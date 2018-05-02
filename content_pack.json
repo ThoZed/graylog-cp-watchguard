@@ -126,6 +126,19 @@
 					"condition_value": "^.*msg_id=\"1AFF-0024\".*",
 					"order": 6
 				}, {
+					"title": "Proxy HTTPS INFO 2CFF-0000",
+					"type": "GROK",
+					"cursor_strategy": "COPY",
+					"target_field": "",
+					"source_field": "message",
+					"configuration": {
+						"grok_pattern": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{NOTSPACE:protocol} %{IPV4:srcip} %{IPV4:dstip} %{BASE10NUM:srcport} %{BASE10NUM:dstport} msg=\"%{DATA:proxy_msg}\" proxy_act=\"%{DATA:proxy_action}\" sni=\"%{DATA:sni}\" cn=\"%{DATA:cn}\" cert_issuer=\"%{DATA:cert_issuer}\" cert_subject=\"%{DATA:cert_subject}\" action=\"%{DATA:cert_action}\" app_id=\"%{DATA:app_id}\" app_cat_id=\"%{DATA:app_cat_id}\" sent_bytes=\"%{BASE10NUM:sent_bytes}\" rcvd_bytes=\"%{BASE10NUM:rcvd_bytes}\" (?:\\s+(geo_dst=\"%{DATA:geo_dst}\")?)"
+					},
+					"converters": [],
+					"condition_type": "REGEX",
+					"condition_value": "^.*msg_id=\"2CFF-0000\".*",
+					"order": 7
+				}, {
 				}
 			]
 		}
