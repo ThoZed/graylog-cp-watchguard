@@ -73,20 +73,6 @@
 					"condition_value": "^.*\\((.*)-\\d\\d\\)",
 					"order": 0
 				}, {
-					"title": "Proxy HTTP INFO 1AFF-0024",
-					"type": "GROK",
-					"cursor_strategy": "COPY",
-					"target_field": "",
-					"source_field": "message",
-					"configuration": {
-						"grok_pattern": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{NOTSPACE:protocol} %{IPV4:srcip} %{IPV4:dstip} %{BASE10NUM:srcport} %{BASE10NUM:dstport} msg=\"%{DATA:proxy_msg}\" proxy_act=\"%{DATA:proxy_action}\" op=\"%{NOTSPACE:proxy_op}\" dstname=\"%{DATA:proxy_dstname}\" arg=\"%{DATA:proxy_arg}\" sent_bytes=\"%{BASE10NUM:sent_bytes}\" rcvd_bytes=\"%{BASE10NUM:rcvd_bytes}\" elapsed_time=\"%{SECOND:elapsed_time} sec\\(s\\)\" (?:\\s+(geo_dst=\"%{DATA:geo_dst}\")?)",
-						"named_captures_only": false
-					},
-					"converters": [],
-					"condition_type": "REGEX",
-					"condition_value": "^.*msg_id=\"1AFF-0024\".*",
-					"order": 6
-				}, {
 					"title": "Fireware msg Description",
 					"type": "LOOKUP_TABLE",
 					"cursor_strategy": "COPY",
@@ -112,6 +98,20 @@
 					"condition_type": "REGEX",
 					"condition_value": "^.*: msg_id.*",
 					"order": 4
+					"title": "Proxy HTTP INFO 1AFF-0024",
+					"type": "GROK",
+					"cursor_strategy": "COPY",
+					"target_field": "",
+					"source_field": "message",
+					"configuration": {
+						"grok_pattern": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{NOTSPACE:protocol} %{IPV4:srcip} %{IPV4:dstip} %{BASE10NUM:srcport} %{BASE10NUM:dstport} msg=\"%{DATA:proxy_msg}\" proxy_act=\"%{DATA:proxy_action}\" op=\"%{NOTSPACE:proxy_op}\" dstname=\"%{DATA:proxy_dstname}\" arg=\"%{DATA:proxy_arg}\" sent_bytes=\"%{BASE10NUM:sent_bytes}\" rcvd_bytes=\"%{BASE10NUM:rcvd_bytes}\" elapsed_time=\"%{SECOND:elapsed_time} sec\\(s\\)\" (?:\\s+(geo_dst=\"%{DATA:geo_dst}\")?)",
+						"named_captures_only": false
+					},
+					"converters": [],
+					"condition_type": "REGEX",
+					"condition_value": "^.*msg_id=\"1AFF-0024\".*",
+					"order": 6
+				}, {
 				}
 			]
 		}
