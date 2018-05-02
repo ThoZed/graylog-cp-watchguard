@@ -98,6 +98,20 @@
 					"condition_type": "REGEX",
 					"condition_value": "^.*: msg_id.*",
 					"order": 4
+				}, {
+					"title": "Firewall PacketFilter INFO 3000-0148",
+					"type": "GROK",
+					"cursor_strategy": "COPY",
+					"target_field": "",
+					"source_field": "message",
+					"configuration": {
+						"grok_pattern": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{BASE10NUM:ip_pkt_len} %{NOTSPACE:protocol} %{BASE10NUM:iph_len} %{BASE10NUM:TTL} (%{IPV4:srcip}|%{DATA:srcuser}) (%{IPV4:dstip}|%{DATA:dstuser}) %{DATA:ip_pkt_info} ((?:\\s+(geo_dst=\"%{DATA:geo_dst}\")?)|\\()"
+					},
+					"converters": [],
+					"condition_type": "REGEX",
+					"condition_value": "^.*msg_id=\"3000-0148\".*",
+					"order": 8
+				}, {
 					"title": "Proxy HTTP INFO 1AFF-0024",
 					"type": "GROK",
 					"cursor_strategy": "COPY",
