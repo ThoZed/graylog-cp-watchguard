@@ -139,6 +139,18 @@
 					"condition_value": "^.*msg_id=\"2CFF-0000\".*",
 					"order": 7
 				}, {
+					"title": "geo_dst to coordinates",
+					"type": "LOOKUP_TABLE",
+					"cursor_strategy": "COPY",
+					"target_field": "geo_coords",
+					"source_field": "geo_dst",
+					"configuration": {
+						"lookup_table_name": "Countrycode3_to_latlong"
+					},
+					"converters": [],
+					"condition_type": "NONE",
+					"condition_value": "",
+					"order": 9
 				}
 			]
 		}
