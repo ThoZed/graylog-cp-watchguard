@@ -11,8 +11,9 @@ In addition to that this content pack adds Area, Name, Level and Description bas
 #### Setup Watchguard to send log messages to graylog
 
 
-![image](/wg-logging1.png)
 
-![image](/Images/wg-logging1.png)
+![wg-logging1](/Images/wg-logging1.png)
 
-![image](/Images/wg-logging2.png)
+![wg-logging2](/Images/wg-logging2.png)
+
+
