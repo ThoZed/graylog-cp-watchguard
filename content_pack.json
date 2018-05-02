@@ -60,6 +60,19 @@
 					"condition_value": "",
 					"order": 3
 				}, {
+					"title": "Name of firewall policy",
+					"type": "REGEX",
+					"cursor_strategy": "COPY",
+					"target_field": "policy_name",
+					"source_field": "message",
+					"configuration": {
+						"regex_value": "^.*\\((.*)-\\d\\d\\)"
+					},
+					"converters": [],
+					"condition_type": "REGEX",
+					"condition_value": "^.*\\((.*)-\\d\\d\\)",
+					"order": 0
+				}, {
 					"title": "Proxy HTTP INFO 1AFF-0024",
 					"type": "GROK",
 					"cursor_strategy": "COPY",
