@@ -32,7 +32,7 @@
 					"converters": [],
 					"condition_type": "NONE",
 					"condition_value": "",
-					"order": 2
+					"order": 3
 				}, {
 					"title": "Fireware msg Area",
 					"type": "LOOKUP_TABLE",
@@ -45,7 +45,7 @@
 					"converters": [],
 					"condition_type": "NONE",
 					"condition_value": "",
-					"order": 1
+					"order": 2
 				}, {
 					"title": "Fireware msg Level",
 					"type": "LOOKUP_TABLE",
@@ -58,7 +58,7 @@
 					"converters": [],
 					"condition_type": "NONE",
 					"condition_value": "",
-					"order": 3
+					"order": 4
 				}, {
 					"title": "Name of firewall policy",
 					"type": "REGEX",
@@ -97,7 +97,7 @@
 					"converters": [],
 					"condition_type": "REGEX",
 					"condition_value": "^.*: msg_id.*",
-					"order": 4
+					"order": 1
 				}, {
 					"title": "Firewall PacketFilter INFO 3000-0148",
 					"type": "GROK",
