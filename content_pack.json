@@ -105,7 +105,7 @@
 					"target_field": "",
 					"source_field": "message",
 					"configuration": {
-						"grok_pattern": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{BASE10NUM:ip_pkt_len} %{NOTSPACE:protocol} %{BASE10NUM:iph_len} %{BASE10NUM:TTL} (%{IPV4:srcip}|%{DATA:srcuser}) (%{IPV4:dstip}|%{DATA:dstuser}) %{DATA:ip_pkt_info} ((?:\\s+(geo_dst=\"%{DATA:geo_dst}\")?)|\\()"
+						"grok_pattern": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{BASE10NUM:ip_pkt_len} %{NOTSPACE:protocol} %{BASE10NUM:iph_len} %{BASE10NUM:TTL} (%{IPV4:srcip}|%{DATA:srcuser}) (%{IPV4:dstip}|%{DATA:dstuser}) %{BASE10NUM:srcport} %{BASE10NUM:dstport} %{DATA:ip_pkt_info} ((?:\\s+(geo_src=\"%{DATA:geo_src}\"|geo_dst=\"%{DATA:geo_dst}\")?)|\\()"
 					},
 					"converters": [],
 					"condition_type": "REGEX",
