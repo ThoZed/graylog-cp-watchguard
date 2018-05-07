@@ -1,611 +1,575 @@
-'msg_id';'msg_level';'msg_area';'msg_name';'msg_desc'
-#Firewall Log Messages
-#Alarm
-'30000152';'INFO';'Firewall / Packet Filter';'IPv4 source route attack';'IPv4 source route attack was detected.'
-'30000153';'INFO';'Firewall / Packet Filter';'IPv4 SYN flood attack';'IPv4 SYN flood attack was detected.'
-'30000154';'INFO';'Firewall / Packet Filter';'IPv4 ICMP flood attack';'IPv4 ICMP flood attack was detected.'
-'30000157';'INFO';'Firewall / Packet Filter';'IPv4 IKE flood attack';'IPv4 IKE flood attack was detected'
-'30000156';'INFO';'Firewall / Packet Filter';'IPv4 IPSEC flood attack';'IPv4 IPSEC flood attack was detected.'
-'30000155';'INFO';'Firewall / Packet Filter';'IPv4 UDP flood attack';'IPv4 UDP flood attack was detected.'
-'30000158';'INFO';'Firewall / Packet Filter';'IPv4 scan attack';'IPv4 scan attack was detected.'
-'30000161';'INFO';'Firewall / Packet Filter';'IPv4 DDOS attack from client';'IPv4 DDOS attack from a client was detected.'
-'30000159';'INFO';'Firewall / Packet Filter';'IPv4 port scan attack';'IPv4 port scan attack was detected.'
-'30000160';'INFO';'Firewall / Packet Filter';'IPv4 DDOS against server';'IPv4 DDOS attack against a server was detected.'
-'30000162';'INFO';'Firewall / Packet Filter';'IPv6 SYN flood attack';'IPv6 SYN flood attack was detected.'
-'30000164';'INFO';'Firewall / Packet Filter';'IPv6 UDP flood attack';'IPv6 UDP flood attack was detected.'
-'30000165';'INFO';'Firewall / Packet Filter';'IPv6 IPSEC flood attack';'IPv6 IPSEC flood attack was detected.'
-'30000163';'INFO';'Firewall / Packet Filter';'IPv6 ICMP flood attack';'IPv6 ICMP flood attack was detected.'
-'30000166';'INFO';'Firewall / Packet Filter';'IPv6 IKE flood attack';'IPv6 IKE flood attack was detected.'
-'30000168';'INFO';'Firewall / Packet Filter';'Blocked site';'Traffic was detected to or from a blocked site.'
-'30000169';'INFO';'Firewall / Packet Filter';'IP spoofing';'IP spoofing was detected from the IP address specified in the log message.'
-'30000167';'INFO';'Firewall / Packet Filter';'Alarm Traffic matched policy';'An alarm log message was sent for traffic that matched the specified policy.'
-'30000168';'INFO';'Firewall / Packet Filter';'Blocked site';'Traffic was detected to or from a blocked site.'
-'30000170';'INFO';'Firewall / Packet Filter';'Connection table high water mark';'The total number of current sessions reached the high water mark (80%) of the maximum connection table.'
-'30000171';'INFO';'Firewall / Packet Filter';'Conntrack table is full';'The conntrack table is full. The number of connections has reached the configured limit.'
-'30000172';'INFO';'Firewall / Packet Filter';'Blocked port';'Traffic was detected on a blocked port.'
-#Firewall Log Messages
-#Diagnostic
-'3000002A';'INFO';'Firewall / Packet Filter';'Address already blocked';'IP address %s will not be added to the blocked sites list because it already exists.'
-'3000003A';'ERROR';'Firewall / Packet Filter';'Unable to read feature keys';'Unable to read feature keys file or fail to parse feature keys file. Features that require a correct feature key will not function.'
-'3000003C';'ERROR';'Firewall / Packet Filter';'No route to HTTP redirect host';'Route look up on HTTP redirect host for the specified policy failed, and local HTTP redirect may not work.'
-'3000012D';'INFO';'Firewall / Packet Filter';'Verify ARP entry';'The appliance sent an ARP request to verify learned ARP entry for a given host.'
-'3000012E';'ERROR';'Firewall / Packet Filter';'Possible loop or ARP spoofing detected';'The appliance received an ARP packet sent from one of its own MAC addresses.'
-'30000006';'INFO';'Firewall / Packet Filter';'Feature settings updated';'Firewall settings for the feature specified in the message have been updated'
-'30000007';'INFO';'Firewall / Packet Filter';'DNS forwarding deferred';'DNS server IP address is not yet known, device will enable DNS when a DNS server IP address is detected'
-'30000029';'INFO';'Firewall / Packet Filter';'Address exempted from blocked sites';'The particular IP address is an exemption and will not be added to the blocked sites list'
-'30000027';'INFO';'Firewall / Packet Filter';'Firewall is starting up';'Firewall is starting up'
-'30000028';'INFO';'Firewall / Packet Filter';'Firewall is shutting down';'Firewall is shutting down'
-'30000040';'INFO';'Firewall / Packet Filter';'Blocked site idle timeout';'Idle timeout has occurred for the specified blocked site, and it will be removed from the blocked sites list.'
-#Firewall Log Messages
-#Event
-'300000C9';'INFO';'Firewall / Packet Filter';'Load Balance Server(TCP Probe)';'Load Balance Server status update due to response or lack of response to a TCP Probe packet.
-'300000CB';'INFO';'Firewall / Packet Filter';'Load Balance Server(ICMP Probe)';'Update to status of Load Balance Server due to success or failure of ICMP Probe packet.
-'3000002F';'INFO';'Firewall / Packet Filter';'Feature not supported by feature key';'The device feature key does not support the specified feature.
-'3000012C';'ERROR';'Firewall / Packet Filter';'ARP spoofing attack';'Detected an ARP spoofing attack.
-'30000004';'INFO';'Firewall / Packet Filter';'Application Control feature expired';'The feature key for your Application Control subscription has expired.
-'30000005';'INFO';'Firewall / Packet Filter';'IPS feature expired';'The feature key for your Intrusion Prevention Services subscription has expired.
-#Firewall Log Messages
-#Traffic
-'30000148';'INFO';'Firewall / Packet Filter';'Normal traffic';'Details of normal traffic either allowed or denied by the firewall policy specified in the log message.'
-'30000149';'INFO';'Firewall / Packet Filter';'Application Control Traffic identified';'Application Control identified traffic for an application.'
-'30000150';'INFO';'Firewall / Packet Filter';'IPS Traffic detected';'IPS detected traffic that matches an IPS signature.'
-'30000151';'INFO';'Firewall / Packet Filter';'Traffic connection terminated';'Record for a terminated connection'
-'30011001';'INFO';'Firewall / Packet Filter';'Temporarily blocking host';'The host is blocked temporarily.'
-#Networking Log Messages
-#Diagnostic
-'5A00000A';'ERROR';'Networking / Dynamic DNS';'No response from server';'Not able to get response from specified dynamic DNS server.'
-'5A00000B';'ERROR';'Networking / Dynamic DNS';'Invalid response from server';'The dynamic DNS server returned an invalid response code.'
-'5A00000C';'INFO';'Networking / Dynamic DNS';'The time for next update';'The log message specifies the next update time for dynamic DNS.'
-'5A00000D';'DEBUG';'Networking / Dynamic DNS';'Send update request';'Sending dynamic DNS update request.'
-'5A000001';'INFO';'Networking / Dynamic DNS';'Response from Dynamic DNS server';'Receive the specified response from the dynamic DNS server.'
-'5A000002';'INFO';'Networking / Dynamic DNS';'Dynamic DNS Domain Name Resolved';'Dynamic DNS server domain name successfully resolved to an IP address.'
-'5A000003';'INFO';'Networking / Dynamic DNS';'Connected to the server';'Connected to the specified dynamic DNS server.'
-'5A000004';'INFO';'Networking / Dynamic DNS';'Connecting to the server';'Connecting to the specified dynamic DNS server.'
-'5A000005';'INFO';'Networking / Dynamic DNS';'Activate dynamic DNS';'Activate dynamic DNS on the specified interface.'
-'5A000006';'DEBUG';'Networking / Dynamic DNS';'Received reply from the server';'Received the specified reply from the dynamic DNS server.'
-'5A000007';'ERROR';'Networking / Dynamic DNS';'Unable to resolve domain name';'Could not resolve domain for dynamic DNS server.'
-'5A000008';'ERROR';'Networking / Dynamic DNS';'Failed to connect to the server';'Could not connect to the dynamic DNS server due to specified reason.'
-'5A000009';'ERROR';'Networking / Dynamic DNS';'Unable to connect to server';'Unable to connect to the specified dynamic DNS server.'
-'3100000F';'INFO';'Networking / Network Management';'Add bridge interface';'Add bridge interface in bridge mode.'
-'3100003D';'INFO';'Networking / Network Management';'Update ARP rules';'Update ARP rules for the specified cluster role.'
-'3100004F';'INFO';'Networking / Network Management';'Fix up multipath gateways';'Fix up multipath gateways of the specified number successfully.'
-'3100005A';'INFO';'Networking / Network Management';'Update wireless settings';'Update wireless settings'
-'3100005B';'INFO';'Networking / Network Management';'Update secondary IP settings';'Update secondary IP address settings for the specified interface.'
-'3100005C';'INFO';'Networking / Network Management';'Update route settings';'Update route settings.'
-'3100005D';'INFO';'Networking / Network Management';'Update 1to1 NAT settings';'Update 1-to-1 NAT settings.'
-'3100005E';'INFO';'Networking / Network Management';'Update DNS settings';'Update DNS settings.'
-'09000001';'ERROR';'Networking / PPPoE';'Duplicate PPPoE Instance Error';'Another instance of the PPPoE process is already active in the system.'
-'09000002';'ERROR';'Networking / PPPoE';'Invalid PPPoE automatic restart settings';'Automatic restart of PPPoE is disabled due to invalid settings.'
-'09000006';'INFO';'Networking / PPPoE';'Initiate PPPoE automatic restart';'PPPoE instance will restart automatically.'
-'09000007';'WARN';'Networking / PPPoE';'Skip PPPoE automatic restart';'PPPoE instance will not restart automatically due to no link.'
-'31000003';'INFO';'Networking / Network Management';'Initiate gratuitous ARP';'Initiate gratuitous ARP for the specified interface.'
-'31000004';'INFO';'Networking / Network Management';'Initiate gratuitous ARP';'Initiate gratuitous ARP for all the interfaces.'
-'31000030';'INFO';'Networking / Network Management';'Send interface logical link status event';'Interface status event is sent for logical link status change.'
-'31000031';'INFO';'Networking / Network Management';'Send interface link status event';'Interface status event is sent for link change.'
-'31000034';'INFO';'Networking / Network Management';'A change was made to the IP address of the external interface';'Handle IP address for the specified external interface.'
-'31000036';'INFO';'Networking / Network Management';'Layer 2 traffic gate is closed';'Layer 2 traffic gate is closed due to the specified reason.'
-'31000035';'ERROR';'Networking / Network Management';'Ignore unknown address operation';'Ignore unknown address operation on the specified interface.'
-'31000037';'INFO';'Networking / Network Management';'Layer 2 traffic gate is opened';'Layer 2 traffic gate is opened due to the specified reason.'
-'31000038';'INFO';'Networking / Network Management';'Traffic signal changed';'Traffic signal is changed to the specified status.'
-'31000050';'INFO';'Networking / Network Management';'Starting wireless AP';'Starting specified wireless AP.'
-'31000051';'INFO';'Networking / Network Management';'Stopping wireless AP';'Stopping the specified wireless Access Point.'
-'31000057';'INFO';'Networking / Network Management';'Start processing configuration';'Started to process configuration settings.'
-'31000058';'INFO';'Networking / Network Management';'Update bridge mode settings';'Update global bridge mode settings.'
-'31000059';'INFO';'Networking / Network Management';'Update drop-in mode settings';'Update global drop-in mode settings.'
-'31000070';'INFO';'Networking / Network Management';'Clean up stale connections';'Clean up stale connections for the expired IP address on dynamic interface.'
-'31130001';'ERROR';'Networking / Network Management';'Capture stopped';'Capture stopped due to the specified reason.'
-'45000001';'ERROR';'Networking / Modem';'Duplicate modem instance running';'System loaded Modem process, but another instance is already active.'
-'56000001';'INFO';'Networking / Dynamic Routing';'Update IPv4 Dynamic Routes';'Updated an IPv4 dynamic route.'
-'56010002';'ERROR';'Networking / Dynamic Routing';'Failed to retrieve license';'Failed to retrieve license features for dynamic routing.'
-'56010004';'ERROR';'Networking / Dynamic Routing';'Not able to get license';'Not able to get license for dynamic routing features.'
-'56010003';'ERROR';'Networking / Dynamic Routing';'Failed to parse license';'Failed to parse license features for dynamic routing.'
-'56020002';'DEBUG';'Networking / Dynamic Routing';'Received cluster event';'Received cluster ready event.'
-'56020001';'DEBUG';'Networking / Dynamic Routing';'Received interface event';'Received an interface status event.'
-'56020003';'DEBUG';'Networking / Dynamic Routing';'Received cluster event';'Received cluster role change event.'
-'56020004';'DEBUG';'Networking / Dynamic Routing';'Received license event';'Received a license update event.'
-'56020005';'ERROR';'Networking / Dynamic Routing';'RCS unresponsive';'The RCS at the specified IP address has become unresponsive'
-'56020006';'INFO';'Networking / Dynamic Routing';'Not able to forward request to RCS';'Not able to forward request to RCS due to no connection.'
-'56030001';'ERROR';'Networking / Dynamic Routing';'An error was detected in the configuration.';'The log message specifies the line number of the error.'
-'56040002';'ERROR';'Networking / Dynamic Routing';'Connection to RCS closed';'Connection to RCS closed.'
-'56040001';'ERROR';'Networking / Dynamic Routing';'Not able to connect to RCS';'Not able to connect to RCS with the specified IP address.'
-#Networking Log Messages
-#Event
-'0900000A';'INFO';'Networking / PPPoE';'Disconnect';'The PPPoE session for the specified interface is disconnected.'
-'3100000A';'INFO';'Networking / Network Management';'Interface shutting down';'Shutting down the specified interface.'
-'3100000B';'INFO';'Networking / Network Management';'Multi-WAN interface activated.';'Interface is activated due to link-monitor success. '
-'3100000D';'WARN';'Networking / Network Management';'Multi-WAN interface deactivated';'Interface is deactivated due to link-monitor failure.'
-'3100002B';'ERROR';'Networking / Network Management';'Interface is disabled';'Specified interface does not exist, The interface status is set to disabled.'
-'3100002C';'WARN';'Networking / Network Management';'Interface link status changed';'The interface link status has changed.'
-'3100003A';'WARN';'Networking / Network Management';'Cluster is enabled';'Cluster is enabled and is forming.'
-'3100003B';'WARN';'Networking / Network Management';'Cluster setting changed to disabled';'The cluster setting was changed from enabled to disabled.'
-'3100003E';'INFO';'Networking / Network Management';'Cluster A/P role changed';'The role of this device in the active/passive (A/P) cluster changed.'
-'3100003F';'INFO';'Networking / Network Management';'Cluster A/A role changed';'The Cluster active/active (A/A) role changed.'
-'3100006A';'WARN';'Networking / Network Management';'IPv6 interface deactivated.';'IPv6 interface was deactivated.'
-'3100006C';'INFO';'Networking / Network Management';'IPv6 interface shutting down';'Shutting down specified IPv6 interface.'
-'3100006D';'INFO';'Networking / Network Management';'IPv6 interface initializing';'Initializing specified IPv6 interface.'
-'6100000A';'INFO';'Networking / Wireless Controller';'Wireless Access Point paired';'The Wireless Access Point has been paired with the Gateway Wireless Controller.'
-'6100000B';'INFO';'Networking / Wireless Controller';'Wireless Access Point unpaired';'The Wireless Access Point has been unpaired with the Gateway Wireless Controller, and will be reset to the factory default configuration.'
-'6100000C';'WARN';'Networking / Wireless Controller';'Rogue Access Point detected';'The Gateway Wireless Controller has detected a Rogue Access Point at the given BSSID, broadcasting the indicated SSID.'
-'6100000F';'INFO';'Networking / Wireless Controller';'Scheduled Restart Event';'If scheduled restarts (reboot or wireless restart) are enabled, this log message will appear prior to the restart action taking place on the specified Wireless Access Point.'
-'09000004';'ERROR';'Networking / PPPoE';'Authentication failure';'The Firebox or XTM device failed to authenticate for PPPoE.'
-'09000005';'ERROR';'Networking / PPPoE';'PPPoE stopped';'PPPoE stopped unexpectedly due to an unknown error.'
-'09000008';'INFO';'Networking / PPPoE';'Enforce static IP address';'Replaced the assigned PPPoE IP address with the configured static IP address.'
-'09000009';'INFO';'Networking / PPPoE';'Session established';'The specified interface established a PPPoE session.'
-'16000001';'ERROR';'Networking / DHCP Server';'DHCP discover';'Received DHCP discover from the client, but there are no free leases available.'
-'16000002';'INFO';'Networking / DHCP Server';'DHCP offer';'The DHCP server offered an IP address to the specified client device.'
-'16000003';'INFO';'Networking / DHCP Server';'DHCP request';'Received DHCP request for specified IP address from the specified client.'
-'31000009';'INFO';'Networking / Network Management';'Interface initializing';'Initializing the specified interface.'
-'31000010';'ERROR';'Networking / Network Management';'Failed to add bridge';'Failed to add bridge'
-'31000029';'ERROR';'Networking / Network Management';'Failed to add interface IP address';'Failed to add the specified IP address to the specified interface.'
-'31000039';'INFO';'Networking / Network Management';'Cluster management interface change';'The configuration for the cluster management interface changed.'
-'31000046';'INFO';'Networking / Network Management';'Activating external interface';'Activating specified external interface.'
-'31000047';'INFO';'Networking / Network Management';'Deactivating external interface';'Deactivating the specified external interface.'
-'31000052';'INFO';'Networking / Network Management';'Starting wireless AP service';'Starting wireless AP service.'
-'31000054';'INFO';'Networking / Network Management';'Detect rogue wireless AP';'Starting rogue wireless AP detection scan.'
-'31000056';'INFO';'Networking / Network Management';'Restart detecting rogue wireless AP';'Restart rogue wireless AP detection scan.'
-'31000055';'INFO';'Networking / Network Management';'Stop detecting rogue wireless AP';'Stopping rogue wireless AP detection scan.'
-'31000069';'INFO';'Networking / Network Management';'IPv6 interface activated.';'An IPv6 interface was activated. The log message specifies the interface.'
-'31000072';'INFO';'Networking / Network Management';'No change for PPPoE IP address during cluster failover';'PPPoE IP address did not change during cluster failover.'
-'31000073';'INFO';'Networking / Network Management';'DHCP IP address change during cluster failover';'The cluster completed a failover.'
-'31000071';'INFO';'Networking / Network Management';'PPPoE IP address change during cluster failover';'The cluster completed a failover.'
-'31000074';'INFO';'Networking / Network Management';'No change for DHCP IP address during cluster failover';'DHCP IP address did not change during cluster failover.'
-'45000003';'INFO';'Networking / Modem';'Modem disconnected';'Specified modem is disconnected.'
-'45000004';'ERROR';'Networking / Modem';'Modem authentication failed';'Modem authentication failed.'
-'49000001';'ERROR';'Networking / Link Monitoring';'Multi-WAN Domain Name Resolution Failed';'Specified interface failed to resolve specified domain name for ping or TCP test for failover.'
-'49000002';'WARN';'Networking / Link Monitoring';'Multi-Wan Probe Failed';'Specified interface did not receive a response to Probe for failover.'
-'49000003';'ERROR';'Networking / Link Monitoring';'Probe failure';'Specified interface marked as Failed due to no response from ping or TCP host.'
-'56000002';'INFO';'Networking / Dynamic Routing';'Cluster role failed over to backup';'Cluster role failed over from master to backup'
-'56000003';'INFO';'Networking / Dynamic Routing';'Cluster role failed over to master';'Cluster role failed over from backup to master'
-'56010001';'WARN';'Networking / Dynamic Routing';'No valid feature key';'No valid feature key for the specified dynamic routing protocol.'
-'56010005';'INFO';'Networking / Dynamic Routing';'License status';'Specifies the license status for a dynamic routing protocol.'
-'61000002';'WARN';'Networking / Wireless Controller';'Model mismatch';'The Wireless Access Point appears to be a different model than what is configured in the Gateway Wireless Controller.'
-'61000005';'INFO';'Networking / Wireless Controller';'Wireless Access Point reboot';'A Wireless Access Point has rebooted.'
-'61000004';'INFO';'Networking / Wireless Controller';'New Wireless Access Point discovered';'A new Wireless Access Point has been discovered by the Gateway Wireless Controller.'
-'61000003';'WARN';'Networking / Wireless Controller';'Wireless Access Point activation failure';'The Gateway Wireless Controller is unable to contact the WatchGuard LiveSecurity Service to activate the service and support contract for the Wireless Access Point.'
-'61000006';'WARN';'Networking / Wireless Controller';'Wireless Access Point went offline';'A Wireless Access Point has gone offline.'
-'61000008';'INFO';'Networking / Wireless Controller';'Wireless Access Point firmware version change';'The Wireless Access Point firmware version has changed.'
-'61000010';'INFO';'Networking / Wireless Controller';'Automatic Deployment Event';'This log is generated whenever an unpaired Wireless Access Point is automatically deployed due to the Automatic Deployment setting being enabled.'
-'61000007';'INFO';'Networking / Wireless Controller';'Wireless Access Point now online';'A Wireless Access Point is now online.'
-'61000009';'INFO';'Networking / Wireless Controller';'Wireless Access Point configuration updated';'The Wireless Access Point has been reconfigured.'
-'61000011';'WARN';'Networking / Wireless Controller';'Wireless Access Point Fault Condition';'This log is generated whenever a fault condition is detected for a Wireless Access Point.'
-'68000003';'INFO';'Networking / Discovery';'On demand scan - stage 1 completed';'On demand scan - stage 1 completed'
-'68000001';'INFO';'Networking / Discovery';'Network scan completed';'Specified type of scan completed'
-'68000002';'INFO';'Networking / Discovery';'Network scan started';'Specified type and stage of scan started'
-#Proxy Policy log messages
-#Event
-'0F000015';'WARN';'Proxy / Connection Framework Manager';'APT threat notified';'When APT server analysis result returned and identified as certain level threat, this event log will be generated to inform that the APT notification has been sent with detailed information.'
-'0F000016';'INFO';'Proxy / Connection Framework Manager';'APT safe result from file submission. Details='%s'';'APT safe result from file submission. Details='Policy Name: HTTP-OUT-00 Reason: clean Message: APT safe object Task_UUID: 7a1e1500e92a410fa44d907f96b9209e MD5: d2723ba60dc88ec1ea449be9eee601cc Source IP: 10.0.1.2 Source Port: 50293 Destination IP: 100.100.100.3 Destination Port: 80 Proxy Type: HTTP Proxy Host: 100.100.100.3 Path: /test.exe''
-'1B0400CE';'ERROR';'Proxy / SMTP';'Ruleset lookup failed';'SMTP proxy -- Failed to check the specified ruleset'
-'1C0200CD';'ERROR';'Proxy / FTP';'Ruleset lookup failed';'FTP proxy -- Failed to check the specified ruleset'
-#Proxy Policy log messages
-#Traffic
-'1AFF000A';'INFO';'Proxy / HTTP';'Request missing URL path';'The HTTP proxy cannot complete the URL because the host or URI value is missing.'
-'1AFF000B';'INFO';'Proxy / HTTP';'Request URL match';'The requested URL matched a configured URL path in the HTTP proxy.'
-'1AFF000C';'INFO';'Proxy / HTTP';'Chunk size line oversize';'The HTTP chunk size line does not terminate correctly with a carriage return and line-feed (CRLF).'
-'1AFF000D';'INFO';'Proxy / HTTP';'Chunk size line invalid';'The HTTP chunk size line has an invalid hexadecimal value.'
-'1AFF000E';'INFO';'Proxy / HTTP';'Chunk no CRLF tail';'The HTTP chunk does not close with a carriage return and line feed (CRLF) because the chunk block is missing the closing characters.'
-'1AFF000F';'INFO';'Proxy / HTTP';'Footer line oversize';'One line of the HTTP footer, an additional header sent at the end of a message is larger than the configured line limit.'
-'1AFF001A';'INFO';'Proxy / HTTP';'Request method match';'The HTTP request method specified in the Request-Line matches a configured rule, or the default rule of no match.'
-'1AFF001C';'INFO';'Proxy / HTTP';'Header cookie domain match';'The cookie domain header matches a configured rule, or the default rule of no match.'
-'1AFF001D';'INFO';'Proxy / HTTP';'Request host missing';'The HTTP request header is missing the host value.'
-'1AFF001E';'INFO';'Proxy / HTTP';'Header authentication scheme match';'The authentication scheme in the HTTP header server response matches one of the configured rules, or the default rule of no match.'
-'1AFF001F';'INFO';'Proxy / HTTP';'Request method not supported';'The HTTP request method does not match a configured rule.'
-'1AFF0001';'INFO';'Proxy / HTTP';'Session timeout with server idle';'The HTTP session has timed out because no traffic has been received from the server for the specified amount of time.'
-'1AFF001B';'INFO';'Proxy / HTTP';'Header match';'The HTTP header line matches a configured rule, or the default rule of no match.'
-'1AFF0002';'INFO';'Proxy / HTTP';'Session timeout with client idle';'The HTTP session has timed out because no traffic has been received from the client for the specified amount of time.'
-'1AFF002B';'INFO';'Proxy / HTTP';'Trusted host';'The destination host name matches a proxy exception configured in the HTTP proxy.'
-'1AFF002C';'INFO';'Proxy / HTTP';'Bad reputation';'The HTTP proxy blocked access to the destination address because of a bad reputation score for the URL.'
-'1AFF002D';'INFO';'Proxy / HTTP';'Good reputation';'The HTTP proxy did not complete a Gateway AntiVirus (GAV) scan for traffic to the destination address because the URL received a good reputation score.'
-'1AFF002E';'INFO';'Proxy / HTTP';'Application match';'Application Control identified the application type from the HTTP client request or server response stream.'
-'1AFF002F';'INFO';'Proxy / HTTP';'DLP violation found';'Data Loss Prevention (DLP) detected a violation of DLP rules.'
-'1AFF0003';'INFO';'Proxy / HTTP';'Session timeout with close complete command timeout';'The Close HTTP Session command timed out because no response to the FIN packet was received within the response time limit (3 minutes).'
-'1AFF0004';'INFO';'Proxy / HTTP';'Oversize Start-Line';'The first line of the client request or server response is longer than the configured maximum line length.'
-'1AFF0005';'INFO';'Proxy / HTTP';'Invalid Request-Line format';'The request line from the client does not match the standard format of [Method][SP][Request-URI][SP][HTTP/Version].'
-'1AFF0006';'INFO';'Proxy / HTTP';'Invalid Status-Line format';'The status line from the server does not match the standard format of [HTTP/Version][SP][Status Code][SP][Reason].'
-'1AFF0007';'INFO';'Proxy / HTTP';'Header line oversize';'A single client request or server response line is longer than the configured maximum line length.'
-'1AFF0008';'INFO';'Proxy / HTTP';'Header block oversize';'The client request or server response header block length is longer than the configured limit.'
-'1AFF0009';'INFO';'Proxy / HTTP';'header block parse error';'The HTTP proxy cannot process the header line because the format is incorrect.'
-'1AFF0010';'INFO';'Proxy / HTTP';'Footer block oversize';'The HTTP footer includes additional header information that is larger than the configured block limit size.'
-'1AFF0011';'INFO';'Proxy / HTTP';'Footer block parse error';'The HTTP footer includes an additional header field with syntax that violates the header format restrictions.'
-'1AFF0012';'INFO';'Proxy / HTTP';'Body content type match';'The HTTP content either matches a configured Body Content Type or no Body Content Type is defined (only the default rule is in use).'
-'1AFF0013';'INFO';'Proxy / HTTP';'Header content malformed';'The HTTP header line does not follow the correct syntax for a client request or server response header.'
-'1AFF0016';'INFO';'Proxy / HTTP';'Header Transfer-Encoding match';'The Transfer-Encoding in the HTTP header matches a configured rule, or the default rule of no match.'
-'1AFF0018';'INFO';'Proxy / HTTP';'Header content type match';'The HTTP header Content Type matches a configured rule, or the default rule of no match.'
-'1AFF0019';'INFO';'Proxy / HTTP';'Request version match';'The HTTP version specified in the HTTP request line matches a configured rule, or the default rule of no match.'
-'1AFF0020';'INFO';'Proxy / HTTP';'Request port mismatch';'Relative-URI is in use and the port specified in the HTTP request host header does not match the port used for the connection.'
-'1AFF0021';'INFO';'Proxy / HTTP';'Request categories';'The HTTP request is sent to a web address that matched a selected WebBlocker category.'
-'1AFF0022';'INFO';'Proxy / HTTP';'Service unavailable';'WebBlocker categorization failed because the configured WebBlocker server is not available.'
-'1AFF0023';'INFO';'Proxy / HTTP';'Request';'URL path oversize''
-'1AFF0024';'INFO';'Proxy / HTTP';'Request';'A detailed summary of the last HTTP proxy transaction.'
-'1AFF0025';'INFO';'Proxy / HTTP';'Header IPS rule match';'Intrusion Prevention Service (IPS) detected an intrusion in the client request or server response header.'
-'1AFF0026';'INFO';'Proxy / HTTP';'Body IPS rule match';'Intrusion Prevention Service (IPS) detected an intrusion in the client request or server response content body.'
-'1AFF0028';'INFO';'Proxy / HTTP';'GAV Virus found';'Gateway AntiVirus (GAV) detected a virus or malware.'
-'1AFF0029';'INFO';'Proxy / HTTP';'GAV scan error';'Gateway AntiVirus (GAV) failed to scan because of an error.'
-'1AFF0030';'INFO';'Proxy / HTTP';'DLP cannot perform scan';'Data Loss Prevention (DLP) failed to scan the traffic because of the error specified in the log message.'
-'1AFF0031';'INFO';'Proxy / HTTP';'DLP object unscannable';'Data Loss Prevention (DLP) cannot extract data from an object because it is encrypted.'
-'1AFF0032';'INFO';'Proxy / HTTP';'HTTP object too large';'Data Loss Prevention (DLP) cannot scan the object because it is larger than the configured limit.'
-'1AFF0033';'INFO';'Proxy / HTTP';'Range header';'This is the configured action (allow or strip) for the HTTP proxy Range header.'
-'1AFF0034';'INFO';'Proxy / HTTP';'APT threat detected';'APT Blocker detected a threat.'
-'1AFF0036';'INFO';'Proxy / HTTP';'File submitted to APT analysis server';'File submitted to APT analysis server for deep threat analysis.'
-'1AFF0037';'INFO';'Proxy / HTTP';'Connect tunnel port match';'The HTTP CONNECT tunnel request port matches a configured rule, or the default rule of no match.'
-'1AFF0038';'INFO';'Proxy / HTTP';'Webproxy redirect';'The HTTP Webproxy connection was redirected to a different proxy action because of the configuration setting in explicit proxy.'
-'1AFF0039';'INFO';'Proxy / HTTP';'File reported safe from APT hash check';'APT hash check did not report a threat from the object''
-'1BFF000A';'INFO';'Proxy / SMTP';'Timeout';'The SMTP connection was idle for longer than the configured idle timeout limit.'
-'1BFF000C';'INFO';'Proxy / SMTP';'GAV Virus found';'Gateway AntiVirus (GAV) detected a virus or malware in an email attachment.'
-'1BFF000F';'INFO';'Proxy / SMTP';'Request';'This SMTP audit log specifies the bytes sent, bytes received, the sender and recipient addresses, and the sender and recipient TLS cipher.'
-'1BFF0000';'INFO';'Proxy / SMTP';'Greeting';'The host name in the SMTP proxy HELO or EHLO command matched one of the Greeting Rules, or the default rule of no match.'
-'1BFF000E';'INFO';'Proxy / SMTP';'GAV cannot perform scan';'Gateway AntiVirus (GAV) could not complete the scan because of the error that is specified in the log message.'
-'1BFF0001';'INFO';'Proxy / SMTP';'ESMTP option';'The EHLO response from the SMTP server includes an ESMTP option that is disabled or unknown.'
-'1BFF001A';'INFO';'Proxy / SMTP';'spamBlocker bulk spam';'spamBlocker has classified the message as bulk SPAM.'
-'1BFF001B';'INFO';'Proxy / SMTP';'spamBlocker suspect spam';'spamBlocker has classified the message as suspect SPAM.'
-'1BFF001C';'INFO';'Proxy / SMTP';'spamBlocker not SPAM';'spamBlocker has classified the message as not SPAM.'
-'1BFF001D';'INFO';'Proxy / SMTP';'spamBlocker classification unknown';'spamBlocker was unable to classify the email message because of an error.'
-'1BFF001E';'INFO';'Proxy / SMTP';'spamBlocker exception matched';'The sender or recipient of the email message matches a spamBlocker exception specified in the SMTP proxy.'
-'1BFF001F';'INFO';'Proxy / SMTP';'Decoder error';'The SMTP proxy was unable to decode the email message due to the error specified in the log message.'
-'1BFF002A';'INFO';'Proxy / SMTP';'File submitted to APT analysis server';'File submitted to APT analysis server for deep threat analysis.'
-'1BFF002B';'INFO';'Proxy / SMTP';'File reported safe from APT hash check';'APT hash check did not report a threat from the object''
-'1BFF0002';'INFO';'Proxy / SMTP';'Authentication (AUTH)';'The EHLO response from the SMTP server included an authentication type that matches a configured authentication rule.'
-'1BFF0003';'INFO';'Proxy / SMTP';'Header';'A MIME header matched a configured rule, or the default rule of no match.'
-'1BFF0004';'INFO';'Proxy / SMTP';'From address';'The sender address matched a rule specified in the Mail From rules.'
-'1BFF0005';'INFO';'Proxy / SMTP';'To address';'The recipient address matched a rule specified in the Rcpt To rules.'
-'1BFF0006';'INFO';'Proxy / SMTP';'Content type';'Some of the message content matched a content filter rule.'
-'1BFF0007';'INFO';'Proxy / SMTP';'Filename';'An email attachment matched a file name rule, or the attachment is uuencoded and the SMTP proxy allows uuencoded attachments.'
-'1BFF0010';'INFO';'Proxy / SMTP';'Message format';'The email message format matched a message format rule specified in the SMTP proxy.'
-'1BFF0011';'INFO';'Proxy / SMTP';'IPS match';'Intrusion Prevention Service (IPS) detected a threat.'
-'1BFF0013';'INFO';'Proxy / SMTP';'Too many recipients';'The number of email recipients specified in the email message exceeds the configured limit.'
-'1BFF0014';'INFO';'Proxy / SMTP';'Response size too long';'The SMTP server response exceeds the configured limit.'
-'1BFF0015';'INFO';'Proxy / SMTP';'Line too long';'The email message contains a line that exceeds the configured limit.'
-'1BFF0016';'INFO';'Proxy / SMTP';'Message too long';'The SMTP message length exceeds the configured limit.'
-'1BFF0017';'INFO';'Proxy / SMTP';'Header too long';'The SMTP message contains a header that exceeds the configured Maximum Header Length.'
-'1BFF0018';'INFO';'Proxy / SMTP';'Command';'The SMTP request contains a command that is not supported or is not valid for the email transaction.'
-'1BFF0019';'INFO';'Proxy / SMTP';'spamBlocker confirmed spam';'spamBlocker has classified the message as confirmed SPAM.'
-'1BFF0021';'INFO';'Proxy / SMTP';'Extra pad characters in base64 encoding';'The SMTP proxy encountered extra pad characters when the body of the base64-encoded message was processed.'
-'1BFF0022';'INFO';'Proxy / SMTP';'Mail from address too long';'A sender email address exceeded the configured maximum address length.'
-'1BFF0023';'INFO';'Proxy / SMTP';'Application match';'Application Control identified the application in the mail message that is specified in the log message.'
-'1BFF0024';'INFO';'Proxy / SMTP';'DLP violation found';'Data Loss Prevention (DLP) detected the rule violation that is specified in the log message.'
-'1BFF0025';'INFO';'Proxy / SMTP';'DLP cannot perform scan';'Data Loss Prevention (DLP) is unable to scan because of the error specified in the log message.'
-'1BFF0026';'INFO';'Proxy / SMTP';'DLP cannot scan object';'Data Loss Prevention (DLP) is unable to extract data from an object because the object is encrypted.'
-'1BFF0027';'INFO';'Proxy / SMTP';'DLP object too large';'The file requested for Data Loss Prevention (DLP) analysis is larger than the configured limit.'
-'1BFF0028';'INFO';'Proxy / SMTP';'APT threat detected';'APT Blocker found the threat specified in the log message in an attached file.'
-'1CFF0000';'INFO';'Proxy / FTP';'User name too long';'The user name exceeds the maximum length specified in the FTP proxy.'
-'1CFF000C';'INFO';'Proxy / FTP';'Request';'This log message for the FTP request transaction includes the source and destination IP addresses for the initial connections.'
-'1CFF000D';'INFO';'Proxy / FTP';'IPS match';'Intrusion Prevention Service (IPS) detected a threat.'
-'1CFF000E';'INFO';'Proxy / FTP';'GAV Virus found';'Gateway AntiVirus (GAV) detected a virus or malware in the attachment.'
-'1CFF000F';'INFO';'Proxy / FTP';'GAV scan error';'Gateway AntiVirus (GAV) failed to scan due to the error specified in the log message.'
-'1CFF0001';'INFO';'Proxy / FTP';'Password too long';'The password specified for the user exceeds the maximum length configured in the FTP proxy.'
-'1CFF0002';'INFO';'Proxy / FTP';'File or directory name too long';'The file or directory name exceeds the maximum length configured in the FTP proxy.'
-'1CFF0003';'INFO';'Proxy / FTP';'Command line too long';'The command exceeded the maximum length configured in the FTP proxy.'
-'1CFF0004';'INFO';'Proxy / FTP';'Exceeded maximum allowed login attempts';'The user exceeded the configured maximum number of allowed failed log in attepmts per connection.'
-'1CFF0005';'INFO';'Proxy / FTP';'Command match';'The command matched a configured rule, or the default of no match.'
-'1CFF0006';'INFO';'Proxy / FTP';'Download match';'The file type matched a configured download rule, or the default rule of no match.'
-'1CFF0007';'INFO';'Proxy / FTP';'Upload match';'The file type matched a configured upload rule, or the default rule of no match.'
-'1CFF0008';'INFO';'Proxy / FTP';'Timeout';'The connection exceeded the configured idle time value.'
-'1CFF0009';'INFO';'Proxy / FTP';'Invalid request';'The FTP proxy rejected the command because of a lack of required arguments, such as a user name.'
-'1CFF0010';'INFO';'Proxy / FTP';'Application match';'Application Control identified an application in the FTP client request or server response.'
-'1CFF0011';'INFO';'Proxy / FTP';'DLP violation found';'Data Loss Prevention (DLP) detected a rule violation.'
-'1CFF0012';'INFO';'Proxy / FTP';'DLP cannot perform scan';'Data Loss Prevention (DLP) failed to scan because of the error specified in the log message.'
-'1CFF0013';'INFO';'Proxy / FTP';'DLP cannot scan object';'Data Loss Prevention (DLP) could not scan and analyze the attachment because it is encrypted.'
-'1CFF0014';'INFO';'Proxy / FTP';'DLP object too large';'Data Loss Prevention (DLP) could not analyze the attachment because the file was larger than the configured limit.'
-'1CFF0015';'INFO';'Proxy / FTP';'APT threat detected';'APT Blocker identified a threat.'
-'1CFF0017';'INFO';'Proxy / FTP';'File submitted to APT analysis server';'File submitted to APT analysis server for deep threat analysis.'
-'1CFF0018';'INFO';'Proxy / FTP';'File reported safe from APT hash check';'APT hash check did not report a threat from the object''
-'1CFF0019';'ERROR';'Proxy / FTP';'FTP Bounce Attempt';'FTP proxy -- User attempted FTP bounce'
-'1DFF0000';'INFO';'Proxy / DNS';'Invalid number of questions';'The traffic was blocked because the message included an invalid number of questions.'
-'1DFF000A';'INFO';'Proxy / DNS';'Response answer undersized';'The DNS response was blocked because the response size was less than the minimum value of 17 bytes.'
-'1DFF000C';'INFO';'Proxy / DNS';'Response ID Invalid';'The DNS response was blocked because the response ID did not match the current or previous request ID.'
-'1DFF000E';'INFO';'Proxy / DNS';'Query question match';'The DNS query name matched a configured rule, or the default rule of no match.'
-'1DFF000F';'INFO';'Proxy / DNS';'Request';'The DNS request audit log specifies the query type and name.'
-'1DFF0001';'INFO';'Proxy / DNS';'Query name oversized';'The DNS query was blocked because the DNS query name exceeded the allowed buffer size, which varies from 0 kilobytes to 64 kilobytes.'
-'1DFF0002';'INFO';'Proxy / DNS';'Query name compressed';'The DNS query was blocked because the domain name was compressed.'
-'1DFF0003';'INFO';'Proxy / DNS';'Parse error';'The DNS request was blocked because the proxy failed to parse the domain name.'
-'1DFF0004';'INFO';'Proxy / DNS';'Not Internet CLASS';'The DNS query was not Internet CLASS.'
-'1DFF0005';'INFO';'Proxy / DNS';'OPcode match';'The OpCode matched a configured rule, or the default rule of no match.'
-'1DFF0006';'INFO';'Proxy / DNS';'Query type match';'The query type matched a configured rule, or the default rule of no match.'
-'1DFF0007';'INFO';'Proxy / DNS';'Question undersized';'The DNS query was blocked because the query size was less than the minimum valid size of 17 bytes.'
-'1DFF0008';'INFO';'Proxy / DNS';'Question oversized';'The DNS query was blocked because the query size exceeds the maximum allowed size of 271 bytes.'
-'1DFF0009';'INFO';'Proxy / DNS';'Timeout';'The DNS connection was idle longer than the configured timeout value in the DNS policy.'
-'1DFF0010';'INFO';'Proxy / DNS';'IPS match';'Intrusion Prevention Service (IPS) detected an intrusion threat.'
-'1DFF0012';'INFO';'Proxy / DNS';'Application match';'Application Control identified the application type from the DNS client query and server response.'
-'2AFF0000';'INFO';'Proxy / H.323';'Timeout';'The connection was idle longer than the configured timeout value. The default value is 180 seconds.''
-'2AFF0001';'INFO';'Proxy / H.323';'Request';'This log message specifies the IP addresses for the completed H323 call.'
-'2AFF0002';'INFO';'Proxy / H.323';'Codec';'The media codec is denied because it matched a configured Denied Codec.'
-'2AFF0003';'INFO';'Proxy / H.323';'Access control';'The header address is allowed or denied because it matches an Access Control rule configured in the H323 policy.'
-'2AFF0006';'INFO';'Proxy / H.323';'IPS match';'Intrusion Prevention Service (IPS) detected an intrusion threat.'
-'2AFF0007';'INFO';'Proxy / H.323';'Application match';'Application Control detected an application type from the transaction.'
-'2CFF0000';'INFO';'Proxy / HTTPS';'Request';'HTTPS transaction log includes server name, certificate details and action taken.'
-'2CFF0001';'INFO';'Proxy / HTTPS';'WebBlocker Request categories';'WebBlocker identified the category for a web request.'
-'2CFF0002';'INFO';'Proxy / HTTPS';'WebBlocker service unavailable';'WebBlocker failed because a WebBlocker Server was not available.'
-'2CFF0003';'INFO';'Proxy / HTTPS';'Domain name match';'This rule log includes the matched rule name or default rule of no match and the patterns its been matched against.'
-'2CFF0007';'INFO';'Proxy / HTTPS';'Protocol invalid';'The HTTPS proxy detected an invalid SSL version.'
-'2CFF0008';'INFO';'Proxy / HTTPS';'Timeout';'The HTTPS connection was idle longer than the timeout value configured in the HTTPS policy.'
-'2CFF0009';'INFO';'Proxy / HTTPS';'Content inspection';'The HTTPS traffic was directed to a different proxy action because of the Content Inspection settings in the HTTPS proxy.'
-'2DFF0000';'INFO';'Proxy / TCP-UDP';'Request';'TCP-UDP transaction log for the traffic that is configured to allow or deny.'
-'2DFF0001';'INFO';'Proxy / TCP-UDP';'IPS match';'Intrusion Prevention Service (IPS) detected an intrusion threat in TCP-UDP proxy traffic.'
-'2DFF0004';'INFO';'Proxy / TCP-UDP';'Protocol';'The TCP-UDP proxy recognized the protocol.'
-'2DFF0005';'INFO';'Proxy / TCP-UDP';'Application match';'Application Control identified the application type from the TCP-UDP proxy traffic.'
-'21FF000A';'INFO';'Proxy / POP3';'Request';'This audit log message specifies the bytes sent, bytes received, and user.'
-'21FF0000';'INFO';'Proxy / POP3';'CAPA';'The CAPA response contained the unknown or blocked capability that is specified in the log message.'
-'21FF000C';'INFO';'Proxy / POP3';'IPS match';'Intrusion Prevention Service (IPS) detected an intrusion threat.'
-'21FF000F';'INFO';'Proxy / POP3';'GAV Virus found';'Gateway AntiVirus detected a virus or malware in the file.'
-'21FF001A';'INFO';'Proxy / POP3';'spamBlocker exception matched';'The sender for the email matched a spamBlocker exception rule.'
-'21FF0001';'INFO';'Proxy / POP3';'Authentication';'The authentication type matched a rule, or the default rule of no match.'
-'21FF001B';'INFO';'Proxy / POP3';'spamBlocker not spam';'spamBlocker classified the message as not SPAM.'
-'21FF001C';'INFO';'Proxy / POP3';'spamBlocker classification unknown';'spamBlocker was unable to classify the message because of the error specified in the log message.'
-'21FF001D';'INFO';'Proxy / POP3';'Extra pad characters';'The POP3 proxy encountered extra pad characters in the body of a base64-encoded message.'
-'21FF001E';'INFO';'Proxy / POP3';'Application match';'Application Control identified the application from the email message.'
-'21FF001F';'INFO';'Proxy / POP3';'APT threat detected';'APT Blocker found the threat specified in the log message in an attached file.'
-'21FF0002';'INFO';'Proxy / POP3';'Command';'The client sent an authentication command when it was not allowed.'
-'21FF0005';'INFO';'Proxy / POP3';'Header';'A POP3 header matched a configured Header rule, or the default rule of no match.'
-'21FF0006';'INFO';'Proxy / POP3';'Content type';'A MIME-type matched a configured content type rule, or the default rule of no match.'
-'21FF0007';'INFO';'Proxy / POP3';'File name';'The attachment matches a configured file name rule, or the default rule of no match.'
-'21FF0009';'INFO';'Proxy / POP3';'Timeout';'The connection was idle for longer than the configured timeout limit.'
-'21FF0010';'INFO';'Proxy / POP3';'GAV cannot perform scan';'Gateway AntiVirus (GAV) failed to scan because of the error specified in the log message.'
-'21FF0012';'INFO';'Proxy / POP3';'Line length too long';'A line exceeds the configured limit.'
-'21FF0014';'INFO';'Proxy / POP3';'Message format';'The message is not in an allowed format.'
-'21FF0015';'INFO';'Proxy / POP3';'Encoding error';'The proxy was unable to decode and encode the message because of the error specified in the log message.'
-'21FF0016';'INFO';'Proxy / POP3';'spamBlocker confirmed spam';'spamBlocker classified the message as confirmed SPAM.'
-'21FF0017';'INFO';'Proxy / POP3';'spamBlocker BULK spam';'spamBlocker classified the message as bulk SPAM.'
-'21FF0018';'INFO';'Proxy / POP3';'spamBlocker suspect spam';'spamBlocker classified the message as suspect SPAM.'
-'21FF0021';'INFO';'Proxy / POP3';'File submitted to APT analysis server';'File submitted to APT analysis server for deep threat analysis.'
-'21FF0022';'INFO';'Proxy / POP3';'File reported safe from APT hash check';'APT hash check did not report a threat from the object''
-'28FF0000';'INFO';'Proxy / SIP';'Timeout';'The connection was idle for longer than the configured timeout value.'
-'28FF0004';'INFO';'Proxy / SIP';'Request';'The log message specifies the source and destination of the allowed call.'
-'28FF0005';'INFO';'Proxy / SIP';'Codec';'The codec is allowed or denied based on the setting for Denied Codecs in the SIP policy.'
-'28FF0006';'INFO';'Proxy / SIP';'Access control';'The header address is allowed or denied based on the Access Control settings.'
-'28FF0008';'INFO';'Proxy / SIP';'IPS match';'Intrusion Prevention Service (IPS) detected an intrusion threat.'
-'28FF0009';'INFO';'Proxy / SIP';'Application match';'Application Control identified an application from the transaction.'
-#Management Log Messages
-#Diagnostic
-'5501000C';'INFO';'Management / System';'Device restore failed';'Device auto restore from a specific image in a USB drive disc or normal restore from a normal image failed'
-'5501000D';'INFO';'Management / System';'Creating USB auto restore image failed';'Creation of USB auto restore image failed due to %s'
-'5501001B';'INFO';'Management / System';'System backup failed';'System backup %s%s failed due to %s.'
-'5501001C';'INFO';'Management / System';'USB auto restore failed reason';'USB auto restore failed due to %s'
-'55010010';'INFO';'Management / System';'USB drive format';'USB drive format operation was %s'
-'55010018';'INFO';'Management / System';'Reset to the default configuration failed';'The default configuration settings were not restored after a system reset.'
-'55010017';'INFO';'Management / System';'Generate system diagnostic successfully';'Exported system diagnostic file to %s successfully'
-'55010014';'INFO';'Management / System';'Generate system diagnostic file failed';'Generate system diagnostic file to %s failed'
-'55010015';'INFO';'Management / System';'Periodic support snapshot is enabled';'System periodic support snapshot is enabled'
-#Management Log Messages
-#Event
-'3D040001';'INFO';'Management / Logging';'Primary Log Server connected';'The device successfully connected to the WatchGuard Log Server designated as the primary server.'
-'3D040002';'INFO';'Management / Logging';'Backup Log Server connected';'The device successfully connected to the WatchGuard Log Server designated as the backup server.'
-'3E000002';'INFO';'Management / Accounting';'User login succeeded';'A user successfully logged in.'
-'3E000003';'WARN';'Management / Accounting';'User login failed';'A user log in attempt failed.'
-'3E000004';'INFO';'Management / Accounting';'User logout';'A user successfully logged out.'
-'133F0065';'ERROR';'Management / Authentication Portal';'Customized certificate generation error';'A custom certificate failed to generate.'
-'01010001';'INFO';'Management / Configuration';'Device configuration change';'The device configuration has been changed.'
-'01010002';'INFO';'Management / Configuration';'Administrative accounts reset to default';'The administrative accounts were returned to the default settings.'
-'01020001';'INFO';'Management / Configuration';'Feature key added';'An administrator added a feature key.'
-'01020002';'INFO';'Management / Configuration';'Feature key removed';'An administrator has removed a feature key.'
-'01020003';'WARN';'Management / Configuration';'Feature expired';''%s' feature expired.'
-'01020005';'INFO';'Management / Configuration';'Feature expiration reminder';'A feature will soon expire.'
-'01040001';'INFO';'Management / Configuration';'Default device settings in use for safe mode';'The device configuration was reset to the default settings because the device is in safe mode.'
-'1100000C';'WARN';'Management / Authentication';'Authentication error';'Authentication failed.'
-'1100000D';'WARN';'Management / Authentication';'Authentication server unavailable';'Authentication failed because both the primary and secondary authentication servers are unavailable.'
-'1100000E';'WARN';'Management / Authentication';'Unsupported RADIUS method';'Authentication failed because the specified RADIUS method is not supported.'
-'1100000F';'WARN';'Management / Authentication';'Groups maximum reached';'Authentication failed because the maximum number of groups has been reached.'
-'5501000B';'INFO';'Management / System';'Device restore';'Device was restored from a saved backup image.'
-'5501001A';'WARN';'Management / System';'Upgrade failed';'System upgrade failed: %s'
-'5501001D';'INFO';'Management / System';'Logo upload succeeded';'Upload of logo succeeded'
-'11000003';'INFO';'Management / Authentication';'Authentication server unavailable';'The external authentication server is not available.'
-'11000004';'INFO';'Management / Authentication';'User authentication succeeded';'The user successfully authenticated.'
-'11000005';'WARN';'Management / Authentication';'User authentication failed';'User authentication failed.'
-'15000000';'INFO';'Management / Management Client';'Device configuration update with audit trail';'The updated configuration file was successfully sent to the device from the specified Management Server.'
-'15000001';'INFO';'Management / Management Client';'Device configuration update';'The device retrieved an updated configuration file from the specified Management Server.'
-'15010000';'INFO';'Management / Management Client';'IPSec certificate import';'The IPsec certificate was successfully imported from the specified Management Server.'
-'15010001';'INFO';'Management / Management Client';'Management Server CA certificate import';'The Management Server CA certificate was successfully imported from the specified Management Server.'
-'40010002';'ERROR';'Management / Certificate';'CA certificate updated failed';'CA certificate updated failed.'
-'40010001';'INFO';'Management / Certificate';'CA certificate updated successfully';'The CA certificate updated successfully to the specified new version.'
-'41000001';'INFO';'Management / LiveSecurity';'RapidDeploy succeeded';'The RapidDeploy package from the LiveSecurity service was successfully applied to the device.'
-'41000002';'ERROR';'Management / LiveSecurity';'RapidDeploy failed';'The RapidDeploy package was not applied to the device.'
-'41000004';'ERROR';'Management / LiveSecurity';'New RSS feed update failed';'New RSS feed from the LiveSecurity Service failed to update.'
-'41000005';'INFO';'Management / LiveSecurity';'Feature key download succeeded';'The feature key for the device was successfully downloaded from the LiveSecurity Service.'
-'41000003';'INFO';'Management / LiveSecurity';'New RSS feed update succeeded';'New RSS feed from the LiveSecurity Service was updated.'
-'41000007';'INFO';'Management / LiveSecurity';'Wireless country specification update succeeded';'The wireless country specification was successfully updated from the LiveSecurity service.'
-'41000006';'ERROR';'Management / LiveSecurity';'Feature key download failed';'The feature key could not be downloaded from the LiveSecurity Service.'
-'41000008';'ERROR';'Management / LiveSecurity';'Wireless country specification update failed';'The wireless country specification could not be downloaded from the LiveSecurity service.'
-'41010001';'INFO';'Management / LiveSecurity';'RapidDeploy configuration from USB succeeded';'The RapidDeploy configuration was successfully applied from a USB drive.'
-'41010002';'ERROR';'Management / LiveSecurity';'RapidDeploy configuration from USB failed';'The RapidDeploy configuration was not successfully applied from a USB drive.'
-'55010002';'ERROR';'Management / System';'LIVESECURITY feature not found''
-'55010000';'INFO';'Management / System';'Bootup time';'System boot up at %s'
-'55010003';'ERROR';'Management / System';'LIVESECURITY expired''
-'55010004';'INFO';'Management / System';'Shutdown';'Shutdown requested by system'
-'55010005';'INFO';'Management / System';'Reboot';'System is rebooting'
-'55010008';'INFO';'Management / System';'Time change';'System time changed from %s to %s'
-'55010007';'INFO';'Management / System';'Automatic reboot';'System is automatically rebooting at %d:%d'
-'55010006';'INFO';'Management / System';'Upgrade succeeded';'System upgrade to %s successful, %s'
-'55010013';'INFO';'Management / System';'USB auto restore started';'USB auto restore started'
-'55010016';'INFO';'Management / System';'Feature expiration reminder';''LIVESECURITY' feature will expire on %s'
-'55010019';'WARN';'Management / System';'Configuration reset failed during a downgrade';'During a system downgrade, the configuration reset failed'
-'55010021';'INFO';'Management / System';'Device restore success';'Device auto restore from a specific image in USB drive or normal restore from a normal image'
-'55010020';'INFO';'Management / System';'Backup succeeded';'System backup succeeded'
-'55010022';'INFO';'Management / System';'USB auto restore image created';'USB auto restore image successfully created'
-'58000001';'INFO';'Management / NTP';'System time changed';'The system time was changed by the NTP process.'
-#FireCluster Log Messages
-#Diagnostic
-'3A00000A';'INFO';'Cluster / Event Monitoring';'VR notification gap';'Member Virtual Router changed state to master due to notification gap from current master'
-'3A00000B';'INFO';'Cluster / Event Monitoring';'VRRP master state';'Virtual Router state changed to master'
-'3A00000C';'ERROR';'Cluster / Event Monitoring';'VRRP initialization failed';'Initialization of Virtual Router Redundancy Protocol (VRRP) failed.'
-'3A000002';'INFO';'Cluster / Event Monitoring';'VRRP enabled';'Virtual Router Redundancy Protocol (VRRP) is now enabled for this Active/Passive Cluster.'
-'3A000004';'INFO';'Cluster / Event Monitoring';'VRRP start master';'VRRP started in master state.'
-'3A000005';'INFO';'Cluster / Event Monitoring';'VR shutdown';'Virtual Router returned to initial state.'
-'3A000006';'INFO';'Cluster / Event Monitoring';'VR pause';'Virtual Router becomes backup due to a pause event.'
-'3A000007';'INFO';'Cluster / Event Monitoring';'VR resume';'Virtual Router becomes master due to a resume event.'
-'3A000008';'INFO';'Cluster / Event Monitoring';'VR backup state';'Virtual Router state changed from master to backup'
-'3B000001';'INFO';'Cluster / Transport';'Channel status change';'The cluster communication channel between the specified members changed state.'
-'3B000002';'INFO';'Cluster / Transport';'Cluster interface down';'The specified Cluster interface is down.'
-'3800025C';'INFO';'Cluster / Management';'Configuration update';'Cluster member received an updated configuration from the master.'
-'38000002';'ERROR';'Cluster / Management';'DHCP overwrite';'A DHCP server has attempted to assign an IP address to cluster member on the Cluster Interface.'
-'38000003';'INFO';'Cluster / Management';'Cluster interface up';'Cluster interface link status changed to up.'
-'38000004';'WARN';'Cluster / Management';'Cluster interface down';'Cluster interface link status changed to down.'
-'38000264';'WARN';'Cluster / Management';'Time synchronization failure';'The cluster master's attempt to synchronize time to a cluster member failed'
-#FireCluster Log Messages
-#Event
-'3A00000E';'INFO';'Cluster / Event Monitoring';'VR enabled';'The Virtual Router representing the cluster is now enabled'
-'3A00000F';'INFO';'Cluster / Event Monitoring';'VR disabled';'The Virtual Router representing the cluster is now disabled'
-'3800025A';'INFO';'Cluster / Management';'Cluster enabled';'Cluster was enabled on the specified member.'
-'3800025B';'INFO';'Cluster / Management';'Cluster disabled on master';'Cluster disabled on the cluster member while it was the cluster master.'
-'3800027A';'WARN';'Cluster / Management';'Non-master member removed';'The non-master member of the Cluster will be reset to factory-default settings because it was removed from the cluster.'
-'3800027E';'ERROR';'Cluster / Management';'Factory-default reset failed';'Failed to reset to factory-default settings.'
-'3900000C';'ERROR';'Cluster / Operations';'Synchronization failed';'Full state synchronization from the master to the specified member failed.'
-'3900000D';'ERROR';'Cluster / Operations';'Synchronization timeout';'Full state synchronization from the master to the specified member timed out.'
-'3900000E';'INFO';'Cluster / Operations';'Synchronization successful';'Full state synchronization to the specified member was successful.'
-'3900000F';'ERROR';'Cluster / Operations';'Failover due to link-down';'Cluster failover due to a link failure on the current master, which now has a health index lower than the backup master.'
-'38000278';'WARN';'Cluster / Management';'Cluster disabled';'The non-master member of the cluster will be reset to factory default-settings because FireCluster is disabled.'
-'38000279';'WARN';'Cluster / Management';'Critical configuration change';'The non-master member of the cluster will be reset to factory-default settings due to a critical configuration change.'
-'38000282';'INFO';'Cluster / Management';'Member ready to join';'Local member has FireCluster enabled and is ready to join.'
-'38000280';'ERROR';'Cluster / Management';'Device discovery failed';'The cluster master was unable to issue a device discovery message.'
-'39000005';'INFO';'Cluster / Operations';'Member promoted to master';'The specified member has become master.'
-'39000003';'WARN';'Cluster / Operations';'Heartbeat lost';'The specified Cluster failed to receive a heartbeat message.'
-'39000007';'ERROR';'Cluster / Operations';'Failover due to WAI';'The master failed over to the specified member because that member has a higher health score than the master.'
-'39000010';'INFO';'Cluster / Operations';'Member role change';'The cluster member changed to the specified role.'
-'39000012';'INFO';'Cluster / Operations';'New master';'The specified member has taken over as master..'
-'39000011';'INFO';'Cluster / Operations';'Interface link status change';'Specified monitored interface link status changed, which will change the health index for the member.'
-'39000015';'INFO';'Cluster / Operations';'Failover initiated by administrator';'The administrator has initiated a failover.'
-'39000016';'WARN';'Cluster / Operations';'Cannot initiate failover';'The failover requested by administrator cannot proceed because the master has a higher health index, or the backup master is unreachable.'
-'39000019';'ERROR';'Cluster / Operations';'Failover due to interface state change';'A cluster failover event occurred due to a change of interface state.'
-'39000058';'INFO';'Cluster / Operations';'Member Role Change';'The role of the specified Cluster member changed.'
-#Security Services Log Messages
-#Event
-'1F000001';'ERROR';'Security Services / Gateway Anti-Virus';'Process failed to start';'ScanD -- Process failed to start'
-'1F010015';'INFO';'Security Services / Gateway Anti-Virus';'Ready for service';'ScanD -- Ready for service'
-'2E000005';'ERROR';'Security Services / Signature Update';'Process exiting';'SIGD -- Process exiting''
-'2E000006';'ERROR';'Security Services / Signature Update';'Process crashed';'SIGD -- Process crashed''
-'2E01001A';'ERROR';'Security Services / Signature Update';'Signature update process failed to start';'SIGD -- Signature update process failed to start'
-'2E01001B';'ERROR';'Security Services / Signature Update';'Signature update process crashed';'SIGD -- Signature update process crashed'
-'2E010017';'WARN';'Security Services / Signature Update';'License failed to load';'SIGD -- License failed to load'
-'2E010018';'ERROR';'Security Services / Signature Update';'Failed to start the signature update for the specified services';'SIGD -- Failed to the start signature update for the specified services'
-'2E010019';'ERROR';'Security Services / Signature Update';'Failed to check the available signature version on the server';'SIGD -- Failed to check the available signature version on the server'
-'2E020065';'INFO';'Security Services / Signature Update';'Signature update process started';'SIGD -- Signature update process started'
-'2E020066';'INFO';'Security Services / Signature Update';'Signature update process completed';'SIGD -- Signature update process completed'
-'2E020067';'ERROR';'Security Services / Signature Update';'Signature update process for the specified version failed';'SIGD -- Signature update process for the specified version failed'
-'2E020069';'INFO';'Security Services / Signature Update';'Device has the latest signature version for the specified service';'SIGD -- Device has the latest signature version for specified service'
-'23000001';'ERROR';'Security Services / spamBlocker';'Failed to start';'spamD -- Failed to start'
-'23000002';'INFO';'Security Services / spamBlocker';'Ready for service';'spamD -- Ready for service'
-#VPN Log Messages
-#Alarm
-'020B0001';'INFO';'VPN / IPSEC';'Tunnel status changed';'The status of the IPSec tunnel changed to up or down.'
-#VPN Log Messages
-#Diagnostic
-'5B010004';'INFO';'VPN / L2TP';'Update user session';'Mobile VPN with L2TP updated the session for the specified user.'
-'5B010005';'INFO';'VPN / L2TP';'Delete user session';'Deleted a Mobile VPN with L2TP session with the specified virtual IP address.'
-'021A000A';'ERROR';'VPN / IPSEC';'IKEv2 IKE_SA_INIT message received on wrong interface';'IKEv2 IKE_SA_INIT negotiation failed because IKE message from peer was received on the wrong interface.'
-'021A000B';'ERROR';'VPN / IPSEC';'IKEv2 remote gateway endpoint ID mismatch';'IKEv2 IKE_AUTH negotiation failed because the remote ID in the gateway endpoint configuration did not match the proposed ID received from the remote gateway.'
-'021A000C';'ERROR';'VPN / IPSEC';'IKEv2 local gateway endpoint ID mismatch';'IKEv2 IKE_AUTH negotiation failed because the local ID in the gateway endpoint configuration did not match the proposed ID received from the remote gateway.'
-'021A000D';'ERROR';'VPN / IPSEC';'Received IKEv2 message does not have expected payloads';'IKEv2 message exchange failed because the received message from the peer does not have the expected payloads''
-'021A000E';'ERROR';'VPN / IPSEC';'IKEv2 IKE proposal mismatch';'The IKEv2 message exchange failed because the IKE proposal in the received message did not match the expected proposal.'
-'021A000F';'ERROR';'VPN / IPSEC';'IKEv2 KE DH-Group mismatch';'IKEv2 message exchange failed because the DH group in the received Key Exchange (KE) payload does not match the DH-Group in the selected proposal.'
-'021A001A';'ERROR';'VPN / IPSEC';'Received invalid SPI during IKEv2 IPSec SA rekey';'IKEv2 IPSec SA rekey failed because the peer sent an invalid SPI.'
-'021A0001';'ERROR';'VPN / IPSEC';'Dropped received IKEv2 message';'Dropped received invalid IKEv2 message.'
-'021A001A';'ERROR';'VPN / IPSEC';'Received invalid SPI during IKEv2 IPSec SA rekey';'IKEv2 IPSec SA rekey failed because the peer sent an invalid SPI.'
-'021A001B';'ERROR';'VPN / IPSEC';'No response from remote gateway';'IKEv2 connection was terminated because there was no response from the remote site.'
-'021A0002';'ERROR';'VPN / IPSEC';'IKE SA not found to handle IKE_SA_INIT_R message';'IKE SA was not found to handle the received IKE_SA_INIT_R message.'
-'021A0003';'ERROR';'VPN / IPSEC';'Gateway endpoint not found to handle IKE_SA_INIT_R message';'Gateway endpoint was not found to handle the received IKE_SA_INIT_R message'
-'021A0004';'INFO';'VPN / IPSEC';'IKEv2 IKE SA is in deleting state';'Received IKEv2 message was ignored because the corresponding IKE SA to handle the message was in DELETING state.'
-'021A0005';'ERROR';'VPN / IPSEC';'Invalid message ID in IKEv2 exchange';'Received IKEv2 message was dropped because it has invalid message ID.'
-'021A0006';'ERROR';'VPN / IPSEC';'IKEv2 gateway endpoint was not found to handle the received message';'IKEv2 gateway endpoint was not found to handle the received message.'
-'021A0007';'ERROR';'VPN / IPSEC';'IKEv2 gateway endpoint version not matched';'IKEv2 message exchange failed because the received IKE version did not match the IKE version configured on the local gateway.'
-'021A0008';'ERROR';'VPN / IPSEC';'IKEv2 gateway endpoint is disabled';'The IKEv2 gateway endpoint is disabled.'
-'021A0009';'ERROR';'VPN / IPSEC';'IKEv2 gateway ID mismatch';'IKEv2 IKE_AUTH negotiation failed because the remote ID configured in the gateway endpoint did not match proposed ID received from the remote gateway.'
-'021A0010';'ERROR';'VPN / IPSEC';'IKEv2 IPSec KE DH-Group mismatch';'IKEv2 message exchange failed because the DH group in the received Key Exchange (KE) payload does not match the DH-Group in the selected proposal.'
-'021A0011';'ERROR';'VPN / IPSEC';'Received unacceptable traffic selector during first CHILD SA negotiation.;'
-'021A0012';'ERROR';'VPN / IPSEC';'IKEv2 peer authentication method mismatch.;'
-'021A0013';'ERROR';'VPN / IPSEC';'IKEv2 peer authentication failed';'IKEv2 tunnel negotiation failed because the local gateway could not authenticate the remote gateway.'
-'021A0014';'ERROR';'VPN / IPSEC';'IKEv2 PSK mismatch';'IKEv2 tunnel negotiation failed because of possible PSK mismatch.'
-'021A0015';'ERROR';'VPN / IPSEC';'Received IKEv2 IKE_SA_INIT notification error message.'
-'021A0016';'ERROR';'VPN / IPSEC';'Received IKEv2 CREATE_CHILD_SA/IKE_AUTH notification error message.'
-'021A0017';'INFO';'VPN / IPSEC';'IKEv2 IKE SA established';'IKEv2 IKE SA is established because IKE_AUTH negotiation is finished or IKE SA is rekeyed.'
-'021A0018';'ERROR';'VPN / IPSEC';'IKEv2 tunnel proposal mismatch.'
-'021A0019';'ERROR';'VPN / IPSEC';'Received invalid SPI during first CHILD SA negotiation.'
-'0203000A';'ERROR';'VPN / IPSEC';'IKE Phase 1 invalid Main Mode second message';'IKE Phase 1 negotiation failed because of invalid second message received by local gateway.'
-'0203000B';'ERROR';'VPN / IPSEC';'IKE Phase 1 invalid Main Mode Key Exchange payload';'IKE Phase 1 negotiation failed because local gateway received invalid Main Mode Key Exchange (KE) payload''
-'0203000C';'ERROR';'VPN / IPSEC';'IKE Phase 1 invalid main mode ID';'IKE Phase 1 negotiation failed because of invalid Main Mode ID payload received by local gateway.'
-'0203000D';'ERROR';'VPN / IPSEC';'IKE Phase 1 invalid aggressive mode hash';'IKE Phase 1 negotiation failed because invalid aggressive mode hash payload received by specified local gateway.'
-'0203000E';'ERROR';'VPN / IPSEC';'IKE Phase 1 invalid Aggressive mode SA payload';'IKE Phase 1 negotiation failed because of invalid Aggressive mode security association (SA) payload received by specified local gateway.'
-'0203000F';'INFO';'VPN / IPSEC';'IKE Phase 1 matching aggressive mode policy not found';'IKE Phase 1 negotiation because local gateway did not find a matching aggressive mode policy.'
-'0203002A';'ERROR';'VPN / IPSEC';'IKE Phase 1 IKE version mismatch';'IKE Phase 1 negotiation failed because the received IKE version did not match the IKE version configured on the local gateway.'
-'0205000A';'ERROR';'VPN / IPSEC';'IKE Phase 2 tunnel route mismatch';'The IPSec tunnel negotiation failed because the proposed tunnel routes did not match the tunnel configuration.'
-'0205000B';'ERROR';'VPN / IPSEC';'IKE Phase 2 message retry timeout';'The IPSec tunnel negotiation failed because an expected response was not received before the message retry timeout.'
-'0205000C';'ERROR';'VPN / IPSEC';'IKE Phase2 message retry timeout because Phase 1 SA expired';'The IPSec tunnel negotiation failed because the Phase 1 Security Association (SA) expired.'
-'0205000D';'ERROR';'VPN / IPSEC';'IKE Phase 2 PFS not enabled';'The IPSec tunnel negotiation failed because the Perfect Forward Secrecy (PFS) value did not match the Phase 2 configuration.'
-'0205000E';'ERROR';'VPN / IPSEC';'IKE Phase 2 wait timeout';'The IPSec tunnel negotiation failed because an expected response was not received before the expected time.'
-'0205000F';'WARN';'VPN / IPSEC';'Rejected Phase 2 negotiation due to incorrect gateway';'Rejected Phase 2 negotiation the proposal did not use the preferred IKE gateway endpoint.'
-'02000001';'ERROR';'VPN / IPSEC';'Default certificate not found';'The IPSec tunnel could not be negotiated because the default IPSec certificate is not installed or is not valid.'
-'02000002';'ERROR';'VPN / IPSEC';'Failed to read certificate';'The IPSec tunnel could not be negotiated because the IPSec certificate is not valid.'
-'02020001';'WARN';'VPN / IPSEC';'IP address not available for Mobile VPN with IPSec user';'All virtual IP addresses allocated to this Mobile VPN with IPSec group are already assigned.'
-'02030002';'ERROR';'VPN / IPSEC';'IKE Phase 1 expecting main mode';'IKE Phase 1 negotiation failed because of incorrect exchange type in proposal from remote gateway.'
-'02030003';'ERROR';'VPN / IPSEC';'IKE Phase 1 expecting aggressive mode';'IKE Phase 1 negotiation failed because of incorrect exchange type in proposal from remote gateway.'
-'02030004';'ERROR';'VPN / IPSEC';'IKE Phase 1 DH group mismatch';'IKE Phase 1 negotiation failed because of incorrect Diffe-Hellman group in proposal from remote gateway.'
-'02030005';'ERROR';'VPN / IPSEC';'IKE Phase 1 hash mismatch';'IKE Phase 1 negotiation failed because of incorrect hash type in proposal from remote gateway.'
-'02030006';'ERROR';'VPN / IPSEC';'IKE Phase 1 encryption mismatch';'IKE Phase 1 negotiation failed because of incorrect encryption type in proposal from remote gateway.'
-'02030007';'ERROR';'VPN / IPSEC';'IKE Phase 1 authentication method mismatch';'IKE Phase 1 negotiation failed because of incorrect authentication method in proposal from remote gateway.'
-'02030008';'ERROR';'VPN / IPSEC';'IKE Phase 1 AES key length mismatch';'IKE Phase 1 negotiation failed because of incorrect AES key length in proposal from remote gateway.'
-'02030009';'ERROR';'VPN / IPSEC';'IKE Phase 1 invalid first message';'IKE Phase 1 negotiation failed because of invalid first message received by local gateway.'
-'02030010';'INFO';'VPN / IPSEC';'IKE Phase 1 matching Main Mode policy not found';'IKE Phase 1 negotiation because local gateway did not find a matching Aggressive mode policy.'
-'02030011';'ERROR';'VPN / IPSEC';'IKE Phase 1 remote gateway ID mismatch';'IKE Phase 1 negotiation failed because remote ID in gateway configuration did not match proposal from remote gateway.'
-'02030012';'ERROR';'VPN / IPSEC';'IKE Phase 1 pre-shared key authentication failure';'IKE Phase 1 negotiation failed because pre-shared key in proposal did not match gateway configuration.'
-'02030013';'INFO';'VPN / IPSEC';'IKE Phase 1 negotiation failed';'IKE Phase 1 negotiation failed because of the reason specified in the log'
-'02030014';'INFO';'VPN / IPSEC';'Received informational error message';'Received the specified information or error message from remote gateway.'
-'02030015';'ERROR';'VPN / IPSEC';'IKE Phase 1 retry timeout';'IKE Phase 1 negotiation failed because of no response from remote site.'
-'02030016';'WARN';'VPN / IPSEC';'Mobile user rejected - maximum user connections reached';'Specified Mobile VPN with IPSec user connection rejected because the specified concurrent user connections limit has been reached.'
-'02030017';'ERROR';'VPN / IPSEC';'CA certificate not available';'IKE phase-1 negotiation failed because no Certificate Authority (CA) certificate is available.'
-'02030018';'ERROR';'VPN / IPSEC';'IKE Phase 1 peer certificate CA is not supported';'IKE Phase 1 negotiation failed because peer certificate is not issued by a known and trusted Certificate Authority(CA).'
-'02030019';'ERROR';'VPN / IPSEC';'IKE Phase 1 received certificate with invalid CA name';'IKE Phase 1 negotiation failed because of invalid Certificate Authority (CA) name in certificate for remote gateway.'
-'02030020';'ERROR';'VPN / IPSEC';'IKE Phase 1 possible shared secret mismatch';'IKE Phase 1 negotiation failed because of possible shared key mismatch.'
-'02030021';'WARN';'VPN / IPSEC';'DPD R_U_THERE_ACK not received';'Firebox or XTM device sent a DPD_R_U_THERE request to remote gateway, but did not receive DPD R_U_THERE_ACK response.'
-'02030022';'WARN';'VPN / IPSEC';'DPD max failure';'The Firebox or XTM device deleted a VPN tunnel because the remote gateway did not respond to DPD R_U_THERE requests.'
-'02030023';'WARN';'VPN / IPSEC';'Did not receive KEEP_ALIVE_ACK response';'Firebox or XTM device sent a KEEP_ALIVE request to remote gateway, but did not receive KEEP_ALIVE_ACK response.'
-'02030024';'WARN';'VPN / IPSEC';'Deleted VPN tunnels due to keep-alive failure';'Firebox or XTM device deleted one or more VPN tunnels because the remote gateway did not respond to keep-alive requests.'
-'02030025';'INFO';'VPN / IPSEC';'Received IKE message for unknown Phase 1 SA';'Received IKE message for unknown P1 SA.'
-'02030026';'ERROR';'VPN / IPSEC';'DSS certificate ID mismatch';'IKE Phase 1 negotiation failed because of mismatched DSS certificate ID setting.'
-'02030027';'ERROR';'VPN / IPSEC';'Failed to get ID information from certificate';'IKE phase-1 negotiation failed because failed to get ID information from certificate.'
-'02030028';'INFO';'VPN / IPSEC';'IKE Phase 1 message received on wrong interface';'IKE Phase 1 negotiation failed because of IKE message peer was received on wrong interface.'
-'02030029';'ERROR';'VPN / IPSEC';'IKE Phase 1 invalid aggressive mode ID';'IKE Phase 1 negotiation failed because received ID did not match with configured ID on local gateway.'
-'02050002';'ERROR';'VPN / IPSEC';'IKE Phase 2 PFS mismatch';'The IPSec tunnel negotiation failed because the Perfect Forward Secrecy (PFS) value did not match the Phase 2 configuration.'
-'02050003';'ERROR';'VPN / IPSEC';'IKE Phase-2 proposal type mismatch';'The IPSec tunnel negotiation failed because the proposal did not match the Phase 2 configuration.'
-'02050004';'ERROR';'VPN / IPSEC';'IKE Phase 2 AH authentication method mismatch';'The IPSec tunnel negotiation failed because the proposed AH authentication method did not match the Phase 2 configuration.'
-'02050005';'ERROR';'VPN / IPSEC';'IKE Phase 2 ESP encryption method mismatch';'The IPSec tunnel negotiation failed because the proposed ESP encryption method did not match the Phase 2 configuration.'
-'02050006';'ERROR';'VPN / IPSEC';'IKE Phase 2 PFS DH group mismatch';'The IPSec tunnel negotiation failed because the proposed Perfect Forward Secrecy Diffe-Hellman (PFS DH) group number did not match the Phase 2 configuration.'
-'02050007';'ERROR';'VPN / IPSEC';'IKE Phase 2 ESP authentication method mismatch';'The IPSec tunnel negotiation failed because the proposed ESP authentication method did not match the Phase 2 configuration.'
-'02050008';'ERROR';'VPN / IPSEC';'IKE Phase 2 AES key length mismatch';'The IPSec tunnel negotiation failed because the proposed AES encryption key length did not match the Phase 2 configuration.'
-'02050010';'INFO';'VPN / IPSEC';'Received quick mode informational error message';'Remote gateway sent an information error message in response to VPN tunnel proposal.'
-'02050011';'INFO';'VPN / IPSEC';'Dropped simultaneous Phase 2 negotiation';'Firebox or XTM device dropped phase-2 negotiation because of another Phase 2 negotiation in progress.'
-'02060001';'WARN';'VPN / IPSEC';'Received XAuth fail notification';'Received notification that Extended Authentication(XAuth) failed.'
-'02060002';'WARN';'VPN / IPSEC';'Rejected PSK authentication, Expect client XAUTH enabled.;'
-'02060003';'WARN';'VPN / IPSEC';'Rejected PSK authentication, Expect server XAUTH enabled.;'
-'02060004';'WARN';'VPN / IPSEC';'XAuth negotiation failed due to mismatched mode';'Mobile VPN with IPSec Extended Authentication(XAuth) negotiation failed because of mismatched authentication mode.'
-'02060005';'WARN';'VPN / IPSEC';'Mobile VPN with IPSec authentication failed because of unresponsive peer';'Mobile VPN with IPSec user authentication failed because the peer did not respond.'
-'02060006';'INFO';'VPN / IPSEC';'Mobile VPN with IPSec user connected with no group';'Specified Mobile VPN with IPSec user successfully authenticated, but is not a member of any group.'
-'02060007';'INFO';'VPN / IPSEC';'Mobile user group information';'Specified Mobile VPN with IPSec user belongs to the specified group.'
-'02080001';'INFO';'VPN / IPSEC';'IKE phase-1 negotiated successful';'IKE phase-1 negotiation was successfully completed.'
-'14000000';'INFO';'VPN / PPTP';'User login';'The specified user logged in to Mobile VPN with PPTP.'
-'14000002';'INFO';'VPN / PPTP';'User log off';'The specified Mobile VPN with PPTP user logged off.'
-'25000001';'INFO';'VPN / SSLVPN';'User log off';'The Mobile VPN with SSL user with the specified virtual IP address logged out.'
-'25000000';'INFO';'VPN / SSLVPN';'User login';'A user logged in to Mobile VPN with SSL.'
-#VPN Log Messages
-#Event
-'5B010001';'INFO';'VPN / L2TP';'Daemon started';'The Mobile VPN with L2TP daemon started.'
-'5B010002';'INFO';'VPN / L2TP';'Configuration updated';'The Mobile VPN with L2TP daemon received a configuration update.'
-'5B010003';'INFO';'VPN / L2TP';'Daemon stopped';'The Mobile VPN with L2TP daemon stopped.'
-'02010001';'INFO';'VPN / IPSEC';'IKE process starts';'The IPSec IKE process started.'
-'02010002';'INFO';'VPN / IPSEC';'Configuration update started';'An IPSec configuration update started.'
-'02010003';'INFO';'VPN / IPSEC';'Configuration update completed';'An IPSec configuration update was successfully completed.'
-'02010004';'WARN';'VPN / IPSEC';'Device not activated';'The device is not activated.'
-'02070001';'INFO';'VPN / IPSEC';'Tunnel established or re-keyed';'The IPSec tunnel was established or re-keyed successfully.'
-'02090001';'WARN';'VPN / IPSEC';'BOVPN tunnel limit reached';'The maximum allowed number of BOVPN tunnel routes have been established.'
-'02090002';'INFO';'VPN / IPSEC';'IKE process -- FireCluster role changed';'The cluster master has changed because of a FireCluster failover.'
-#Mobile Security Log Messages
-#Event
-'70000001';'ERROR';'Mobile Security / Endpoint Manager';'Mobile security license limit reached';'A user login from FireClient was rejected because the number of concurrently connected Mobile Security users has reached the limit supported by the Mobile Security license.'
-'70000002';'WARN';'Mobile Security / Endpoint Manager';'Mobile security license high watermark reached';'The number of concurrently connected Mobile Security users has reached 90 percent of the capacity supported by the Mobile Security license.'
-'70010003';'INFO';'Mobile Security / Endpoint Manager';'Mobile device user logout';'User has logged out of Firebox from FireClient on the device.'
-'70010000';'INFO';'Mobile Security / Endpoint Manager';'Mobile device connect';'FireClient on the device has connected to the Firebox.'
-'70010001';'INFO';'Mobile Security / Endpoint Manager';'Mobile device user already login';'User has logged in to Firebox from the device prior to the connection request.'
-'70010002';'INFO';'Mobile Security / Endpoint Manager';'Mobile device user login';'User has logged in to Firebox through FireClient on the device.'
-'70010004';'INFO';'Mobile Security / Endpoint Manager';'Mobile device idle disconnected';'FireClient on the device is considered disconnected due to inactivity.'
-'70010005';'INFO';'Mobile Security / Endpoint Manager';'Mobile device disconnected';'FireClient on the device has disconnected.'
-'70010006';'INFO';'Mobile Security / Endpoint Manager';'Mobile device Unknown compliance';'Mobile device compliance status is Unknown.'
-'70010007';'INFO';'Mobile Security / Endpoint Manager';'Mobile device Compliant';'Mobile device compliance status is Compliant, because it meets the compliance requirements.'
-'70010008';'INFO';'Mobile Security / Endpoint Manager';'Mobile device Not Compliant';'Mobile device compliance status is Not Compliant, because it does not meet the compliance requirements.'
-'70010009';'INFO';'Mobile Security / Endpoint Manager';'Mobile device user session recreated';'User session is recreated because the mobile device IP address changed.'
-'70020000';'INFO';'Mobile Security / Endpoint Manager';'Mobile device Authorization Agreement sign action';'The Device Authorization Agreement is either accepted or declined by a user at the specified local time.'
+"msg_id","msg_level","msg_area","msg_name","msg_desc"
+"3000-0152","INFO","Firewall / Packet Filter","IPv4 source route attack","IPv4 source route attack was detected."
+"3000-0153","INFO","Firewall / Packet Filter","IPv4 SYN flood attack","IPv4 SYN flood attack was detected."
+"3000-0154","INFO","Firewall / Packet Filter","IPv4 ICMP flood attack","IPv4 ICMP flood attack was detected."
+"3000-0157","INFO","Firewall / Packet Filter","IPv4 IKE flood attack","IPv4 IKE flood attack was detected"
+"3000-0156","INFO","Firewall / Packet Filter","IPv4 IPSEC flood attack","IPv4 IPSEC flood attack was detected."
+"3000-0155","INFO","Firewall / Packet Filter","IPv4 UDP flood attack","IPv4 UDP flood attack was detected."
+"3000-0158","INFO","Firewall / Packet Filter","IPv4 scan attack","IPv4 scan attack was detected."
+"3000-0161","INFO","Firewall / Packet Filter","IPv4 DDOS attack from client","IPv4 DDOS attack from a client was detected."
+"3000-0159","INFO","Firewall / Packet Filter","IPv4 port scan attack","IPv4 port scan attack was detected."
+"3000-0160","INFO","Firewall / Packet Filter","IPv4 DDOS against server","IPv4 DDOS attack against a server was detected."
+"3000-0162","INFO","Firewall / Packet Filter","IPv6 SYN flood attack","IPv6 SYN flood attack was detected."
+"3000-0164","INFO","Firewall / Packet Filter","IPv6 UDP flood attack","IPv6 UDP flood attack was detected."
+"3000-0165","INFO","Firewall / Packet Filter","IPv6 IPSEC flood attack","IPv6 IPSEC flood attack was detected."
+"3000-0163","INFO","Firewall / Packet Filter","IPv6 ICMP flood attack","IPv6 ICMP flood attack was detected."
+"3000-0166","INFO","Firewall / Packet Filter","IPv6 IKE flood attack","IPv6 IKE flood attack was detected."
+"3000-0168","INFO","Firewall / Packet Filter","Blocked site","Traffic was detected to or from a blocked site."
+"3000-0169","INFO","Firewall / Packet Filter","IP spoofing","IP spoofing was detected from the IP address specified in the log message."
+"3000-0167","INFO","Firewall / Packet Filter","Alarm Traffic matched policy","An alarm log message was sent for traffic that matched the specified policy."
+"3000-0170","INFO","Firewall / Packet Filter","Connection table high water mark","The total number of current sessions reached the high water mark (80%) of the maximum connection table."
+"3000-0171","INFO","Firewall / Packet Filter","Conntrack table is full","The conntrack table is full. The number of connections has reached the configured limit."
+"3000-0172","INFO","Firewall / Packet Filter","Blocked port","Traffic was detected on a blocked port."
+"3000-002A","INFO","Firewall / Packet Filter","Address already blocked","IP address %s will not be added to the blocked sites list because it already exists."
+"3000-003A","ERROR","Firewall / Packet Filter","Unable to read feature keys","Unable to read feature keys file or fail to parse feature keys file. Features that require a correct feature key will not function."
+"3000-003C","ERROR","Firewall / Packet Filter","No route to HTTP redirect host","Route look up on HTTP redirect host for the specified policy failed, and local HTTP redirect may not work."
+"3000-012D","INFO","Firewall / Packet Filter","Verify ARP entry","The appliance sent an ARP request to verify learned ARP entry for a given host."
+"3000-012E","ERROR","Firewall / Packet Filter","Possible loop or ARP spoofing detected","The appliance received an ARP packet sent from one of its own MAC addresses."
+"3000-0006","INFO","Firewall / Packet Filter","Feature settings updated","Firewall settings for the feature specified in the message have been updated"
+"3000-0007","INFO","Firewall / Packet Filter","DNS forwarding deferred","DNS server IP address is not yet known, device will enable DNS when a DNS server IP address is detected"
+"3000-0029","INFO","Firewall / Packet Filter","Address exempted from blocked sites","The particular IP address is an exemption and will not be added to the blocked sites list"
+"3000-0027","INFO","Firewall / Packet Filter","Firewall is starting up","Firewall is starting up"
+"3000-0028","INFO","Firewall / Packet Filter","Firewall is shutting down","Firewall is shutting down"
+"3000-0040","INFO","Firewall / Packet Filter","Blocked site idle timeout","Idle timeout has occurred for the specified blocked site, and it will be removed from the blocked sites list."
+"3000-00C9","INFO","Firewall / Packet Filter","Load Balance Server(TCP Probe)","Load Balance Server status update due to response or lack of response to a TCP Probe packet."
+"3000-00CB","INFO","Firewall / Packet Filter","Load Balance Server(ICMP Probe)","Update to status of Load Balance Server due to success or failure of ICMP Probe packet."
+"3000-002F","INFO","Firewall / Packet Filter","Feature not supported by feature key","The device feature key does not support the specified feature."
+"3000-012C","ERROR","Firewall / Packet Filter","ARP spoofing attack","Detected an ARP spoofing attack."
+"3000-0004","INFO","Firewall / Packet Filter","Application Control feature expired","The feature key for your Application Control subscription has expired."
+"3000-0005","INFO","Firewall / Packet Filter","IPS feature expired","The feature key for your Intrusion Prevention Services subscription has expired."
+"3000-0148","INFO","Firewall / Packet Filter","Normal traffic","Details of normal traffic either allowed or denied by the firewall policy specified in the log message."
+"3000-0149","INFO","Firewall / Packet Filter","Application Control Traffic identified","Application Control identified traffic for an application."
+"3000-0150","INFO","Firewall / Packet Filter","IPS Traffic detected","IPS detected traffic that matches an IPS signature."
+"3000-0151","INFO","Firewall / Packet Filter","Traffic connection terminated","Record for a terminated connection"
+"3001-1001","INFO","Firewall / Packet Filter","Temporarily blocking host","The host is blocked temporarily."
+"5A00-000A","ERROR","Networking / Dynamic DNS","No response from server","Not able to get response from specified dynamic DNS server."
+"5A00-000B","ERROR","Networking / Dynamic DNS","Invalid response from server","The dynamic DNS server returned an invalid response code."
+"5A00-000C","INFO","Networking / Dynamic DNS","The time for next update","The log message specifies the next update time for dynamic DNS."
+"5A00-000D","DEBUG","Networking / Dynamic DNS","Send update request","Sending dynamic DNS update request."
+"5A00-0001","INFO","Networking / Dynamic DNS","Response from Dynamic DNS server","Receive the specified response from the dynamic DNS server."
+"5A00-0002","INFO","Networking / Dynamic DNS","Dynamic DNS Domain Name Resolved","Dynamic DNS server domain name successfully resolved to an IP address."
+"5A00-0003","INFO","Networking / Dynamic DNS","Connected to the server","Connected to the specified dynamic DNS server."
+"5A00-0004","INFO","Networking / Dynamic DNS","Connecting to the server","Connecting to the specified dynamic DNS server."
+"5A00-0005","INFO","Networking / Dynamic DNS","Activate dynamic DNS","Activate dynamic DNS on the specified interface."
+"5A00-0006","DEBUG","Networking / Dynamic DNS","Received reply from the server","Received the specified reply from the dynamic DNS server."
+"5A00-0007","ERROR","Networking / Dynamic DNS","Unable to resolve domain name","Could not resolve domain for dynamic DNS server."
+"5A00-0008","ERROR","Networking / Dynamic DNS","Failed to connect to the server","Could not connect to the dynamic DNS server due to specified reason."
+"5A00-0009","ERROR","Networking / Dynamic DNS","Unable to connect to server","Unable to connect to the specified dynamic DNS server."
+"3100-000F","INFO","Networking / Network Management","Add bridge interface","Add bridge interface in bridge mode."
+"3100-003D","INFO","Networking / Network Management","Update ARP rules","Update ARP rules for the specified cluster role."
+"3100-004F","INFO","Networking / Network Management","Fix up multipath gateways","Fix up multipath gateways of the specified number successfully."
+"3100-005A","INFO","Networking / Network Management","Update wireless settings","Update wireless settings"
+"3100-005B","INFO","Networking / Network Management","Update secondary IP settings","Update secondary IP address settings for the specified interface."
+"3100-005C","INFO","Networking / Network Management","Update route settings","Update route settings."
+"3100-005D","INFO","Networking / Network Management","Update 1to1 NAT settings","Update 1-to-1 NAT settings."
+"3100-005E","INFO","Networking / Network Management","Update DNS settings","Update DNS settings."
+"0900-0001","ERROR","Networking / PPPoE","Duplicate PPPoE Instance Error","Another instance of the PPPoE process is already active in the system."
+"0900-0002","ERROR","Networking / PPPoE","Invalid PPPoE automatic restart settings","Automatic restart of PPPoE is disabled due to invalid settings."
+"0900-0006","INFO","Networking / PPPoE","Initiate PPPoE automatic restart","PPPoE instance will restart automatically."
+"0900-0007","WARN","Networking / PPPoE","Skip PPPoE automatic restart","PPPoE instance will not restart automatically due to no link."
+"3100-0003","INFO","Networking / Network Management","Initiate gratuitous ARP","Initiate gratuitous ARP for the specified interface."
+"3100-0004","INFO","Networking / Network Management","Initiate gratuitous ARP","Initiate gratuitous ARP for all the interfaces."
+"3100-0030","INFO","Networking / Network Management","Send interface logical link status event","Interface status event is sent for logical link status change."
+"3100-0031","INFO","Networking / Network Management","Send interface link status event","Interface status event is sent for link change."
+"3100-0034","INFO","Networking / Network Management","A change was made to the IP address of the external interface","Handle IP address for the specified external interface."
+"3100-0036","INFO","Networking / Network Management","Layer 2 traffic gate is closed","Layer 2 traffic gate is closed due to the specified reason."
+"3100-0035","ERROR","Networking / Network Management","Ignore unknown address operation","Ignore unknown address operation on the specified interface."
+"3100-0037","INFO","Networking / Network Management","Layer 2 traffic gate is opened","Layer 2 traffic gate is opened due to the specified reason."
+"3100-0038","INFO","Networking / Network Management","Traffic signal changed","Traffic signal is changed to the specified status."
+"3100-0050","INFO","Networking / Network Management","Starting wireless AP","Starting specified wireless AP."
+"3100-0051","INFO","Networking / Network Management","Stopping wireless AP","Stopping the specified wireless Access Point."
+"3100-0057","INFO","Networking / Network Management","Start processing configuration","Started to process configuration settings."
+"3100-0058","INFO","Networking / Network Management","Update bridge mode settings","Update global bridge mode settings."
+"3100-0059","INFO","Networking / Network Management","Update drop-in mode settings","Update global drop-in mode settings."
+"3100-0070","INFO","Networking / Network Management","Clean up stale connections","Clean up stale connections for the expired IP address on dynamic interface."
+"3113-0001","ERROR","Networking / Network Management","Capture stopped","Capture stopped due to the specified reason."
+"4500-0001","ERROR","Networking / Modem","Duplicate modem instance running","System loaded Modem process, but another instance is already active."
+"5600-0001","INFO","Networking / Dynamic Routing","Update IPv4 Dynamic Routes","Updated an IPv4 dynamic route."
+"5601-0002","ERROR","Networking / Dynamic Routing","Failed to retrieve license","Failed to retrieve license features for dynamic routing."
+"5601-0004","ERROR","Networking / Dynamic Routing","Not able to get license","Not able to get license for dynamic routing features."
+"5601-0003","ERROR","Networking / Dynamic Routing","Failed to parse license","Failed to parse license features for dynamic routing."
+"5602-0002","DEBUG","Networking / Dynamic Routing","Received cluster event","Received cluster ready event."
+"5602-0001","DEBUG","Networking / Dynamic Routing","Received interface event","Received an interface status event."
+"5602-0003","DEBUG","Networking / Dynamic Routing","Received cluster event","Received cluster role change event."
+"5602-0004","DEBUG","Networking / Dynamic Routing","Received license event","Received a license update event."
+"5602-0005","ERROR","Networking / Dynamic Routing","RCS unresponsive","The RCS at the specified IP address has become unresponsive"
+"5602-0006","INFO","Networking / Dynamic Routing","Not able to forward request to RCS","Not able to forward request to RCS due to no connection."
+"5603-0001","ERROR","Networking / Dynamic Routing","An error was detected in the configuration.","The log message specifies the line number of the error."
+"5604-0002","ERROR","Networking / Dynamic Routing","Connection to RCS closed","Connection to RCS closed."
+"5604-0001","ERROR","Networking / Dynamic Routing","Not able to connect to RCS","Not able to connect to RCS with the specified IP address."
+"0900-000A","INFO","Networking / PPPoE","Disconnect","The PPPoE session for the specified interface is disconnected."
+"3100-000A","INFO","Networking / Network Management","Interface shutting down","Shutting down the specified interface."
+"3100-000B","INFO","Networking / Network Management","Multi-WAN interface activated.","Interface is activated due to link-monitor success. "
+"3100-000D","WARN","Networking / Network Management","Multi-WAN interface deactivated","Interface is deactivated due to link-monitor failure."
+"3100-002B","ERROR","Networking / Network Management","Interface is disabled","Specified interface does not exist, The interface status is set to disabled."
+"3100-002C","WARN","Networking / Network Management","Interface link status changed","The interface link status has changed."
+"3100-003A","WARN","Networking / Network Management","Cluster is enabled","Cluster is enabled and is forming."
+"3100-003B","WARN","Networking / Network Management","Cluster setting changed to disabled","The cluster setting was changed from enabled to disabled."
+"3100-003E","INFO","Networking / Network Management","Cluster A/P role changed","The role of this device in the active/passive (A/P) cluster changed."
+"3100-003F","INFO","Networking / Network Management","Cluster A/A role changed","The Cluster active/active (A/A) role changed."
+"3100-006A","WARN","Networking / Network Management","IPv6 interface deactivated.","IPv6 interface was deactivated."
+"3100-006C","INFO","Networking / Network Management","IPv6 interface shutting down","Shutting down specified IPv6 interface."
+"3100-006D","INFO","Networking / Network Management","IPv6 interface initializing","Initializing specified IPv6 interface."
+"6100-000A","INFO","Networking / Wireless Controller","Wireless Access Point paired","The Wireless Access Point has been paired with the Gateway Wireless Controller."
+"6100-000B","INFO","Networking / Wireless Controller","Wireless Access Point unpaired","The Wireless Access Point has been unpaired with the Gateway Wireless Controller, and will be reset to the factory default configuration."
+"6100-000C","WARN","Networking / Wireless Controller","Rogue Access Point detected","The Gateway Wireless Controller has detected a Rogue Access Point at the given BSSID, broadcasting the indicated SSID."
+"6100-000F","INFO","Networking / Wireless Controller","Scheduled Restart Event","If scheduled restarts (reboot or wireless restart) are enabled, this log message will appear prior to the restart action taking place on the specified Wireless Access Point."
+"0900-0004","ERROR","Networking / PPPoE","Authentication failure","The Firebox or XTM device failed to authenticate for PPPoE."
+"0900-0005","ERROR","Networking / PPPoE","PPPoE stopped","PPPoE stopped unexpectedly due to an unknown error."
+"0900-0008","INFO","Networking / PPPoE","Enforce static IP address","Replaced the assigned PPPoE IP address with the configured static IP address."
+"0900-0009","INFO","Networking / PPPoE","Session established","The specified interface established a PPPoE session."
+"1600-0001","ERROR","Networking / DHCP Server","DHCP discover","Received DHCP discover from the client, but there are no free leases available."
+"1600-0002","INFO","Networking / DHCP Server","DHCP offer","The DHCP server offered an IP address to the specified client device."
+"1600-0003","INFO","Networking / DHCP Server","DHCP request","Received DHCP request for specified IP address from the specified client."
+"3100-0009","INFO","Networking / Network Management","Interface initializing","Initializing the specified interface."
+"3100-0010","ERROR","Networking / Network Management","Failed to add bridge","Failed to add bridge"
+"3100-0029","ERROR","Networking / Network Management","Failed to add interface IP address","Failed to add the specified IP address to the specified interface."
+"3100-0039","INFO","Networking / Network Management","Cluster management interface change","The configuration for the cluster management interface changed."
+"3100-0046","INFO","Networking / Network Management","Activating external interface","Activating specified external interface."
+"3100-0047","INFO","Networking / Network Management","Deactivating external interface","Deactivating the specified external interface."
+"3100-0052","INFO","Networking / Network Management","Starting wireless AP service","Starting wireless AP service."
+"3100-0054","INFO","Networking / Network Management","Detect rogue wireless AP","Starting rogue wireless AP detection scan."
+"3100-0056","INFO","Networking / Network Management","Restart detecting rogue wireless AP","Restart rogue wireless AP detection scan."
+"3100-0055","INFO","Networking / Network Management","Stop detecting rogue wireless AP","Stopping rogue wireless AP detection scan."
+"3100-0069","INFO","Networking / Network Management","IPv6 interface activated.","An IPv6 interface was activated. The log message specifies the interface."
+"3100-0072","INFO","Networking / Network Management","No change for PPPoE IP address during cluster failover","PPPoE IP address did not change during cluster failover."
+"3100-0073","INFO","Networking / Network Management","DHCP IP address change during cluster failover","The cluster completed a failover."
+"3100-0071","INFO","Networking / Network Management","PPPoE IP address change during cluster failover","The cluster completed a failover."
+"3100-0074","INFO","Networking / Network Management","No change for DHCP IP address during cluster failover","DHCP IP address did not change during cluster failover."
+"4500-0003","INFO","Networking / Modem","Modem disconnected","Specified modem is disconnected."
+"4500-0004","ERROR","Networking / Modem","Modem authentication failed","Modem authentication failed."
+"4900-0001","ERROR","Networking / Link Monitoring","Multi-WAN Domain Name Resolution Failed","Specified interface failed to resolve specified domain name for ping or TCP test for failover."
+"4900-0002","WARN","Networking / Link Monitoring","Multi-Wan Probe Failed","Specified interface did not receive a response to Probe for failover."
+"4900-0003","ERROR","Networking / Link Monitoring","Probe failure","Specified interface marked as Failed due to no response from ping or TCP host."
+"5600-0002","INFO","Networking / Dynamic Routing","Cluster role failed over to backup","Cluster role failed over from master to backup"
+"5600-0003","INFO","Networking / Dynamic Routing","Cluster role failed over to master","Cluster role failed over from backup to master"
+"5601-0001","WARN","Networking / Dynamic Routing","No valid feature key","No valid feature key for the specified dynamic routing protocol."
+"5601-0005","INFO","Networking / Dynamic Routing","License status","Specifies the license status for a dynamic routing protocol."
+"6100-0002","WARN","Networking / Wireless Controller","Model mismatch","The Wireless Access Point appears to be a different model than what is configured in the Gateway Wireless Controller."
+"6100-0005","INFO","Networking / Wireless Controller","Wireless Access Point reboot","A Wireless Access Point has rebooted."
+"6100-0004","INFO","Networking / Wireless Controller","New Wireless Access Point discovered","A new Wireless Access Point has been discovered by the Gateway Wireless Controller."
+"6100-0003","WARN","Networking / Wireless Controller","Wireless Access Point activation failure","The Gateway Wireless Controller is unable to contact the WatchGuard LiveSecurity Service to activate the service and support contract for the Wireless Access Point."
+"6100-0006","WARN","Networking / Wireless Controller","Wireless Access Point went offline","A Wireless Access Point has gone offline."
+"6100-0008","INFO","Networking / Wireless Controller","Wireless Access Point firmware version change","The Wireless Access Point firmware version has changed."
+"6100-0010","INFO","Networking / Wireless Controller","Automatic Deployment Event","This log is generated whenever an unpaired Wireless Access Point is automatically deployed due to the Automatic Deployment setting being enabled."
+"6100-0007","INFO","Networking / Wireless Controller","Wireless Access Point now online","A Wireless Access Point is now online."
+"6100-0009","INFO","Networking / Wireless Controller","Wireless Access Point configuration updated","The Wireless Access Point has been reconfigured."
+"6100-0011","WARN","Networking / Wireless Controller","Wireless Access Point Fault Condition","This log is generated whenever a fault condition is detected for a Wireless Access Point."
+"6800-0003","INFO","Networking / Discovery","On demand scan - stage 1 completed","On demand scan - stage 1 completed."
+"6800-0001","INFO","Networking / Discovery","Network scan completed","Specified type of scan completed."
+"6800-0002","INFO","Networking / Discovery","Network scan started","Specified type and stage of scan started"
+"0F00-0015","WARN","Proxy / Connection Framework Manager","APT threat notified","When APT server analysis result returned and identified as certain level threat, this event log will be generated to inform that the APT notification has been sent with detailed information."
+"0F00-0016","INFO","Proxy / Connection Framework Manager","APT safe result from file submission. Details='%s'","APT safe result from file submission."
+"1B04-00CE","ERROR","Proxy / SMTP","Ruleset lookup failed","SMTP proxy -- Failed to check the specified ruleset"
+"1C02-00CD","ERROR","Proxy / FTP","Ruleset lookup failed","FTP proxy -- Failed to check the specified ruleset"
+"1AFF-000A","INFO","Proxy / HTTP","Request missing URL path","The HTTP proxy cannot complete the URL because the host or URI value is missing."
+"1AFF-000B","INFO","Proxy / HTTP","Request URL match","The requested URL matched a configured URL path in the HTTP proxy."
+"1AFF-000C","INFO","Proxy / HTTP","Chunk size line oversize","The HTTP chunk size line does not terminate correctly with a carriage return and line-feed (CRLF)."
+"1AFF-000D","INFO","Proxy / HTTP","Chunk size line invalid","The HTTP chunk size line has an invalid hexadecimal value."
+"1AFF-000E","INFO","Proxy / HTTP","Chunk no CRLF tail","The HTTP chunk does not close with a carriage return and line feed (CRLF) because the chunk block is missing the closing characters."
+"1AFF-000F","INFO","Proxy / HTTP","Footer line oversize","One line of the HTTP footer, an additional header sent at the end of a message is larger than the configured line limit."
+"1AFF-001A","INFO","Proxy / HTTP","Request method match","The HTTP request method specified in the Request-Line matches a configured rule, or the default rule of no match."
+"1AFF-001C","INFO","Proxy / HTTP","Header cookie domain match","The cookie domain header matches a configured rule, or the default rule of no match."
+"1AFF-001D","INFO","Proxy / HTTP","Request host missing","The HTTP request header is missing the host value."
+"1AFF-001E","INFO","Proxy / HTTP","Header authentication scheme match","The authentication scheme in the HTTP header server response matches one of the configured rules, or the default rule of no match."
+"1AFF-001F","INFO","Proxy / HTTP","Request method not supported","The HTTP request method does not match a configured rule."
+"1AFF-0001","INFO","Proxy / HTTP","Session timeout with server idle","The HTTP session has timed out because no traffic has been received from the server for the specified amount of time."
+"1AFF-001B","INFO","Proxy / HTTP","Header match","The HTTP header line matches a configured rule, or the default rule of no match."
+"1AFF-0002","INFO","Proxy / HTTP","Session timeout with client idle","The HTTP session has timed out because no traffic has been received from the client for the specified amount of time."
+"1AFF-002B","INFO","Proxy / HTTP","Trusted host","The destination host name matches a proxy exception configured in the HTTP proxy."
+"1AFF-002C","INFO","Proxy / HTTP","Bad reputation","The HTTP proxy blocked access to the destination address because of a bad reputation score for the URL."
+"1AFF-002D","INFO","Proxy / HTTP","Good reputation","The HTTP proxy did not complete a Gateway AntiVirus (GAV) scan for traffic to the destination address because the URL received a good reputation score."
+"1AFF-002E","INFO","Proxy / HTTP","Application match","Application Control identified the application type from the HTTP client request or server response stream."
+"1AFF-002F","INFO","Proxy / HTTP","DLP violation found","Data Loss Prevention (DLP) detected a violation of DLP rules."
+"1AFF-0003","INFO","Proxy / HTTP","Session timeout with close complete command timeout","The Close HTTP Session command timed out because no response to the FIN packet was received within the response time limit (3 minutes)."
+"1AFF-0004","INFO","Proxy / HTTP","Oversize Start-Line","The first line of the client request or server response is longer than the configured maximum line length."
+"1AFF-0005","INFO","Proxy / HTTP","Invalid Request-Line format","The request line from the client does not match the standard format of [Method][SP][Request-URI][SP][HTTP/Version]."
+"1AFF-0006","INFO","Proxy / HTTP","Invalid Status-Line format","The status line from the server does not match the standard format of [HTTP/Version][SP][Status Code][SP][Reason]."
+"1AFF-0007","INFO","Proxy / HTTP","Header line oversize","A single client request or server response line is longer than the configured maximum line length."
+"1AFF-0008","INFO","Proxy / HTTP","Header block oversize","The client request or server response header block length is longer than the configured limit."
+"1AFF-0009","INFO","Proxy / HTTP","header block parse error","The HTTP proxy cannot process the header line because the format is incorrect."
+"1AFF-0010","INFO","Proxy / HTTP","Footer block oversize","The HTTP footer includes additional header information that is larger than the configured block limit size."
+"1AFF-0011","INFO","Proxy / HTTP","Footer block parse error","The HTTP footer includes an additional header field with syntax that violates the header format restrictions."
+"1AFF-0012","INFO","Proxy / HTTP","Body content type match","The HTTP content either matches a configured Body Content Type or no Body Content Type is defined (only the default rule is in use)."
+"1AFF-0013","INFO","Proxy / HTTP","Header content malformed","The HTTP header line does not follow the correct syntax for a client request or server response header."
+"1AFF-0016","INFO","Proxy / HTTP","Header Transfer-Encoding match","The Transfer-Encoding in the HTTP header matches a configured rule, or the default rule of no match."
+"1AFF-0018","INFO","Proxy / HTTP","Header content type match","The HTTP header Content Type matches a configured rule, or the default rule of no match."
+"1AFF-0019","INFO","Proxy / HTTP","Request version match","The HTTP version specified in the HTTP request line matches a configured rule, or the default rule of no match."
+"1AFF-0020","INFO","Proxy / HTTP","Request port mismatch","Relative-URI is in use and the port specified in the HTTP request host header does not match the port used for the connection."
+"1AFF-0021","INFO","Proxy / HTTP","Request categories","The HTTP request is sent to a web address that matched a selected WebBlocker category."
+"1AFF-0022","INFO","Proxy / HTTP","Service unavailable","WebBlocker categorization failed because the configured WebBlocker server is not available."
+"1AFF-0023","INFO","Proxy / HTTP","Request","URL path oversize"
+"1AFF-0024","INFO","Proxy / HTTP","Request","A detailed summary of the last HTTP proxy transaction."
+"1AFF-0025","INFO","Proxy / HTTP","Header IPS rule match","Intrusion Prevention Service (IPS) detected an intrusion in the client request or server response header."
+"1AFF-0026","INFO","Proxy / HTTP","Body IPS rule match","Intrusion Prevention Service (IPS) detected an intrusion in the client request or server response content body."
+"1AFF-0028","INFO","Proxy / HTTP","GAV Virus found","Gateway AntiVirus (GAV) detected a virus or malware."
+"1AFF-0029","INFO","Proxy / HTTP","GAV scan error","Gateway AntiVirus (GAV) failed to scan because of an error."
+"1AFF-0030","INFO","Proxy / HTTP","DLP cannot perform scan","Data Loss Prevention (DLP) failed to scan the traffic because of the error specified in the log message."
+"1AFF-0031","INFO","Proxy / HTTP","DLP object unscannable","Data Loss Prevention (DLP) cannot extract data from an object because it is encrypted."
+"1AFF-0032","INFO","Proxy / HTTP","HTTP object too large","Data Loss Prevention (DLP) cannot scan the object because it is larger than the configured limit."
+"1AFF-0033","INFO","Proxy / HTTP","Range header","This is the configured action (allow or strip) for the HTTP proxy Range header."
+"1AFF-0034","INFO","Proxy / HTTP","APT threat detected","APT Blocker detected a threat."
+"1AFF-0036","INFO","Proxy / HTTP","File submitted to APT analysis server","File submitted to APT analysis server for deep threat analysis."
+"1AFF-0037","INFO","Proxy / HTTP","Connect tunnel port match","The HTTP CONNECT tunnel request port matches a configured rule, or the default rule of no match."
+"1AFF-0038","INFO","Proxy / HTTP","Webproxy redirect","The HTTP Webproxy connection was redirected to a different proxy action because of the configuration setting in explicit proxy."
+"1AFF-0039","INFO","Proxy / HTTP","File reported safe from APT hash check","APT hash check did not report a threat from the object"
+"1BFF-000A","INFO","Proxy / SMTP","Timeout","The SMTP connection was idle for longer than the configured idle timeout limit."
+"1BFF-000C","INFO","Proxy / SMTP","GAV Virus found","Gateway AntiVirus (GAV) detected a virus or malware in an email attachment."
+"1BFF-000F","INFO","Proxy / SMTP","Request","This SMTP audit log specifies the bytes sent, bytes received, the sender and recipient addresses, and the sender and recipient TLS cipher."
+"1BFF-0000","INFO","Proxy / SMTP","Greeting","The host name in the SMTP proxy HELO or EHLO command matched one of the Greeting Rules, or the default rule of no match."
+"1BFF-000E","INFO","Proxy / SMTP","GAV cannot perform scan","Gateway AntiVirus (GAV) could not complete the scan because of the error that is specified in the log message."
+"1BFF-0001","INFO","Proxy / SMTP","ESMTP option","The EHLO response from the SMTP server includes an ESMTP option that is disabled or unknown."
+"1BFF-001A","INFO","Proxy / SMTP","spamBlocker bulk spam","spamBlocker has classified the message as bulk SPAM."
+"1BFF-001B","INFO","Proxy / SMTP","spamBlocker suspect spam","spamBlocker has classified the message as suspect SPAM."
+"1BFF-001C","INFO","Proxy / SMTP","spamBlocker not SPAM","spamBlocker has classified the message as not SPAM."
+"1BFF-001D","INFO","Proxy / SMTP","spamBlocker classification unknown","spamBlocker was unable to classify the email message because of an error."
+"1BFF-001E","INFO","Proxy / SMTP","spamBlocker exception matched","The sender or recipient of the email message matches a spamBlocker exception specified in the SMTP proxy."
+"1BFF-001F","INFO","Proxy / SMTP","Decoder error","The SMTP proxy was unable to decode the email message due to the error specified in the log message."
+"1BFF-002A","INFO","Proxy / SMTP","File submitted to APT analysis server","File submitted to APT analysis server for deep threat analysis."
+"1BFF-002B","INFO","Proxy / SMTP","File reported safe from APT hash check","APT hash check did not report a threat from the object"
+"1BFF-0002","INFO","Proxy / SMTP","Authentication (AUTH)","The EHLO response from the SMTP server included an authentication type that matches a configured authentication rule."
+"1BFF-0003","INFO","Proxy / SMTP","Header","A MIME header matched a configured rule, or the default rule of no match."
+"1BFF-0004","INFO","Proxy / SMTP","From address","The sender address matched a rule specified in the Mail From rules."
+"1BFF-0005","INFO","Proxy / SMTP","To address","The recipient address matched a rule specified in the Rcpt To rules."
+"1BFF-0006","INFO","Proxy / SMTP","Content type","Some of the message content matched a content filter rule."
+"1BFF-0007","INFO","Proxy / SMTP","Filename","An email attachment matched a file name rule, or the attachment is uuencoded and the SMTP proxy allows uuencoded attachments."
+"1BFF-0010","INFO","Proxy / SMTP","Message format","The email message format matched a message format rule specified in the SMTP proxy."
+"1BFF-0011","INFO","Proxy / SMTP","IPS match","Intrusion Prevention Service (IPS) detected a threat."
+"1BFF-0013","INFO","Proxy / SMTP","Too many recipients","The number of email recipients specified in the email message exceeds the configured limit."
+"1BFF-0014","INFO","Proxy / SMTP","Response size too long","The SMTP server response exceeds the configured limit."
+"1BFF-0015","INFO","Proxy / SMTP","Line too long","The email message contains a line that exceeds the configured limit."
+"1BFF-0016","INFO","Proxy / SMTP","Message too long","The SMTP message length exceeds the configured limit."
+"1BFF-0017","INFO","Proxy / SMTP","Header too long","The SMTP message contains a header that exceeds the configured Maximum Header Length."
+"1BFF-0018","INFO","Proxy / SMTP","Command","The SMTP request contains a command that is not supported or is not valid for the email transaction."
+"1BFF-0019","INFO","Proxy / SMTP","spamBlocker confirmed spam","spamBlocker has classified the message as confirmed SPAM."
+"1BFF-0021","INFO","Proxy / SMTP","Extra pad characters in base64 encoding","The SMTP proxy encountered extra pad characters when the body of the base64-encoded message was processed."
+"1BFF-0022","INFO","Proxy / SMTP","Mail from address too long","A sender email address exceeded the configured maximum address length."
+"1BFF-0023","INFO","Proxy / SMTP","Application match","Application Control identified the application in the mail message that is specified in the log message."
+"1BFF-0024","INFO","Proxy / SMTP","DLP violation found","Data Loss Prevention (DLP) detected the rule violation that is specified in the log message."
+"1BFF-0025","INFO","Proxy / SMTP","DLP cannot perform scan","Data Loss Prevention (DLP) is unable to scan because of the error specified in the log message."
+"1BFF-0026","INFO","Proxy / SMTP","DLP cannot scan object","Data Loss Prevention (DLP) is unable to extract data from an object because the object is encrypted."
+"1BFF-0027","INFO","Proxy / SMTP","DLP object too large","The file requested for Data Loss Prevention (DLP) analysis is larger than the configured limit."
+"1BFF-0028","INFO","Proxy / SMTP","APT threat detected","APT Blocker found the threat specified in the log message in an attached file."
+"1CFF-0000","INFO","Proxy / FTP","User name too long","The user name exceeds the maximum length specified in the FTP proxy."
+"1CFF-000C","INFO","Proxy / FTP","Request","This log message for the FTP request transaction includes the source and destination IP addresses for the initial connections."
+"1CFF-000D","INFO","Proxy / FTP","IPS match","Intrusion Prevention Service (IPS) detected a threat."
+"1CFF-000E","INFO","Proxy / FTP","GAV Virus found","Gateway AntiVirus (GAV) detected a virus or malware in the attachment."
+"1CFF-000F","INFO","Proxy / FTP","GAV scan error","Gateway AntiVirus (GAV) failed to scan due to the error specified in the log message."
+"1CFF-0001","INFO","Proxy / FTP","Password too long","The password specified for the user exceeds the maximum length configured in the FTP proxy."
+"1CFF-0002","INFO","Proxy / FTP","File or directory name too long","The file or directory name exceeds the maximum length configured in the FTP proxy."
+"1CFF-0003","INFO","Proxy / FTP","Command line too long","The command exceeded the maximum length configured in the FTP proxy."
+"1CFF-0004","INFO","Proxy / FTP","Exceeded maximum allowed login attempts","The user exceeded the configured maximum number of allowed failed log in attepmts per connection."
+"1CFF-0005","INFO","Proxy / FTP","Command match","The command matched a configured rule, or the default of no match."
+"1CFF-0006","INFO","Proxy / FTP","Download match","The file type matched a configured download rule, or the default rule of no match."
+"1CFF-0007","INFO","Proxy / FTP","Upload match","The file type matched a configured upload rule, or the default rule of no match."
+"1CFF-0008","INFO","Proxy / FTP","Timeout","The connection exceeded the configured idle time value."
+"1CFF-0009","INFO","Proxy / FTP","Invalid request","The FTP proxy rejected the command because of a lack of required arguments, such as a user name."
+"1CFF-0010","INFO","Proxy / FTP","Application match","Application Control identified an application in the FTP client request or server response."
+"1CFF-0011","INFO","Proxy / FTP","DLP violation found","Data Loss Prevention (DLP) detected a rule violation."
+"1CFF-0012","INFO","Proxy / FTP","DLP cannot perform scan","Data Loss Prevention (DLP) failed to scan because of the error specified in the log message."
+"1CFF-0013","INFO","Proxy / FTP","DLP cannot scan object","Data Loss Prevention (DLP) could not scan and analyze the attachment because it is encrypted."
+"1CFF-0014","INFO","Proxy / FTP","DLP object too large","Data Loss Prevention (DLP) could not analyze the attachment because the file was larger than the configured limit."
+"1CFF-0015","INFO","Proxy / FTP","APT threat detected","APT Blocker identified a threat."
+"1CFF-0017","INFO","Proxy / FTP","File submitted to APT analysis server","File submitted to APT analysis server for deep threat analysis."
+"1CFF-0018","INFO","Proxy / FTP","File reported safe from APT hash check","APT hash check did not report a threat from the object"
+"1CFF-0019","ERROR","Proxy / FTP","FTP Bounce Attempt","FTP proxy -- User attempted FTP bounce"
+"1DFF-0000","INFO","Proxy / DNS","Invalid number of questions","The traffic was blocked because the message included an invalid number of questions."
+"1DFF-000A","INFO","Proxy / DNS","Response answer undersized","The DNS response was blocked because the response size was less than the minimum value of 17 bytes."
+"1DFF-000C","INFO","Proxy / DNS","Response ID Invalid","The DNS response was blocked because the response ID did not match the current or previous request ID."
+"1DFF-000E","INFO","Proxy / DNS","Query question match","The DNS query name matched a configured rule, or the default rule of no match."
+"1DFF-000F","INFO","Proxy / DNS","Request","The DNS request audit log specifies the query type and name."
+"1DFF-0001","INFO","Proxy / DNS","Query name oversized","The DNS query was blocked because the DNS query name exceeded the allowed buffer size, which varies from 0 kilobytes to 64 kilobytes."
+"1DFF-0002","INFO","Proxy / DNS","Query name compressed","The DNS query was blocked because the domain name was compressed."
+"1DFF-0003","INFO","Proxy / DNS","Parse error","The DNS request was blocked because the proxy failed to parse the domain name."
+"1DFF-0004","INFO","Proxy / DNS","Not Internet CLASS","The DNS query was not Internet CLASS."
+"1DFF-0005","INFO","Proxy / DNS","OPcode match","The OpCode matched a configured rule, or the default rule of no match."
+"1DFF-0006","INFO","Proxy / DNS","Query type match","The query type matched a configured rule, or the default rule of no match."
+"1DFF-0007","INFO","Proxy / DNS","Question undersized","The DNS query was blocked because the query size was less than the minimum valid size of 17 bytes."
+"1DFF-0008","INFO","Proxy / DNS","Question oversized","The DNS query was blocked because the query size exceeds the maximum allowed size of 271 bytes."
+"1DFF-0009","INFO","Proxy / DNS","Timeout","The DNS connection was idle longer than the configured timeout value in the DNS policy."
+"1DFF-0010","INFO","Proxy / DNS","IPS match","Intrusion Prevention Service (IPS) detected an intrusion threat."
+"1DFF-0012","INFO","Proxy / DNS","Application match","Application Control identified the application type from the DNS client query and server response."
+"2AFF-0000","INFO","Proxy / H.323","Timeout","The connection was idle longer than the configured timeout value. The default value is 180 seconds."
+"2AFF-0001","INFO","Proxy / H.323","Request","This log message specifies the IP addresses for the completed H323 call."
+"2AFF-0002","INFO","Proxy / H.323","Codec","The media codec is denied because it matched a configured Denied Codec."
+"2AFF-0003","INFO","Proxy / H.323","Access control","The header address is allowed or denied because it matches an Access Control rule configured in the H323 policy."
+"2AFF-0006","INFO","Proxy / H.323","IPS match","Intrusion Prevention Service (IPS) detected an intrusion threat."
+"2AFF-0007","INFO","Proxy / H.323","Application match","Application Control detected an application type from the transaction."
+"2CFF-0000","INFO","Proxy / HTTPS","Request","HTTPS transaction log includes server name, certificate details and action taken."
+"2CFF-0001","INFO","Proxy / HTTPS","WebBlocker Request categories","WebBlocker identified the category for a web request."
+"2CFF-0002","INFO","Proxy / HTTPS","WebBlocker service unavailable","WebBlocker failed because a WebBlocker Server was not available."
+"2CFF-0003","INFO","Proxy / HTTPS","Domain name match","This rule log includes the matched rule name or default rule of no match and the patterns its been matched against."
+"2CFF-0007","INFO","Proxy / HTTPS","Protocol invalid","The HTTPS proxy detected an invalid SSL version."
+"2CFF-0008","INFO","Proxy / HTTPS","Timeout","The HTTPS connection was idle longer than the timeout value configured in the HTTPS policy."
+"2CFF-0009","INFO","Proxy / HTTPS","Content inspection","The HTTPS traffic was directed to a different proxy action because of the Content Inspection settings in the HTTPS proxy."
+"2DFF-0000","INFO","Proxy / TCP-UDP","Request","TCP-UDP transaction log for the traffic that is configured to allow or deny."
+"2DFF-0001","INFO","Proxy / TCP-UDP","IPS match","Intrusion Prevention Service (IPS) detected an intrusion threat in TCP-UDP proxy traffic."
+"2DFF-0004","INFO","Proxy / TCP-UDP","Protocol","The TCP-UDP proxy recognized the protocol."
+"2DFF-0005","INFO","Proxy / TCP-UDP","Application match","Application Control identified the application type from the TCP-UDP proxy traffic."
+"21FF-000A","INFO","Proxy / POP3","Request","This audit log message specifies the bytes sent, bytes received, and user."
+"21FF-0000","INFO","Proxy / POP3","CAPA","The CAPA response contained the unknown or blocked capability that is specified in the log message."
+"21FF-000C","INFO","Proxy / POP3","IPS match","Intrusion Prevention Service (IPS) detected an intrusion threat."
+"21FF-000F","INFO","Proxy / POP3","GAV Virus found","Gateway AntiVirus detected a virus or malware in the file."
+"21FF-001A","INFO","Proxy / POP3","spamBlocker exception matched","The sender for the email matched a spamBlocker exception rule."
+"21FF-0001","INFO","Proxy / POP3","Authentication","The authentication type matched a rule, or the default rule of no match."
+"21FF-001B","INFO","Proxy / POP3","spamBlocker not spam","spamBlocker classified the message as not SPAM."
+"21FF-001C","INFO","Proxy / POP3","spamBlocker classification unknown","spamBlocker was unable to classify the message because of the error specified in the log message."
+"21FF-001D","INFO","Proxy / POP3","Extra pad characters","The POP3 proxy encountered extra pad characters in the body of a base64-encoded message."
+"21FF-001E","INFO","Proxy / POP3","Application match","Application Control identified the application from the email message."
+"21FF-001F","INFO","Proxy / POP3","APT threat detected","APT Blocker found the threat specified in the log message in an attached file."
+"21FF-0002","INFO","Proxy / POP3","Command","The client sent an authentication command when it was not allowed."
+"21FF-0005","INFO","Proxy / POP3","Header","A POP3 header matched a configured Header rule, or the default rule of no match."
+"21FF-0006","INFO","Proxy / POP3","Content type","A MIME-type matched a configured content type rule, or the default rule of no match."
+"21FF-0007","INFO","Proxy / POP3","File name","The attachment matches a configured file name rule, or the default rule of no match."
+"21FF-0009","INFO","Proxy / POP3","Timeout","The connection was idle for longer than the configured timeout limit."
+"21FF-0010","INFO","Proxy / POP3","GAV cannot perform scan","Gateway AntiVirus (GAV) failed to scan because of the error specified in the log message."
+"21FF-0012","INFO","Proxy / POP3","Line length too long","A line exceeds the configured limit."
+"21FF-0014","INFO","Proxy / POP3","Message format","The message is not in an allowed format."
+"21FF-0015","INFO","Proxy / POP3","Encoding error","The proxy was unable to decode and encode the message because of the error specified in the log message."
+"21FF-0016","INFO","Proxy / POP3","spamBlocker confirmed spam","spamBlocker classified the message as confirmed SPAM."
+"21FF-0017","INFO","Proxy / POP3","spamBlocker BULK spam","spamBlocker classified the message as bulk SPAM."
+"21FF-0018","INFO","Proxy / POP3","spamBlocker suspect spam","spamBlocker classified the message as suspect SPAM."
+"21FF-0021","INFO","Proxy / POP3","File submitted to APT analysis server","File submitted to APT analysis server for deep threat analysis."
+"21FF-0022","INFO","Proxy / POP3","File reported safe from APT hash check","APT hash check did not report a threat from the object"
+"28FF-0000","INFO","Proxy / SIP","Timeout","The connection was idle for longer than the configured timeout value."
+"28FF-0004","INFO","Proxy / SIP","Request","The log message specifies the source and destination of the allowed call."
+"28FF-0005","INFO","Proxy / SIP","Codec","The codec is allowed or denied based on the setting for Denied Codecs in the SIP policy."
+"28FF-0006","INFO","Proxy / SIP","Access control","The header address is allowed or denied based on the Access Control settings."
+"28FF-0008","INFO","Proxy / SIP","IPS match","Intrusion Prevention Service (IPS) detected an intrusion threat."
+"28FF-0009","INFO","Proxy / SIP","Application match","Application Control identified an application from the transaction."
+"5501-000C","INFO","Management / System","Device restore failed","Device auto restore from a specific image in a USB drive disc or normal restore from a normal image failed"
+"5501-000D","INFO","Management / System","Creating USB auto restore image failed","Creation of USB auto restore image failed due to %s"
+"5501-001B","INFO","Management / System","System backup failed","System backup %s%s failed due to %s."
+"5501-001C","INFO","Management / System","USB auto restore failed reason","USB auto restore failed due to %s"
+"5501-0010","INFO","Management / System","USB drive format","USB drive format operation was %s"
+"5501-0018","INFO","Management / System","Reset to the default configuration failed","The default configuration settings were not restored after a system reset."
+"5501-0017","INFO","Management / System","Generate system diagnostic successfully","Exported system diagnostic file to %s successfully"
+"5501-0014","INFO","Management / System","Generate system diagnostic file failed","Generate system diagnostic file to %s failed"
+"5501-0015","INFO","Management / System","Periodic support snapshot is enabled","System periodic support snapshot is enabled"
+"3D04-0001","INFO","Management / Logging","Primary Log Server connected","The device successfully connected to the WatchGuard Log Server designated as the primary server."
+"3D04-0002","INFO","Management / Logging","Backup Log Server connected","The device successfully connected to the WatchGuard Log Server designated as the backup server."
+"3E00-0002","INFO","Management / Accounting","User login succeeded","A user successfully logged in."
+"3E00-0003","WARN","Management / Accounting","User login failed","A user log in attempt failed."
+"3E00-0004","INFO","Management / Accounting","User logout","A user successfully logged out."
+"133F-0065","ERROR","Management / Authentication Portal","Customized certificate generation error","A custom certificate failed to generate."
+"0101-0001","INFO","Management / Configuration","Device configuration change","The device configuration has been changed."
+"0101-0002","INFO","Management / Configuration","Administrative accounts reset to default","The administrative accounts were returned to the default settings."
+"0102-0001","INFO","Management / Configuration","Feature key added","An administrator added a feature key."
+"0102-0002","INFO","Management / Configuration","Feature key removed","An administrator has removed a feature key."
+"0102-0003","WARN","Management / Configuration","Feature expired","'%s' feature expired."
+"0102-0005","INFO","Management / Configuration","Feature expiration reminder","A feature will soon expire."
+"0104-0001","INFO","Management / Configuration","Default device settings in use for safe mode","The device configuration was reset to the default settings because the device is in safe mode."
+"1100-000C","WARN","Management / Authentication","Authentication error","Authentication failed."
+"1100-000D","WARN","Management / Authentication","Authentication server unavailable","Authentication failed because both the primary and secondary authentication servers are unavailable."
+"1100-000E","WARN","Management / Authentication","Unsupported RADIUS method","Authentication failed because the specified RADIUS method is not supported."
+"1100-000F","WARN","Management / Authentication","Groups maximum reached","Authentication failed because the maximum number of groups has been reached."
+"5501-000B","INFO","Management / System","Device restore","Device was restored from a saved backup image."
+"5501-001A","WARN","Management / System","Upgrade failed","System upgrade failed: %s"
+"5501-001D","INFO","Management / System","Logo upload succeeded","Upload of logo succeeded"
+"1100-0003","INFO","Management / Authentication","Authentication server unavailable","The external authentication server is not available."
+"1100-0004","INFO","Management / Authentication","User authentication succeeded","The user successfully authenticated."
+"1100-0005","WARN","Management / Authentication","User authentication failed","User authentication failed."
+"1500-0000","INFO","Management / Management Client","Device configuration update with audit trail","The updated configuration file was successfully sent to the device from the specified Management Server."
+"1500-0001","INFO","Management / Management Client","Device configuration update","The device retrieved an updated configuration file from the specified Management Server."
+"1501-0000","INFO","Management / Management Client","IPSec certificate import","The IPsec certificate was successfully imported from the specified Management Server."
+"1501-0001","INFO","Management / Management Client","Management Server CA certificate import","The Management Server CA certificate was successfully imported from the specified Management Server."
+"4001-0002","ERROR","Management / Certificate","CA certificate updated failed","CA certificate updated failed."
+"4001-0001","INFO","Management / Certificate","CA certificate updated successfully","The CA certificate updated successfully to the specified new version."
+"4100-0001","INFO","Management / LiveSecurity","RapidDeploy succeeded","The RapidDeploy package from the LiveSecurity service was successfully applied to the device."
+"4100-0002","ERROR","Management / LiveSecurity","RapidDeploy failed","The RapidDeploy package was not applied to the device."
+"4100-0004","ERROR","Management / LiveSecurity","New RSS feed update failed","New RSS feed from the LiveSecurity Service failed to update."
+"4100-0005","INFO","Management / LiveSecurity","Feature key download succeeded","The feature key for the device was successfully downloaded from the LiveSecurity Service."
+"4100-0003","INFO","Management / LiveSecurity","New RSS feed update succeeded","New RSS feed from the LiveSecurity Service was updated."
+"4100-0007","INFO","Management / LiveSecurity","Wireless country specification update succeeded","The wireless country specification was successfully updated from the LiveSecurity service."
+"4100-0006","ERROR","Management / LiveSecurity","Feature key download failed","The feature key could not be downloaded from the LiveSecurity Service."
+"4100-0008","ERROR","Management / LiveSecurity","Wireless country specification update failed","The wireless country specification could not be downloaded from the LiveSecurity service."
+"4101-0001","INFO","Management / LiveSecurity","RapidDeploy configuration from USB succeeded","The RapidDeploy configuration was successfully applied from a USB drive."
+"4101-0002","ERROR","Management / LiveSecurity","RapidDeploy configuration from USB failed","The RapidDeploy configuration was not successfully applied from a USB drive."
+"5501-0002","ERROR","Management / System","LIVESECURITY feature not found","LIVESECURITY feature not found"
+"5501-0000","INFO","Management / System","Bootup time","System boot up at %s"
+"5501-0003","ERROR","Management / System","LIVESECURITY expired","LIVESECURITY expired"
+"5501-0004","INFO","Management / System","Shutdown","Shutdown requested by system"
+"5501-0005","INFO","Management / System","Reboot","System is rebooting"
+"5501-0008","INFO","Management / System","Time change","System time changed from %s to %s"
+"5501-0007","INFO","Management / System","Automatic reboot","System is automatically rebooting at %d:%d"
+"5501-0006","INFO","Management / System","Upgrade succeeded","System upgrade to %s successful, %s"
+"5501-0013","INFO","Management / System","USB auto restore started","USB auto restore started"
+"5501-0016","INFO","Management / System","Feature expiration reminder","'LIVESECURITY' feature will expire on %s"
+"5501-0019","WARN","Management / System","Configuration reset failed during a downgrade","During a system downgrade, the configuration reset failed"
+"5501-0021","INFO","Management / System","Device restore success","Device auto restore from a specific image in USB drive or normal restore from a normal image"
+"5501-0020","INFO","Management / System","Backup succeeded","System backup succeeded"
+"5501-0022","INFO","Management / System","USB auto restore image created","USB auto restore image successfully created"
+"5800-0001","INFO","Management / NTP","System time changed","The system time was changed by the NTP process."
+"3A00-000A","INFO","Cluster / Event Monitoring","VR notification gap","Member Virtual Router changed state to master due to notification gap from current master"
+"3A00-000B","INFO","Cluster / Event Monitoring","VRRP master state","Virtual Router state changed to master"
+"3A00-000C","ERROR","Cluster / Event Monitoring","VRRP initialization failed","Initialization of Virtual Router Redundancy Protocol (VRRP) failed."
+"3A00-0002","INFO","Cluster / Event Monitoring","VRRP enabled","Virtual Router Redundancy Protocol (VRRP) is now enabled for this Active/Passive Cluster."
+"3A00-0004","INFO","Cluster / Event Monitoring","VRRP start master","VRRP started in master state."
+"3A00-0005","INFO","Cluster / Event Monitoring","VR shutdown","Virtual Router returned to initial state."
+"3A00-0006","INFO","Cluster / Event Monitoring","VR pause","Virtual Router becomes backup due to a pause event."
+"3A00-0007","INFO","Cluster / Event Monitoring","VR resume","Virtual Router becomes master due to a resume event."
+"3A00-0008","INFO","Cluster / Event Monitoring","VR backup state","Virtual Router state changed from master to backup"
+"3B00-0001","INFO","Cluster / Transport","Channel status change","The cluster communication channel between the specified members changed state."
+"3B00-0002","INFO","Cluster / Transport","Cluster interface down","The specified Cluster interface is down."
+"3800-025C","INFO","Cluster / Management","Configuration update","Cluster member received an updated configuration from the master."
+"3800-0002","ERROR","Cluster / Management","DHCP overwrite","A DHCP server has attempted to assign an IP address to cluster member on the Cluster Interface."
+"3800-0003","INFO","Cluster / Management","Cluster interface up","Cluster interface link status changed to up."
+"3800-0004","WARN","Cluster / Management","Cluster interface down","Cluster interface link status changed to down."
+"3800-0264","WARN","Cluster / Management","Time synchronization failure","The cluster master's attempt to synchronize time to a cluster member failed"
+"3A00-000E","INFO","Cluster / Event Monitoring","VR enabled","The Virtual Router representing the cluster is now enabled"
+"3A00-000F","INFO","Cluster / Event Monitoring","VR disabled","The Virtual Router representing the cluster is now disabled"
+"3800-025A","INFO","Cluster / Management","Cluster enabled","Cluster was enabled on the specified member."
+"3800-025B","INFO","Cluster / Management","Cluster disabled on master","Cluster disabled on the cluster member while it was the cluster master."
+"3800-027A","WARN","Cluster / Management","Non-master member removed","The non-master member of the Cluster will be reset to factory-default settings because it was removed from the cluster."
+"3800-027E","ERROR","Cluster / Management","Factory-default reset failed","Failed to reset to factory-default settings."
+"3900-000C","ERROR","Cluster / Operations","Synchronization failed","Full state synchronization from the master to the specified member failed."
+"3900-000D","ERROR","Cluster / Operations","Synchronization timeout","Full state synchronization from the master to the specified member timed out."
+"3900-000E","INFO","Cluster / Operations","Synchronization successful","Full state synchronization to the specified member was successful."
+"3900-000F","ERROR","Cluster / Operations","Failover due to link-down","Cluster failover due to a link failure on the current master, which now has a health index lower than the backup master."
+"3800-0278","WARN","Cluster / Management","Cluster disabled","The non-master member of the cluster will be reset to factory default-settings because FireCluster is disabled."
+"3800-0279","WARN","Cluster / Management","Critical configuration change","The non-master member of the cluster will be reset to factory-default settings due to a critical configuration change."
+"3800-0282","INFO","Cluster / Management","Member ready to join","Local member has FireCluster enabled and is ready to join."
+"3800-0280","ERROR","Cluster / Management","Device discovery failed","The cluster master was unable to issue a device discovery message."
+"3900-0005","INFO","Cluster / Operations","Member promoted to master","The specified member has become master."
+"3900-0003","WARN","Cluster / Operations","Heartbeat lost","The specified Cluster failed to receive a heartbeat message."
+"3900-0007","ERROR","Cluster / Operations","Failover due to WAI","The master failed over to the specified member because that member has a higher health score than the master."
+"3900-0010","INFO","Cluster / Operations","Member role change","The cluster member changed to the specified role."
+"3900-0012","INFO","Cluster / Operations","New master","The specified member has taken over as master.."
+"3900-0011","INFO","Cluster / Operations","Interface link status change","Specified monitored interface link status changed, which will change the health index for the member."
+"3900-0015","INFO","Cluster / Operations","Failover initiated by administrator","The administrator has initiated a failover."
+"3900-0016","WARN","Cluster / Operations","Cannot initiate failover","The failover requested by administrator cannot proceed because the master has a higher health index, or the backup master is unreachable."
+"3900-0019","ERROR","Cluster / Operations","Failover due to interface state change","A cluster failover event occurred due to a change of interface state."
+"3900-0058","INFO","Cluster / Operations","Member Role Change","The role of the specified Cluster member changed."
+"1F00-0001","ERROR","Security Services / Gateway Anti-Virus","Process failed to start","ScanD -- Process failed to start"
+"1F01-0015","INFO","Security Services / Gateway Anti-Virus","Ready for service","ScanD -- Ready for service"
+"2E00-0005","ERROR","Security Services / Signature Update","Process exiting","SIGD -- Process exiting"
+"2E00-0006","ERROR","Security Services / Signature Update","Process crashed","SIGD -- Process crashed"
+"2E01-001A","ERROR","Security Services / Signature Update","Signature update process failed to start","SIGD -- Signature update process failed to start"
+"2E01-001B","ERROR","Security Services / Signature Update","Signature update process crashed","SIGD -- Signature update process crashed"
+"2E01-0017","WARN","Security Services / Signature Update","License failed to load","SIGD -- License failed to load"
+"2E01-0018","ERROR","Security Services / Signature Update","Failed to start the signature update for the specified services","SIGD -- Failed to the start signature update for the specified services"
+"2E01-0019","ERROR","Security Services / Signature Update","Failed to check the available signature version on the server","SIGD -- Failed to check the available signature version on the server"
+"2E02-0065","INFO","Security Services / Signature Update","Signature update process started","SIGD -- Signature update process started"
+"2E02-0066","INFO","Security Services / Signature Update","Signature update process completed","SIGD -- Signature update process completed"
+"2E02-0067","ERROR","Security Services / Signature Update","Signature update process for the specified version failed","SIGD -- Signature update process for the specified version failed"
+"2E02-0069","INFO","Security Services / Signature Update","Device has the latest signature version for the specified service","SIGD -- Device has the latest signature version for specified service"
+"2300-0001","ERROR","Security Services / spamBlocker","Failed to start","spamD -- Failed to start"
+"2300-0002","INFO","Security Services / spamBlocker","Ready for service","spamD -- Ready for service"
+"020B-0001","INFO","VPN / IPSEC","Tunnel status changed","The status of the IPSec tunnel changed to up or down."
+"5B01-0004","INFO","VPN / L2TP","Update user session","Mobile VPN with L2TP updated the session for the specified user."
+"5B01-0005","INFO","VPN / L2TP","Delete user session","Deleted a Mobile VPN with L2TP session with the specified virtual IP address."
+"021A-000A","ERROR","VPN / IPSEC","IKEv2 IKE_SA_INIT message received on wrong interface","IKEv2 IKE_SA_INIT negotiation failed because IKE message from peer was received on the wrong interface."
+"021A-000B","ERROR","VPN / IPSEC","IKEv2 remote gateway endpoint ID mismatch","IKEv2 IKE_AUTH negotiation failed because the remote ID in the gateway endpoint configuration did not match the proposed ID received from the remote gateway."
+"021A-000C","ERROR","VPN / IPSEC","IKEv2 local gateway endpoint ID mismatch","IKEv2 IKE_AUTH negotiation failed because the local ID in the gateway endpoint configuration did not match the proposed ID received from the remote gateway."
+"021A-000D","ERROR","VPN / IPSEC","Received IKEv2 message does not have expected payloads","IKEv2 message exchange failed because the received message from the peer does not have the expected payloads"
+"021A-000E","ERROR","VPN / IPSEC","IKEv2 IKE proposal mismatch","The IKEv2 message exchange failed because the IKE proposal in the received message did not match the expected proposal."
+"021A-000F","ERROR","VPN / IPSEC","IKEv2 KE DH-Group mismatch","IKEv2 message exchange failed because the DH group in the received Key Exchange (KE) payload does not match the DH-Group in the selected proposal."
+"021A-001A","ERROR","VPN / IPSEC","Received invalid SPI during IKEv2 IPSec SA rekey","IKEv2 IPSec SA rekey failed because the peer sent an invalid SPI."
+"021A-0001","ERROR","VPN / IPSEC","Dropped received IKEv2 message","Dropped received invalid IKEv2 message."
+"021A-001B","ERROR","VPN / IPSEC","No response from remote gateway","IKEv2 connection was terminated because there was no response from the remote site."
+"021A-0002","ERROR","VPN / IPSEC","IKE SA not found to handle IKE_SA_INIT_R message","IKE SA was not found to handle the received IKE_SA_INIT_R message."
+"021A-0003","ERROR","VPN / IPSEC","Gateway endpoint not found to handle IKE_SA_INIT_R message","Gateway endpoint was not found to handle the received IKE_SA_INIT_R message"
+"021A-0004","INFO","VPN / IPSEC","IKEv2 IKE SA is in deleting state","Received IKEv2 message was ignored because the corresponding IKE SA to handle the message was in DELETING state."
+"021A-0005","ERROR","VPN / IPSEC","Invalid message ID in IKEv2 exchange","Received IKEv2 message was dropped because it has invalid message ID."
+"021A-0006","ERROR","VPN / IPSEC","IKEv2 gateway endpoint was not found to handle the received message","IKEv2 gateway endpoint was not found to handle the received message."
+"021A-0007","ERROR","VPN / IPSEC","IKEv2 gateway endpoint version not matched","IKEv2 message exchange failed because the received IKE version did not match the IKE version configured on the local gateway."
+"021A-0008","ERROR","VPN / IPSEC","IKEv2 gateway endpoint is disabled","The IKEv2 gateway endpoint is disabled."
+"021A-0009","ERROR","VPN / IPSEC","IKEv2 gateway ID mismatch","IKEv2 IKE_AUTH negotiation failed because the remote ID configured in the gateway endpoint did not match proposed ID received from the remote gateway."
+"021A-0010","ERROR","VPN / IPSEC","IKEv2 IPSec KE DH-Group mismatch","IKEv2 message exchange failed because the DH group in the received Key Exchange (KE) payload does not match the DH-Group in the selected proposal."
+"021A-0011","ERROR","VPN / IPSEC","Received unacceptable traffic selector during first CHILD SA negotiation.","Received unacceptable traffic selector during first CHILD SA negotiation."
+"021A-0012","ERROR","VPN / IPSEC","IKEv2 peer authentication method mismatch.","IKEv2 peer authentication method mismatch."
+"021A-0013","ERROR","VPN / IPSEC","IKEv2 peer authentication failed","IKEv2 tunnel negotiation failed because the local gateway could not authenticate the remote gateway."
+"021A-0014","ERROR","VPN / IPSEC","IKEv2 PSK mismatch","IKEv2 tunnel negotiation failed because of possible PSK mismatch."
+"021A-0015","ERROR","VPN / IPSEC","Received IKEv2 IKE_SA_INIT notification error message.","Received IKEv2 IKE_SA_INIT notification error message."
+"021A-0016","ERROR","VPN / IPSEC","Received IKEv2 CREATE_CHILD_SA/IKE_AUTH notification error message.","Received IKEv2 CREATE_CHILD_SA/IKE_AUTH notification error message."
+"021A-0017","INFO","VPN / IPSEC","IKEv2 IKE SA established","IKEv2 IKE SA is established because IKE_AUTH negotiation is finished or IKE SA is rekeyed."
+"021A-0018","ERROR","VPN / IPSEC","IKEv2 tunnel proposal mismatch.","IKEv2 tunnel proposal mismatch."
+"021A-0019","ERROR","VPN / IPSEC","Received invalid SPI during first CHILD SA negotiation.","Received invalid SPI during first CHILD SA negotiation."
+"0203-000A","ERROR","VPN / IPSEC","IKE Phase 1 invalid Main Mode second message","IKE Phase 1 negotiation failed because of invalid second message received by local gateway."
+"0203-000B","ERROR","VPN / IPSEC","IKE Phase 1 invalid Main Mode Key Exchange payload","IKE Phase 1 negotiation failed because local gateway received invalid Main Mode Key Exchange (KE) payload"
+"0203-000C","ERROR","VPN / IPSEC","IKE Phase 1 invalid main mode ID","IKE Phase 1 negotiation failed because of invalid Main Mode ID payload received by local gateway."
+"0203-000D","ERROR","VPN / IPSEC","IKE Phase 1 invalid aggressive mode hash","IKE Phase 1 negotiation failed because invalid aggressive mode hash payload received by specified local gateway."
+"0203-000E","ERROR","VPN / IPSEC","IKE Phase 1 invalid Aggressive mode SA payload","IKE Phase 1 negotiation failed because of invalid Aggressive mode security association (SA) payload received by specified local gateway."
+"0203-000F","INFO","VPN / IPSEC","IKE Phase 1 matching aggressive mode policy not found","IKE Phase 1 negotiation because local gateway did not find a matching aggressive mode policy."
+"0203-002A","ERROR","VPN / IPSEC","IKE Phase 1 IKE version mismatch","IKE Phase 1 negotiation failed because the received IKE version did not match the IKE version configured on the local gateway."
+"0205-000A","ERROR","VPN / IPSEC","IKE Phase 2 tunnel route mismatch","The IPSec tunnel negotiation failed because the proposed tunnel routes did not match the tunnel configuration."
+"0205-000B","ERROR","VPN / IPSEC","IKE Phase 2 message retry timeout","The IPSec tunnel negotiation failed because an expected response was not received before the message retry timeout."
+"0205-000C","ERROR","VPN / IPSEC","IKE Phase2 message retry timeout because Phase 1 SA expired","The IPSec tunnel negotiation failed because the Phase 1 Security Association (SA) expired."
+"0205-000D","ERROR","VPN / IPSEC","IKE Phase 2 PFS not enabled","The IPSec tunnel negotiation failed because the Perfect Forward Secrecy (PFS) value did not match the Phase 2 configuration."
+"0205-000E","ERROR","VPN / IPSEC","IKE Phase 2 wait timeout","The IPSec tunnel negotiation failed because an expected response was not received before the expected time"'
+"0205-000F","WARN","VPN / IPSEC","Rejected Phase 2 negotiation due to incorrect gateway","Rejected Phase 2 negotiation the proposal did not use the preferred IKE gateway endpoint."
+"0200-0001","ERROR","VPN / IPSEC","Default certificate not found","The IPSec tunnel could not be negotiated because the default IPSec certificate is not installed or is not valid."
+"0200-0002","ERROR","VPN / IPSEC","Failed to read certificate","The IPSec tunnel could not be negotiated because the IPSec certificate is not valid."
+"0202-0001","WARN","VPN / IPSEC","IP address not available for Mobile VPN with IPSec user","All virtual IP addresses allocated to this Mobile VPN with IPSec group are already assigned."
+"0203-0002","ERROR","VPN / IPSEC","IKE Phase 1 expecting main mode","IKE Phase 1 negotiation failed because of incorrect exchange type in proposal from remote gateway."
+"0203-0003","ERROR","VPN / IPSEC","IKE Phase 1 expecting aggressive mode","IKE Phase 1 negotiation failed because of incorrect exchange type in proposal from remote gateway."
+"0203-0004","ERROR","VPN / IPSEC","IKE Phase 1 DH group mismatch","IKE Phase 1 negotiation failed because of incorrect Diffe-Hellman group in proposal from remote gateway."
+"0203-0005","ERROR","VPN / IPSEC","IKE Phase 1 hash mismatch","IKE Phase 1 negotiation failed because of incorrect hash type in proposal from remote gateway."
+"0203-0006","ERROR","VPN / IPSEC","IKE Phase 1 encryption mismatch","IKE Phase 1 negotiation failed because of incorrect encryption type in proposal from remote gateway."
+"0203-0007","ERROR","VPN / IPSEC","IKE Phase 1 authentication method mismatch","IKE Phase 1 negotiation failed because of incorrect authentication method in proposal from remote gateway."
+"0203-0008","ERROR","VPN / IPSEC","IKE Phase 1 AES key length mismatch","IKE Phase 1 negotiation failed because of incorrect AES key length in proposal from remote gateway."
+"0203-0009","ERROR","VPN / IPSEC","IKE Phase 1 invalid first message","IKE Phase 1 negotiation failed because of invalid first message received by local gateway."
+"0203-0010","INFO","VPN / IPSEC","IKE Phase 1 matching Main Mode policy not found","IKE Phase 1 negotiation because local gateway did not find a matching Aggressive mode policy."
+"0203-0011","ERROR","VPN / IPSEC","IKE Phase 1 remote gateway ID mismatch","IKE Phase 1 negotiation failed because remote ID in gateway configuration did not match proposal from remote gateway."
+"0203-0012","ERROR","VPN / IPSEC","IKE Phase 1 pre-shared key authentication failure","IKE Phase 1 negotiation failed because pre-shared key in proposal did not match gateway configuration."
+"0203-0013","INFO","VPN / IPSEC","IKE Phase 1 negotiation failed","IKE Phase 1 negotiation failed because of the reason specified in the log"
+"0203-0014","INFO","VPN / IPSEC","Received informational error message","Received the specified information or error message from remote gateway."
+"0203-0015","ERROR","VPN / IPSEC","IKE Phase 1 retry timeout","IKE Phase 1 negotiation failed because of no response from remote site."
+"0203-0016","WARN","VPN / IPSEC","Mobile user rejected - maximum user connections reached","Specified Mobile VPN with IPSec user connection rejected because the specified concurrent user connections limit has been reached."
+"0203-0017","ERROR","VPN / IPSEC","CA certificate not available","IKE phase-1 negotiation failed because no Certificate Authority (CA) certificate is available."
+"0203-0018","ERROR","VPN / IPSEC","IKE Phase 1 peer certificate CA is not supported","IKE Phase 1 negotiation failed because peer certificate is not issued by a known and trusted Certificate Authority(CA)."
+"0203-0019","ERROR","VPN / IPSEC","IKE Phase 1 received certificate with invalid CA name","IKE Phase 1 negotiation failed because of invalid Certificate Authority (CA) name in certificate for remote gateway."
+"0203-0020","ERROR","VPN / IPSEC","IKE Phase 1 possible shared secret mismatch","IKE Phase 1 negotiation failed because of possible shared key mismatch."
+"0203-0021","WARN","VPN / IPSEC","DPD R_U_THERE_ACK not received","Firebox or XTM device sent a DPD_R_U_THERE request to remote gateway, but did not receive DPD R_U_THERE_ACK response."
+"0203-0022","WARN","VPN / IPSEC","DPD max failure","The Firebox or XTM device deleted a VPN tunnel because the remote gateway did not respond to DPD R_U_THERE requests."
+"0203-0023","WARN","VPN / IPSEC","Did not receive KEEP_ALIVE_ACK response","Firebox or XTM device sent a KEEP_ALIVE request to remote gateway, but did not receive KEEP_ALIVE_ACK response."
+"0203-0024","WARN","VPN / IPSEC","Deleted VPN tunnels due to keep-alive failure","Firebox or XTM device deleted one or more VPN tunnels because the remote gateway did not respond to keep-alive requests."
+"0203-0025","INFO","VPN / IPSEC","Received IKE message for unknown Phase 1 SA","Received IKE message for unknown P1 SA."
+"0203-0026","ERROR","VPN / IPSEC","DSS certificate ID mismatch","IKE Phase 1 negotiation failed because of mismatched DSS certificate ID setting."
+"0203-0027","ERROR","VPN / IPSEC","Failed to get ID information from certificate","IKE phase-1 negotiation failed because failed to get ID information from certificate."
+"0203-0028","INFO","VPN / IPSEC","IKE Phase 1 message received on wrong interface","IKE Phase 1 negotiation failed because of IKE message peer was received on wrong interface."
+"0203-0029","ERROR","VPN / IPSEC","IKE Phase 1 invalid aggressive mode ID","IKE Phase 1 negotiation failed because received ID did not match with configured ID on local gateway."
+"0205-0002","ERROR","VPN / IPSEC","IKE Phase 2 PFS mismatch","The IPSec tunnel negotiation failed because the Perfect Forward Secrecy (PFS) value did not match the Phase 2 configuration."
+"0205-0003","ERROR","VPN / IPSEC","IKE Phase-2 proposal type mismatch","The IPSec tunnel negotiation failed because the proposal did not match the Phase 2 configuration."
+"0205-0004","ERROR","VPN / IPSEC","IKE Phase 2 AH authentication method mismatch","The IPSec tunnel negotiation failed because the proposed AH authentication method did not match the Phase 2 configuration."
+"0205-0005","ERROR","VPN / IPSEC","IKE Phase 2 ESP encryption method mismatch","The IPSec tunnel negotiation failed because the proposed ESP encryption method did not match the Phase 2 configuration."
+"0205-0006","ERROR","VPN / IPSEC","IKE Phase 2 PFS DH group mismatch","The IPSec tunnel negotiation failed because the proposed Perfect Forward Secrecy Diffe-Hellman (PFS DH) group number did not match the Phase 2 configuration."
+"0205-0007","ERROR","VPN / IPSEC","IKE Phase 2 ESP authentication method mismatch","The IPSec tunnel negotiation failed because the proposed ESP authentication method did not match the Phase 2 configuration."
+"0205-0008","ERROR","VPN / IPSEC","IKE Phase 2 AES key length mismatch","The IPSec tunnel negotiation failed because the proposed AES encryption key length did not match the Phase 2 configuration."
+"0205-0010","INFO","VPN / IPSEC","Received quick mode informational error message","Remote gateway sent an information error message in response to VPN tunnel proposal."
+"0205-0011","INFO","VPN / IPSEC","Dropped simultaneous Phase 2 negotiation","Firebox or XTM device dropped phase-2 negotiation because of another Phase 2 negotiation in progress."
+"0206-0001","WARN","VPN / IPSEC","Received XAuth fail notification","Received notification that Extended Authentication(XAuth) failed."
+"0206-0002","WARN","VPN / IPSEC","Rejected PSK authentication, Expect client XAUTH enabled.","Rejected PSK authentication, Expect client XAUTH enabled."
+"0206-0003","WARN","VPN / IPSEC","Rejected PSK authentication, Expect server XAUTH enabled.","Rejected PSK authentication, Expect server XAUTH enabled."
+"0206-0004","WARN","VPN / IPSEC","XAuth negotiation failed due to mismatched mode","Mobile VPN with IPSec Extended Authentication(XAuth) negotiation failed because of mismatched authentication mode."
+"0206-0005","WARN","VPN / IPSEC","Mobile VPN with IPSec authentication failed because of unresponsive peer","Mobile VPN with IPSec user authentication failed because the peer did not respond."
+"0206-0006","INFO","VPN / IPSEC","Mobile VPN with IPSec user connected with no group","Specified Mobile VPN with IPSec user successfully authenticated, but is not a member of any group."
+"0206-0007","INFO","VPN / IPSEC","Mobile user group information","Specified Mobile VPN with IPSec user belongs to the specified group."
+"0208-0001","INFO","VPN / IPSEC","IKE phase-1 negotiated successful","IKE phase-1 negotiation was successfully completed."
+"1400-0000","INFO","VPN / PPTP","User login","The specified user logged in to Mobile VPN with PPTP."
+"1400-0002","INFO","VPN / PPTP","User log off","The specified Mobile VPN with PPTP user logged off."
+"2500-0001","INFO","VPN / SSLVPN","User log off","The Mobile VPN with SSL user with the specified virtual IP address logged out."
+"2500-0000","INFO","VPN / SSLVPN","User login","A user logged in to Mobile VPN with SSL."
+"5B01-0001","INFO","VPN / L2TP","Daemon started","The Mobile VPN with L2TP daemon started."
+"5B01-0002","INFO","VPN / L2TP","Configuration updated","The Mobile VPN with L2TP daemon received a configuration update."
+"5B01-0003","INFO","VPN / L2TP","Daemon stopped","The Mobile VPN with L2TP daemon stopped."
+"0201-0001","INFO","VPN / IPSEC","IKE process starts","The IPSec IKE process started."
+"0201-0002","INFO","VPN / IPSEC","Configuration update started","An IPSec configuration update started."
+"0201-0003","INFO","VPN / IPSEC","Configuration update completed","An IPSec configuration update was successfully completed."
+"0201-0004","WARN","VPN / IPSEC","Device not activated","The device is not activated."
+"0207-0001","INFO","VPN / IPSEC","Tunnel established or re-keyed","The IPSec tunnel was established or re-keyed successfully."
+"0209-0001","WARN","VPN / IPSEC","BOVPN tunnel limit reached","The maximum allowed number of BOVPN tunnel routes have been established."
+"0209-0002","INFO","VPN / IPSEC","IKE process -- FireCluster role changed","The cluster master has changed because of a FireCluster failover."
+"7000-0001","ERROR","Mobile Security / Endpoint Manager","Mobile security license limit reached","A user login from FireClient was rejected because the number of concurrently connected Mobile Security users has reached the limit supported by the Mobile Security license."
+"7000-0002","WARN","Mobile Security / Endpoint Manager","Mobile security license high watermark reached","The number of concurrently connected Mobile Security users has reached 90 percent of the capacity supported by the Mobile Security license."
+"7001-0003","INFO","Mobile Security / Endpoint Manager","Mobile device user logout","User has logged out of Firebox from FireClient on the device."
+"7001-0000","INFO","Mobile Security / Endpoint Manager","Mobile device connect","FireClient on the device has connected to the Firebox."
+"7001-0001","INFO","Mobile Security / Endpoint Manager","Mobile device user already login","User has logged in to Firebox from the device prior to the connection request."
+"7001-0002","INFO","Mobile Security / Endpoint Manager","Mobile device user login","User has logged in to Firebox through FireClient on the device."
+"7001-0004","INFO","Mobile Security / Endpoint Manager","Mobile device idle disconnected","FireClient on the device is considered disconnected due to inactivity."
+"7001-0005","INFO","Mobile Security / Endpoint Manager","Mobile device disconnected","FireClient on the device has disconnected."
+"7001-0006","INFO","Mobile Security / Endpoint Manager","Mobile device Unknown compliance","Mobile device compliance status is Unknown."
+"7001-0007","INFO","Mobile Security / Endpoint Manager","Mobile device Compliant","Mobile device compliance status is Compliant, because it meets the compliance requirements."
+"7001-0008","INFO","Mobile Security / Endpoint Manager","Mobile device Not Compliant","Mobile device compliance status is Not Compliant, because it does not meet the compliance requirements."
+"7001-0009","INFO","Mobile Security / Endpoint Manager","Mobile device user session recreated","User session is recreated because the mobile device IP address changed."
+"7002-0000","INFO","Mobile Security / Endpoint Manager","Mobile device Authorization Agreement sign action","The Device Authorization Agreement is either accepted or declined by a user at the specified local time."
