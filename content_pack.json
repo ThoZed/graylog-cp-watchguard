@@ -150,6 +150,19 @@
 					"converters": [],
 					"condition_type": "NONE",
 					"condition_value": "",
+					"order": 10
+				}, {
+					"title": "Proxy SMTP INFO 1BFF-0001",
+					"type": "GROK",
+					"cursor_strategy": "COPY",
+					"target_field": "",
+					"source_field": "message",
+					"configuration": {
+						"grok_pattern": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{NOTSPACE:protocol} %{IPV4:srcip} %{IPV4:dstip} %{BASE10NUM:srcport} %{BASE10NUM:dstport} msg=\"%{DATA:proxy_msg}\" proxy_act=\"%{DATA:proxy_action}\" keyword=\"%{NOTSPACE:keyword} ((?:\\s+(geo_src=\"%{DATA:geo_src}\"|geo_dst=\"%{DATA:geo_dst}\")?)|\\()"
+					},
+					"converters": [],
+					"condition_type": "REGEX",
+					"condition_value": "^.*msg_id=\"1BFF-0001\".*",
 					"order": 9
 				}
 			]
