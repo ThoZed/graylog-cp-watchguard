@@ -173,7 +173,7 @@
 					"source_field": "message",
 					"target_field": "",
 					"extractor_config": {
-						"grok_pattern": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{NOTSPACE:protocol} %{IPV4:srcip} %{IPV4:dstip} %{BASE10NUM:srcport} %{BASE10NUM:dstport} msg=\"%{DATA:proxy_msg}\" proxy_act=\"%{DATA:proxy_action}\" rcvd_bytes=\"%{BASE10NUM:rcvd_bytes}\" sent_bytes=\"%{BASE10NUM:sent_bytes}\" sender=\"%{EMAILADDRESS:sender}\" recipients=\"%{EMAILADDRESS:recipients}\" server_ssl=\"%{DATA:server_ssl}\" client_ssl=\"%{DATA:client_ssl}\" ((?:\\s+(geo_src=\"%{DATA:geo_src}\"|geo_dst=\"%{DATA:geo_dst}\")?)|\\()"
+						"grok_pattern": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{NOTSPACE:protocol} %{IPV4:srcip} %{IPV4:dstip} %{BASE10NUM:srcport} %{BASE10NUM:dstport} msg=\"%{DATA:proxy_msg}\" proxy_act=\"%{DATA:proxy_action}\" rcvd_bytes=\"%{BASE10NUM:rcvd_bytes}\" sent_bytes=\"%{BASE10NUM:sent_bytes}\" sender=\"%{DATA:sender}\" recipients=\"%{DATA:recipients}\" server_ssl=\"%{DATA:server_ssl}\" client_ssl=\"%{DATA:client_ssl}\" ((?:\\s+(geo_src=\"%{DATA:geo_src}\"|geo_dst=\"%{DATA:geo_dst}\")?)|\\()"
 					},
 					"condition_type": "regex",
 					"condition_value": "^.*msg_id=\"1BFF-000F\".*"
