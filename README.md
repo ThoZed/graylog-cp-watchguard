@@ -1,19 +1,49 @@
 # Graylog Content Pack for Watchguard
 
+
 ![graylog-cp-watchguard](https://user-images.githubusercontent.com/1869080/39520776-24204032-4e0c-11e8-8f13-65aae3a3fbc8.png)
 
-This Content Pack enables you to parse the syslog logs which are generated and shipped by Watchguard Fireware. The Logs are parsed to enable dashboards, streams and structured search queries.  
-The structure of the incoming logs depends on the kind of log which is marked with the message id defined by watchguard. To match all incoming logs there has to be an Extractor for each of those message ids.   
-In addition to that this content pack adds Area, Name, Level and Description based on the message id. The information is added by using the lookup table(fireware_msg_id_lookup_table.csv).
+This Content Pack enables you to parse the logs which are generated and shipped by Watchguard Fireware. The Logs are parsed to enable dashboards, streams and structured search queries.  
 
-[Overiew of Watchguard Message ID's](https://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html)
+###  Fireware log format
 
-#### Setup Watchguard to send log messages to graylog
+The logs messages include a message ID which could be extracted by using following Expression.
+
+`^.*msg_id="`
+
+The resulting msg_id is used by the extractors to lookup msg_name,msg_area,msg_level and msg_desc fields.
+
+With the help od this information it is more easy to read the incoming log messages. Every message provides additional information which could be used for search queries.
+
+The extractor calls a lookup table which uses a data adapter to read the [csv](.LookupTables/fireware_msg_id_lookup_table.csv) file.
+
+This file is a list similar to the [Fireware log catalog](https://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html)
+
+### Prerequisites
+
+1. graylog up and running :)
+    - [Installing Graylog](http://docs.graylog.org/en/latest/pages/installation.html#installing-graylog)
+2. copy [csv](.LookupTables/) files to `/etc/graylog`
+3. configure Fireware to send logs
+
+    System Manager -> Setup -> Logging -> - [x] send syslog mess...
+
+   -IP-Address: <graylog host>
+
+   -Port: 55514
 
 
+### Import Content Pack
 
-![wg-logging1](https://user-images.githubusercontent.com/1869080/39520779-28f27486-4e0c-11e8-9b44-9fa86709bfba.PNG)
+Because you have to import the content in order the content pack consists following files:
 
-![wg-logging2](https://user-images.githubusercontent.com/1869080/39520783-2cb05bce-4e0c-11e8-9a53-792750355e26.PNG)
+1. content_pack_lookuptables.json
+2. content_pack_input.json
 
+please apply the lookuptables first.
 
+*if you run into trouble while importing or updating it may be helpful to remove every component an start fresh.*
+
+### Extractors
+
+### Dashboards
