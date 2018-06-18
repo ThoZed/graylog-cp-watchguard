@@ -17,6 +17,7 @@
 			},
 			"static_fields": {
 				"from_syslog": "true"
+				"device": "watchguard"
 			},
 			"type": "org.graylog2.inputs.syslog.udp.SyslogUDPInput",
 			"global": false,
@@ -32,7 +33,7 @@
 					"converters": [],
 					"condition_type": "NONE",
 					"condition_value": "",
-					"order": 4
+					"order": 5
 				}, {
 					"title": "Fireware msg Area",
 					"type": "LOOKUP_TABLE",
@@ -45,7 +46,7 @@
 					"converters": [],
 					"condition_type": "NONE",
 					"condition_value": "",
-					"order": 3
+					"order": 4
 				}, {
 					"title": "Fireware msg Level",
 					"type": "LOOKUP_TABLE",
@@ -58,7 +59,7 @@
 					"converters": [],
 					"condition_type": "NONE",
 					"condition_value": "",
-					"order": 5
+					"order": 6
 				}, {
 					"title": "Name of firewall policy",
 					"type": "REGEX",
@@ -70,7 +71,7 @@
 					},
 					"converters": [],
 					"condition_type": "REGEX",
-					"condition_value": "^.*\\((.*)-\\d\\d\\)",
+					"condition_value": "^.*tcp|udp|icmp.*\((.*)-\d\d\)",
 					"order": 0
 				}, {
 					"title": "Fireware msg Description",
@@ -84,7 +85,7 @@
 					"converters": [],
 					"condition_type": "NONE",
 					"condition_value": "",
-					"order": 2
+					"order": 3
 				}, {
 					"title": "Message ID",
 					"type": "REGEX",
@@ -97,7 +98,7 @@
 					"converters": [],
 					"condition_type": "REGEX",
 					"condition_value": "^.*: msg_id.*",
-					"order": 1
+					"order": 2
 				}, {
 					"title": "Proxy HTTP INFO 1AFF-0024",
 					"type": "GROK",
@@ -111,7 +112,7 @@
 					"converters": [],
 					"condition_type": "REGEX",
 					"condition_value": "^.*msg_id=\"1AFF-0024\".*",
-					"order": 6
+					"order": 7
 				}, {
 					"title": "Proxy HTTPS INFO 2CFF-0000",
 					"type": "GROK",
@@ -124,7 +125,7 @@
 					"converters": [],
 					"condition_type": "REGEX",
 					"condition_value": "^.*msg_id=\"2CFF-0000\".*",
-					"order": 7
+					"order": 8
 				}, {
 					"title": "geo_dst to coordinates",
 					"type": "LOOKUP_TABLE",
@@ -137,7 +138,7 @@
 					"converters": [],
 					"condition_type": "NONE",
 					"condition_value": "",
-					"order": 11
+					"order": 12
 				}, {
 					"title": "Firewall PacketFilter INFO 3000-0148",
 					"type": "GROK",
@@ -150,7 +151,7 @@
 					"converters": [],
 					"condition_type": "REGEX",
 					"condition_value": "^.*msg_id=\"3000-0148\".*",
-					"order": 8
+					"order": 9
 				}, {
 					"title": "Proxy SMTP INFO 1BFF-0001",
 					"type": "GROK",
@@ -163,7 +164,7 @@
 					"converters": [],
 					"condition_type": "REGEX",
 					"condition_value": "^.*msg_id=\"1BFF-0001\".*",
-					"order": 9
+					"order": 10
 				}, {
 					"title": "Proxy SMTP INFO 1BFF-000F",
 					"type": "GROK",
@@ -176,7 +177,20 @@
 					"converters": [],
 					"condition_type": "REGEX",
 					"condition_value": "^.*msg_id=\"1BFF-000F\".*",
-					"order": 10
+					"order": 11
+				}, {
+					"title": "Name of firewall policy - internal naming",
+					"type": "REGEX",
+					"cursor_strategy": "COPY",
+					"target_field": "policy_name",
+					"source_field": "message",
+					"configuration": {
+						"regex_value": "^.*\\((.*)\\)$"
+					},
+					"converters": [],
+					"condition_type": "REGEX",
+					"condition_value": "^.*tcp|udp|icmp.*\((.*)\)$",
+					"order": 1
 				}
 			]
 		}],
