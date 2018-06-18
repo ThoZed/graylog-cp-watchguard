@@ -9,13 +9,13 @@ This Content Pack enables you to parse the logs which are generated and shipped 
 
 The logs messages include a message ID which could be extracted by using following Expression.
 
-`^.*msg_id="`
+`^.*msg_id=\"(\S\S\S\S-\S\S\S\S)\"`
 
 The resulting msg_id is used by the extractors to lookup msg_name,msg_area,msg_level and msg_desc fields.
 
 With the help od this information it is more easy to read the incoming log messages. Every message provides additional information which could be used for search queries.
 
-The extractor calls a lookup table which uses a data adapter to read the [csv](.LookupTables/fireware_msg_id_lookup_table.csv) file.
+The extractor calls a lookup table which uses a data adapter to read the [csv](LookupTables/fireware_msg_id_lookup_table.csv) file.
 
 This file is a list similar to the [Fireware log catalog](https://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html)
 
@@ -23,7 +23,7 @@ This file is a list similar to the [Fireware log catalog](https://www.watchguard
 
 1. graylog up and running :)
     - [Installing Graylog](http://docs.graylog.org/en/latest/pages/installation.html#installing-graylog)
-2. copy [csv](.LookupTables/) files to `/etc/graylog`
+2. copy [csv](LookupTables/) files to `/etc/graylog`
 3. configure Fireware to send logs
 
     System Manager -> Setup -> Logging -> - [x] send syslog mess...
