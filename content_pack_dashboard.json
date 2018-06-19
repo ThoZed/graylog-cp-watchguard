@@ -1,0 +1,142 @@
+{
+	"name": "Watchguard Content Pack_apply third",
+	"description": "Watchguard logs parsed by Graylog - Streams and Dashboards for integration incident and presentation",
+	"category": "Firewalls",
+	"inputs": [],
+	"streams": [],
+	"outputs": [],
+	"dashboards": [{
+			"title": "Watchguard - presentation",
+			"description": "Collection of informational charts",
+			"dashboard_widgets": [{
+					"description": "Worldmap - Connections",
+					"type": "org.graylog.plugins.map.widget.strategy.MapWidgetStrategy",
+					"cache_time": 10,
+					"configuration": {
+						"timerange": {
+							"type": "relative",
+							"range": 0
+						},
+						"field": "geo_coords",
+						"query": "device:watchguard"
+					},
+					"col": 1,
+					"row": 1,
+					"height": 2,
+					"width": 2
+				}
+			]
+		}, {
+			"title": "Watchguard - incident",
+			"description": "Shows Errors, Blocks ...",
+			"dashboard_widgets": []
+		}, {
+			"title": "Watchguard - integrator",
+			"description": "show metrics , find problems while extracting",
+			"dashboard_widgets": [{
+					"description": "Overview incoming/unextracted - 7d",
+					"type": "STACKED_CHART",
+					"cache_time": 10,
+					"configuration": {
+						"interval": "minute",
+						"timerange": {
+							"type": "relative",
+							"range": 604800
+						},
+						"renderer": "line",
+						"interpolation": "linear",
+						"series": [{
+								"query": "device:watchguard NOT action:Deny NOT action:Allow NOT _exists_:dhcp_message",
+								"field": "source",
+								"statistical_function": "count"
+							}, {
+								"query": "device:watchguard",
+								"field": "source",
+								"statistical_function": "count"
+							}
+						]
+					},
+					"col": 3,
+					"row": 3,
+					"height": 2,
+					"width": 2
+				}, {
+					"description": "Overview incoming/unextracted - 1h",
+					"type": "STACKED_CHART",
+					"cache_time": 10,
+					"configuration": {
+						"interval": "minute",
+						"timerange": {
+							"type": "relative",
+							"range": 3600
+						},
+						"renderer": "line",
+						"interpolation": "linear",
+						"series": [{
+								"query": "device:watchguard NOT action:Deny NOT action:Allow NOT _exists_:dhcp_message",
+								"field": "source",
+								"statistical_function": "count"
+							}, {
+								"query": "device:watchguard",
+								"field": "source",
+								"statistical_function": "count"
+							}
+						]
+					},
+					"col": 3,
+					"row": 1,
+					"height": 2,
+					"width": 2
+				}, {
+					"description": "missing extractor - 1h - feel free to contribute :-)",
+					"type": "QUICKVALUES",
+					"cache_time": 10,
+					"configuration": {
+						"timerange": {
+							"type": "relative",
+							"range": 3600
+						},
+						"field": "msg_id",
+						"query": "device:watchguard NOT action:Deny NOT action:Allow NOT _exists_:dhcp_message",
+						"show_data_table": true,
+						"limit": 5,
+						"show_pie_chart": false,
+						"sort_order": "desc",
+						"stacked_fields": "",
+						"data_table_limit": 50
+					},
+					"col": 2,
+					"row": 1,
+					"height": 4,
+					"width": 1
+				}, {
+					"description": "missing extractor - 7d - feel free to contribute :-)",
+					"type": "QUICKVALUES",
+					"cache_time": 10,
+					"configuration": {
+						"timerange": {
+							"type": "relative",
+							"range": 604800
+						},
+						"field": "msg_id",
+						"query": "device:watchguard NOT action:Deny NOT action:Allow NOT _exists_:dhcp_message",
+						"show_data_table": true,
+						"limit": 5,
+						"show_pie_chart": false,
+						"sort_order": "desc",
+						"stacked_fields": "",
+						"data_table_limit": 50
+					},
+					"col": 1,
+					"row": 1,
+					"height": 4,
+					"width": 1
+				}
+			]
+		}
+	],
+	"grok_patterns": [],
+	"lookup_tables": [],
+	"lookup_caches": [],
+	"lookup_data_adapters": []
+}
