@@ -198,7 +198,7 @@
 					"target_field": "",
 					"source_field": "message",
 					"configuration": {
-						"grok_pattern": "^.*\\) %{NOTSPACE:service}\\[%{NOTSPACE:process}\\]: msg_id=\"1600-0065\" %{DHCPMESSAGE:dhcp_message} to %{IPV4:dhcp_clientip} \\(%{MAC:dhcp_clientmac}\\) via vlan%{NOTSPACE:dhcp_clientvlan}"
+						"grok_pattern": "^.*\\) %{NOTSPACE:service}\\[%{NOTSPACE:process}\\]: msg_id=\"1600-0065\" %{DHCPMESSAGE:dhcp_message} (on|to) %{IPV4:dhcp_clientip}( to %{MAC:dhcp_clientmac} \\(%{NOTSPACE:dhcp_clientname}\\) via| \\(%{COMMONMAC:dhcp_clientmac}\\) via) vlan%{NOTSPACE:dhcp_clientvlan}"
 					},
 					"converters": [],
 					"condition_type": "REGEX",
