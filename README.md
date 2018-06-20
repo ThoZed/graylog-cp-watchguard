@@ -13,7 +13,7 @@ The logs messages include a message ID which could be extracted by using followi
 
 The resulting msg_id is used by the extractors to lookup msg_name,msg_area,msg_level and msg_desc fields.
 
-With the help od this information it is more easy to read the incoming log messages. Every message provides additional information which could be used for search queries.
+With the help of this information it is more easy to read the incoming log messages. Every message provides additional information which could be used for search queries.
 
 The extractor calls a lookup table which uses a data adapter to read the [csv](LookupTables/fireware_msg_id_lookup_table.csv) file.
 
@@ -46,4 +46,9 @@ please apply the lookuptables first.
 
 ### Extractors
 
-### Dashboards
+### Dashboard
+
+with the **_integrator panel_** you are able to see which messages have a missing extractor. The timeline shows incoming and unextracted messages.
+
+<img src="https://user-images.githubusercontent.com/1869080/41641816-ccbeb338-7466-11e8-9243-bedfc2f2542e.PNG" width="600">
+

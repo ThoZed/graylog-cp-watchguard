@@ -6,7 +6,11 @@
 	"streams": [],
 	"outputs": [],
 	"dashboards": [],
-	"grok_patterns": [],
+	"grok_patterns": [{
+			"name": "DHCPMESSAGE",
+			"pattern": "(DHCPDISCOVER|DHCPOFFER|DHCPREQUEST|DHCPACK|DHCPNAK|DHCPRELEASE|DHCPDECLINE)"
+		}
+	],
 	"lookup_tables": [{
 			"title": "Lookup Table Fireware msg ID to Description",
 			"description": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html",

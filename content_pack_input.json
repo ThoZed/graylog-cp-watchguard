@@ -138,7 +138,7 @@
 					"converters": [],
 					"condition_type": "NONE",
 					"condition_value": "",
-					"order": 12
+					"order": 14
 				}, {
 					"title": "Firewall PacketFilter INFO 3000-0148",
 					"type": "GROK",
@@ -191,6 +191,32 @@
 					"condition_type": "REGEX",
 					"condition_value": "^.*tcp|udp|icmp.*\((.*)\)$",
 					"order": 1
+				}, {
+					"title": "Networking DHCP INFO 1600-0065",
+					"type": "GROK",
+					"cursor_strategy": "COPY",
+					"target_field": "",
+					"source_field": "message",
+					"configuration": {
+						"grok_pattern": "^.*\\) %{NOTSPACE:service}\\[%{NOTSPACE:process}\\]: msg_id=\"1600-0065\" %{DHCPMESSAGE:dhcp_message} (on|to) %{IPV4:dhcp_clientip}( to %{MAC:dhcp_clientmac} \\(%{NOTSPACE:dhcp_clientname}\\) via| \\(%{COMMONMAC:dhcp_clientmac}\\) via) vlan%{NOTSPACE:dhcp_clientvlan}"
+					},
+					"converters": [],
+					"condition_type": "REGEX",
+					"condition_value": "^.*msg_id=\"1600-0065\".*",
+					"order": 12
+				}, {
+					"title": "Networking DHCP INFO 1600-0066",
+					"type": "GROK",
+					"cursor_strategy": "COPY",
+					"target_field": "",
+					"source_field": "message",
+					"configuration": {
+						"grok_pattern": "^.*\\) %{NOTSPACE:service}\\[%{NOTSPACE:process}\\]: msg_id=\"1600-0066\" %{DHCPMESSAGE:dhcp_message} (from|(for %{IPV4:dhcp_clientip}|for %{IPV4:dhcp_clientip} \\(%{IPV4:dhcp_serverip}\\)) from) %{MAC:dhcp_clientmac} (via|\\(%{NOTSPACE:dhcp_clientname}\\) via) vlan%{NUMBER:dhcp_clientvlan}"
+					},
+					"converters": [],
+					"condition_type": "REGEX",
+					"condition_value": "^.*msg_id=\"1600-0066\".*",
+					"order": 13
 				}
 			]
 		}],
