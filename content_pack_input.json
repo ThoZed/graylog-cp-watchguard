@@ -16,7 +16,7 @@
 				"store_full_message": false
 			},
 			"static_fields": {
-				"from_syslog": "true"
+				"from_syslog": "true",
 				"device": "watchguard"
 			},
 			"type": "org.graylog2.inputs.syslog.udp.SyslogUDPInput",
@@ -59,20 +59,7 @@
 					"converters": [],
 					"condition_type": "NONE",
 					"condition_value": "",
-					"order": 6
-				}, {
-					"title": "Name of firewall policy",
-					"type": "REGEX",
-					"cursor_strategy": "COPY",
-					"target_field": "policy_name",
-					"source_field": "message",
-					"configuration": {
-						"regex_value": "^.*\\((.*)-\\d\\d\\)"
-					},
-					"converters": [],
-					"condition_type": "REGEX",
-					"condition_value": "^.*tcp|udp|icmp.*\((.*)-\d\d\)",
-					"order": 0
+					"order": 3
 				}, {
 					"title": "Fireware msg Description",
 					"type": "LOOKUP_TABLE",
@@ -85,7 +72,7 @@
 					"converters": [],
 					"condition_type": "NONE",
 					"condition_value": "",
-					"order": 3
+					"order": 6
 				}, {
 					"title": "Message ID",
 					"type": "REGEX",
@@ -98,21 +85,7 @@
 					"converters": [],
 					"condition_type": "REGEX",
 					"condition_value": "^.*: msg_id.*",
-					"order": 2
-				}, {
-					"title": "Proxy HTTP INFO 1AFF-0024",
-					"type": "GROK",
-					"cursor_strategy": "COPY",
-					"target_field": "",
-					"source_field": "message",
-					"configuration": {
-						"grok_pattern": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{NOTSPACE:protocol} %{IPV4:srcip} %{IPV4:dstip} %{BASE10NUM:srcport} %{BASE10NUM:dstport} msg=\"%{DATA:proxy_msg}\" proxy_act=\"%{DATA:proxy_action}\" op=\"%{NOTSPACE:proxy_op}\" dstname=\"%{DATA:proxy_dstname}\" arg=\"%{DATA:proxy_arg}\" sent_bytes=\"%{BASE10NUM:sent_bytes}\" rcvd_bytes=\"%{BASE10NUM:rcvd_bytes}\" elapsed_time=\"%{SECOND:elapsed_time} sec\\(s\\)\" (?:\\s+(geo_dst=\"%{DATA:geo_dst}\")?)",
-						"named_captures_only": false
-					},
-					"converters": [],
-					"condition_type": "REGEX",
-					"condition_value": "^.*msg_id=\"1AFF-0024\".*",
-					"order": 7
+					"order": 0
 				}, {
 					"title": "Proxy HTTPS INFO 2CFF-0000",
 					"type": "GROK",
@@ -125,7 +98,7 @@
 					"converters": [],
 					"condition_type": "REGEX",
 					"condition_value": "^.*msg_id=\"2CFF-0000\".*",
-					"order": 8
+					"order": 10
 				}, {
 					"title": "geo_dst to coordinates",
 					"type": "LOOKUP_TABLE",
@@ -138,7 +111,7 @@
 					"converters": [],
 					"condition_type": "NONE",
 					"condition_value": "",
-					"order": 14
+					"order": 16
 				}, {
 					"title": "Firewall PacketFilter INFO 3000-0148",
 					"type": "GROK",
@@ -151,7 +124,7 @@
 					"converters": [],
 					"condition_type": "REGEX",
 					"condition_value": "^.*msg_id=\"3000-0148\".*",
-					"order": 9
+					"order": 7
 				}, {
 					"title": "Proxy SMTP INFO 1BFF-0001",
 					"type": "GROK",
@@ -164,7 +137,7 @@
 					"converters": [],
 					"condition_type": "REGEX",
 					"condition_value": "^.*msg_id=\"1BFF-0001\".*",
-					"order": 10
+					"order": 12
 				}, {
 					"title": "Proxy SMTP INFO 1BFF-000F",
 					"type": "GROK",
@@ -177,7 +150,20 @@
 					"converters": [],
 					"condition_type": "REGEX",
 					"condition_value": "^.*msg_id=\"1BFF-000F\".*",
-					"order": 11
+					"order": 13
+				}, {
+					"title": "Name of firewall policy",
+					"type": "REGEX",
+					"cursor_strategy": "COPY",
+					"target_field": "policy_name",
+					"source_field": "message",
+					"configuration": {
+						"regex_value": "^.*\\((.*)-\\d\\d\\)"
+					},
+					"converters": [],
+					"condition_type": "REGEX",
+					"condition_value": "^.*tcp|udp|icmp.*\\((.*)-\\d\\d\\)",
+					"order": 1
 				}, {
 					"title": "Name of firewall policy - internal naming",
 					"type": "REGEX",
@@ -189,21 +175,8 @@
 					},
 					"converters": [],
 					"condition_type": "REGEX",
-					"condition_value": "^.*tcp|udp|icmp.*\((.*)\)$",
-					"order": 1
-				}, {
-					"title": "Networking DHCP INFO 1600-0065",
-					"type": "GROK",
-					"cursor_strategy": "COPY",
-					"target_field": "",
-					"source_field": "message",
-					"configuration": {
-						"grok_pattern": "^.*\\) %{NOTSPACE:service}\\[%{NOTSPACE:process}\\]: msg_id=\"1600-0065\" %{DHCPMESSAGE:dhcp_message} (on|to) %{IPV4:dhcp_clientip}( to %{MAC:dhcp_clientmac} \\(%{NOTSPACE:dhcp_clientname}\\) via| \\(%{COMMONMAC:dhcp_clientmac}\\) via) vlan%{NOTSPACE:dhcp_clientvlan}"
-					},
-					"converters": [],
-					"condition_type": "REGEX",
-					"condition_value": "^.*msg_id=\"1600-0065\".*",
-					"order": 12
+					"condition_value": "^.*tcp|udp|icmp.*\\((.*)\\)$",
+					"order": 2
 				}, {
 					"title": "Networking DHCP INFO 1600-0066",
 					"type": "GROK",
@@ -216,10 +189,64 @@
 					"converters": [],
 					"condition_type": "REGEX",
 					"condition_value": "^.*msg_id=\"1600-0066\".*",
-					"order": 13
+					"order": 15
+				}, {
+					"title": "Networking DHCP INFO 1600-0065",
+					"type": "GROK",
+					"cursor_strategy": "COPY",
+					"target_field": "",
+					"source_field": "message",
+					"configuration": {
+						"grok_pattern": "^.*\\) %{NOTSPACE:service}\\[%{NOTSPACE:process}\\]: msg_id=\"1600-0065\" %{DHCPMESSAGE:dhcp_message} (on|to) %{IPV4:dhcp_clientip}( to %{MAC:dhcp_clientmac} \\(%{NOTSPACE:dhcp_clientname}\\) via| \\(%{COMMONMAC:dhcp_clientmac}\\) via) vlan%{NOTSPACE:dhcp_clientvlan}"
+					},
+					"converters": [],
+					"condition_type": "REGEX",
+					"condition_value": "^.*msg_id=\"1600-0065\".*",
+					"order": 14
+				}, {
+					"title": "Proxy HTTP INFO 1AFF-0033",
+					"type": "GROK",
+					"cursor_strategy": "COPY",
+					"target_field": "",
+					"source_field": "message",
+					"configuration": {
+						"grok_pattern": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{NOTSPACE:protocol} %{IPV4:srcip} %{IPV4:dstip} %{BASE10NUM:srcport} %{BASE10NUM:dstport} msg=\"%{DATA:proxy_msg}\" proxy_act=\"%{DATA:proxy_action}\" header=\"%{DATA:proxy_header}\" (?:\\s+(geo_dst=\"%{DATA:geo_dst}\")?)"
+					},
+					"converters": [],
+					"condition_type": "REGEX",
+					"condition_value": "^.*msg_id=\"1AFF-0033\".*",
+					"order": 9
+				}, {
+					"title": "Proxy HTTP INFO 1AFF-0024",
+					"type": "GROK",
+					"cursor_strategy": "COPY",
+					"target_field": "",
+					"source_field": "message",
+					"configuration": {
+						"grok_pattern": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{NOTSPACE:protocol} %{IPV4:srcip} %{IPV4:dstip} %{BASE10NUM:srcport} %{BASE10NUM:dstport} msg=\"%{DATA:proxy_msg}\" proxy_act=\"%{DATA:proxy_action}\" op=\"%{DATA:proxy_op}\" dstname=\"%{DATA:proxy_dstname}\" arg=\"%{DATA:proxy_arg}\" sent_bytes=\"%{BASE10NUM:sent_bytes}\" rcvd_bytes=\"%{BASE10NUM:rcvd_bytes}\" elapsed_time=\"%{SECOND:elapsed_time} sec\\(s\\)\"(?:\\s+(geo_dst=\"%{DATA:geo_dst}\")?)",
+						"named_captures_only": false
+					},
+					"converters": [],
+					"condition_type": "REGEX",
+					"condition_value": "^.*msg_id=\"1AFF-0024\".*",
+					"order": 8
+				}, {
+					"title": "Proxy HTTPS INFO 2CFF-0008",
+					"type": "GROK",
+					"cursor_strategy": "COPY",
+					"target_field": "",
+					"source_field": "message",
+					"configuration": {
+						"grok_pattern": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{NOTSPACE:protocol} %{IPV4:srcip} %{IPV4:dstip} %{BASE10NUM:srcport} %{BASE10NUM:dstport} msg=\"%{DATA:proxy_msg}\"(?:\\s+(geo_dst=\"%{DATA:geo_dst}\")?)"
+					},
+					"converters": [],
+					"condition_type": "REGEX",
+					"condition_value": "^.*msg_id=\"2CFF-0008\".*",
+					"order": 11
 				}
 			]
-		}],
+		}
+	],
 	"streams": [],
 	"outputs": [],
 	"dashboards": [],
