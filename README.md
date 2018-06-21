@@ -39,6 +39,7 @@ Because you have to import the content in order the content pack consists follow
 
 1. content_pack_lookuptables.json
 2. content_pack_input.json
+3. content_pack_dashboard.json
 
 please apply the lookuptables first.
 
