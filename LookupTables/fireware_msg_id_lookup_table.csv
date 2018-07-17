@@ -496,7 +496,7 @@
 "0205-000B","ERROR","VPN / IPSEC","IKE Phase 2 message retry timeout","The IPSec tunnel negotiation failed because an expected response was not received before the message retry timeout."
 "0205-000C","ERROR","VPN / IPSEC","IKE Phase2 message retry timeout because Phase 1 SA expired","The IPSec tunnel negotiation failed because the Phase 1 Security Association (SA) expired."
 "0205-000D","ERROR","VPN / IPSEC","IKE Phase 2 PFS not enabled","The IPSec tunnel negotiation failed because the Perfect Forward Secrecy (PFS) value did not match the Phase 2 configuration."
-"0205-000E","ERROR","VPN / IPSEC","IKE Phase 2 wait timeout","The IPSec tunnel negotiation failed because an expected response was not received before the expected time"'
+"0205-000E","ERROR","VPN / IPSEC","IKE Phase 2 wait timeout","The IPSec tunnel negotiation failed because an expected response was not received before the expected time."
 "0205-000F","WARN","VPN / IPSEC","Rejected Phase 2 negotiation due to incorrect gateway","Rejected Phase 2 negotiation the proposal did not use the preferred IKE gateway endpoint."
 "0200-0001","ERROR","VPN / IPSEC","Default certificate not found","The IPSec tunnel could not be negotiated because the default IPSec certificate is not installed or is not valid."
 "0200-0002","ERROR","VPN / IPSEC","Failed to read certificate","The IPSec tunnel could not be negotiated because the IPSec certificate is not valid."
