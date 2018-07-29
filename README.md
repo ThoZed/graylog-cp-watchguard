@@ -45,11 +45,34 @@ please apply the lookuptables first.
 
 *if you run into trouble while importing or updating it may be helpful to remove every component an start fresh.*
 
-### Extractors
+### Streams
+
+With the help of streams it is possible to narrow your search results to following areas:
+
+- Proxy
+- Management
+- Firewall
+- Networking
+- Cluster
+- Security Services
+- VPN
+- Mobile Security
+- INFO
+- WARNING
+- ERROR
+- DEBUG
+
+The Streams are also setup to allow user access only for certain messages.
 
 ### Dashboard
 
-with the **_integrator panel_** you are able to see which messages have a missing extractor. The timeline shows incoming and unextracted messages.
+With the **_integrator panel_** you are able to see which messages have a missing extractor. The timeline shows incoming and unextracted messages.
 
 <img src="https://user-images.githubusercontent.com/1869080/41641816-ccbeb338-7466-11e8-9243-bedfc2f2542e.PNG" width="600">
 
+With the **_incident panel_** you have a quick oulook about firewall traffic and see counts of the different messages types.
+Its also a good point to start digging the logs, in case of an incident.
+
+<img src="https://user-images.githubusercontent.com/1869080/42139130-4ab43fa4-7d88-11e8-94dd-c03955f58594.PNG" width="600">
+
+### Extractors
