@@ -47,7 +47,7 @@ please apply the lookuptables first.
 
 ### Streams
 
-With the help of streams is possible to narrow your search results to following areas:
+With the help of streams it is possible to narrow your search results to following areas:
 
 - Proxy
 - Management
@@ -57,7 +57,6 @@ With the help of streams is possible to narrow your search results to following 
 - Security Services
 - VPN
 - Mobile Security
--
 - INFO
 - WARNING
 - ERROR
@@ -72,7 +71,7 @@ With the **_integrator panel_** you are able to see which messages have a missin
 <img src="https://user-images.githubusercontent.com/1869080/41641816-ccbeb338-7466-11e8-9243-bedfc2f2542e.PNG" width="600">
 
 With the **_incident panel_** you have a quick oulook about firewall traffic and see counts of the different messages types.
-Its also a good starting point to digging the logs, in case of an incident.
+Its also a good point to start digging the logs, in case of an incident.
 
 <img src="https://user-images.githubusercontent.com/1869080/42139130-4ab43fa4-7d88-11e8-94dd-c03955f58594.PNG" width="600">
 
