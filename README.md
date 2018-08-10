@@ -1,7 +1,7 @@
+![graylog-cp-watchguard_2](https://user-images.githubusercontent.com/1869080/43983109-2e9316ca-9cf9-11e8-86e8-2f7a818f03dd.png)
+
+
 # Graylog Content Pack for Watchguard
-
-
-![graylog-cp-watchguard](https://user-images.githubusercontent.com/1869080/39520776-24204032-4e0c-11e8-8f13-65aae3a3fbc8.png)
 
 This Content Pack enables you to parse the logs which are generated and shipped by Watchguard Fireware. The Logs are parsed to enable dashboards, streams and structured search queries.  
 
