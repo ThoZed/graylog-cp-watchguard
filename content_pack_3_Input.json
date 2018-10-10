@@ -1,5 +1,5 @@
 {
-	"name": "Watchguard Content Pack_apply second",
+	"name": "Watchguard Content Pack_apply third",
 	"description": "Watchguard logs parsed by Graylog - Input and Extractors",
 	"category": "Firewall",
 	"inputs": [{
