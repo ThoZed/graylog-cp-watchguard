@@ -1,7 +1,7 @@
 {
-	"name": "Watchguard Content Pack_apply third",
+	"name": "Watchguard Content Pack_apply fourth",
 	"description": "Watchguard logs parsed by Graylog - Streams and Dashboards for integration incident and presentation",
-	"category": "Firewalls",
+	"category": "Firewall",
 	"inputs": [],
 	"streams": [{
 			"id": "5b393666954f3f031cd92f3c",
