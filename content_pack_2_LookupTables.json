@@ -1,62 +1,687 @@
 {
-	"name": "Watchguard Content Pack_apply second",
-	"description": "Watchguard logs parsed by Graylog - Lookup Table",
-	"category": "Firewall",
-	"inputs": [],
-	"streams": [],
-	"outputs": [],
-	"dashboards": [],
-	"grok_patterns": [],
-	"lookup_tables": [{
-			"title": "Lookup Table Fireware msg ID to Description",
-			"description": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html",
-			"name": "lookup-table-fireware-msg-id-to-description",
-			"cache_name": "fireware-msg_id-cache",
-			"data_adapter_name": "fireware-msg-id-to-description-lookup",
-			"default_single_value": "",
-			"default_single_value_type": "NULL",
-			"default_multi_value": "",
-			"default_multi_value_type": "NULL"
-		}, {
-			"title": "Lookup Table Fireware msg ID to Level",
-			"description": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html",
-			"name": "lookup-table-fireware-msg-id-to-level",
-			"cache_name": "fireware-msg_id-cache",
-			"data_adapter_name": "fireware-msg-id-to-level-lookup",
-			"default_single_value": "",
-			"default_single_value_type": "NULL",
-			"default_multi_value": "",
-			"default_multi_value_type": "NULL"
-		}, {
-			"title": "Countrycode3_to_latlong",
-			"description": "Use Lookuptable to convert the UN Code to latitude and longitude",
-			"name": "Countrycode3_to_latlong",
-			"cache_name": "country-code-table",
-			"data_adapter_name": "countrycode-3dig-to-2dig",
-			"default_single_value": "",
-			"default_single_value_type": "NULL",
-			"default_multi_value": "",
-			"default_multi_value_type": "NULL"
-		}, {
-			"title": "Lookup Table Fireware msg ID to Area",
-			"description": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html",
-			"name": "lookup-table-fireware-msg-id-to-area",
-			"cache_name": "fireware-msg_id-cache",
-			"data_adapter_name": "fireware-msg-id-to-area-lookup",
-			"default_single_value": "",
-			"default_single_value_type": "NULL",
-			"default_multi_value": "",
-			"default_multi_value_type": "NULL"
-		}, {
-			"title": "Lookup Table Fireware msg ID to Name",
-			"description": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html",
-			"name": "lookup-table-fireware-msg-id-to-name",
-			"cache_name": "fireware-msg_id-cache",
-			"data_adapter_name": "fireware-msg-id-to-name-lookup",
-			"default_single_value": "",
-			"default_single_value_type": "NULL",
-			"default_multi_value": "",
-			"default_multi_value_type": "NULL"
-		}
-	]
+  "v": "0",
+  "id": "480665b7-166a-4c00-9c92-941b157684de",
+  "rev": 1,
+  "name": "Watchguard Content Pack_apply second",
+  "summary": "[auto-generated]",
+  "description": "Watchguard logs parsed by Graylog - Lookup Table",
+  "vendor": "[auto-generated]",
+  "url": "https://www.graylog.org/",
+  "parameters": [],
+  "entities": [
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_adapter",
+        "version": "1"
+      },
+      "id": "05d75f27-f0d2-413c-9b5c-655101afc3e6",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "fireware-msg-id-to-area-lookup"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Fireware msg ID to Area Lookup"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "csvfile"
+          },
+          "path": {
+            "@type": "string",
+            "@value": "/etc/graylog/fireware_msg_id_lookup_table.csv"
+          },
+          "separator": {
+            "@type": "string",
+            "@value": ","
+          },
+          "quotechar": {
+            "@type": "string",
+            "@value": "\""
+          },
+          "key_column": {
+            "@type": "string",
+            "@value": "msg_id"
+          },
+          "value_column": {
+            "@type": "string",
+            "@value": "msg_area"
+          },
+          "check_interval": {
+            "@type": "long",
+            "@value": 18
+          },
+          "case_insensitive_lookup": {
+            "@type": "boolean",
+            "@value": false
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_adapter",
+        "version": "1"
+      },
+      "id": "ff839c24-4a61-42e3-82c7-97f691414926",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "fireware-msg-id-to-level-lookup"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Fireware msg ID to Level Lookup"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "csvfile"
+          },
+          "path": {
+            "@type": "string",
+            "@value": "/etc/graylog/fireware_msg_id_lookup_table.csv"
+          },
+          "separator": {
+            "@type": "string",
+            "@value": ","
+          },
+          "quotechar": {
+            "@type": "string",
+            "@value": "\""
+          },
+          "key_column": {
+            "@type": "string",
+            "@value": "msg_id"
+          },
+          "value_column": {
+            "@type": "string",
+            "@value": "msg_level"
+          },
+          "check_interval": {
+            "@type": "long",
+            "@value": 180
+          },
+          "case_insensitive_lookup": {
+            "@type": "boolean",
+            "@value": false
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_adapter",
+        "version": "1"
+      },
+      "id": "5c6c801a-198d-415c-b75c-1ba7a58be31f",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "fireware-msg-id-to-description-lookup"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Fireware msg ID to Description Lookup"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "csvfile"
+          },
+          "path": {
+            "@type": "string",
+            "@value": "/etc/graylog/fireware_msg_id_lookup_table.csv"
+          },
+          "separator": {
+            "@type": "string",
+            "@value": ","
+          },
+          "quotechar": {
+            "@type": "string",
+            "@value": "\""
+          },
+          "key_column": {
+            "@type": "string",
+            "@value": "msg_id"
+          },
+          "value_column": {
+            "@type": "string",
+            "@value": "msg_desc"
+          },
+          "check_interval": {
+            "@type": "long",
+            "@value": 180
+          },
+          "case_insensitive_lookup": {
+            "@type": "boolean",
+            "@value": false
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_adapter",
+        "version": "1"
+      },
+      "id": "f45ff819-6eda-4532-9530-5b095db3f0b8",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "countrycode-3dig-to-latlong"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Fireware countrycode 3dig to latlong"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup the countrycode table to convert 3 digit country code(UN) to 2digit country code(ISO)"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "csvfile"
+          },
+          "path": {
+            "@type": "string",
+            "@value": "/etc/graylog/countrycode_lookup_table.csv"
+          },
+          "separator": {
+            "@type": "string",
+            "@value": ";"
+          },
+          "quotechar": {
+            "@type": "string",
+            "@value": "'"
+          },
+          "key_column": {
+            "@type": "string",
+            "@value": "ccode_un_a3"
+          },
+          "value_column": {
+            "@type": "string",
+            "@value": "ccode_latlong"
+          },
+          "check_interval": {
+            "@type": "long",
+            "@value": 600
+          },
+          "case_insensitive_lookup": {
+            "@type": "boolean",
+            "@value": false
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_adapter",
+        "version": "1"
+      },
+      "id": "fb441e3b-c339-48e4-be39-634d542b25c3",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "fireware-msg-id-to-name-lookup"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Fireware msg ID to Name Lookup"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "csvfile"
+          },
+          "path": {
+            "@type": "string",
+            "@value": "/etc/graylog/fireware_msg_id_lookup_table.csv"
+          },
+          "separator": {
+            "@type": "string",
+            "@value": ","
+          },
+          "quotechar": {
+            "@type": "string",
+            "@value": "\""
+          },
+          "key_column": {
+            "@type": "string",
+            "@value": "msg_id"
+          },
+          "value_column": {
+            "@type": "string",
+            "@value": "msg_name"
+          },
+          "check_interval": {
+            "@type": "long",
+            "@value": 180
+          },
+          "case_insensitive_lookup": {
+            "@type": "boolean",
+            "@value": false
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_cache",
+        "version": "1"
+      },
+      "id": "3314e8e8-37d6-4285-9ba1-c38de61ac0e4",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "fireware-msg_id-cache"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Fireware msg_ID Cache"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Cache for csv Lookup of Fireware msg_id's"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "guava_cache"
+          },
+          "max_size": {
+            "@type": "integer",
+            "@value": 50
+          },
+          "expire_after_access": {
+            "@type": "long",
+            "@value": 60
+          },
+          "expire_after_access_unit": {
+            "@type": "string",
+            "@value": "SECONDS"
+          },
+          "expire_after_write": {
+            "@type": "long",
+            "@value": 0
+          },
+          "expire_after_write_unit": {
+            "@type": "string",
+            "@value": "SECONDS"
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_cache",
+        "version": "1"
+      },
+      "id": "1223059a-061a-48a9-b303-e3a7baf7a10a",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "country-code-table"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Country Code Table"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Table of country codes"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "guava_cache"
+          },
+          "max_size": {
+            "@type": "integer",
+            "@value": 1000
+          },
+          "expire_after_access": {
+            "@type": "long",
+            "@value": 600
+          },
+          "expire_after_access_unit": {
+            "@type": "string",
+            "@value": "SECONDS"
+          },
+          "expire_after_write": {
+            "@type": "long",
+            "@value": 0
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_table",
+        "version": "1"
+      },
+      "id": "49f6616c-1c70-4ad0-9ab1-e2941310de05",
+      "data": {
+        "default_single_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "cache_name": {
+          "@type": "string",
+          "@value": "3314e8e8-37d6-4285-9ba1-c38de61ac0e4"
+        },
+        "name": {
+          "@type": "string",
+          "@value": "lookup-table-fireware-msg-id-to-area"
+        },
+        "default_multi_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "default_multi_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "data_adapter_name": {
+          "@type": "string",
+          "@value": "05d75f27-f0d2-413c-9b5c-655101afc3e6"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Lookup Table Fireware msg ID to Area"
+        },
+        "default_single_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_table",
+        "version": "1"
+      },
+      "id": "bbf5b388-784f-4224-9837-0ff37835a3bf",
+      "data": {
+        "default_single_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "cache_name": {
+          "@type": "string",
+          "@value": "3314e8e8-37d6-4285-9ba1-c38de61ac0e4"
+        },
+        "name": {
+          "@type": "string",
+          "@value": "looklookup-table-fireware-msg-id-to-level"
+        },
+        "default_multi_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "default_multi_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "data_adapter_name": {
+          "@type": "string",
+          "@value": "ff839c24-4a61-42e3-82c7-97f691414926"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Lookup Table Fireware msg ID to Level"
+        },
+        "default_single_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_table",
+        "version": "1"
+      },
+      "id": "f3f32146-1be9-44db-8aad-5b6761d30f89",
+      "data": {
+        "default_single_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "cache_name": {
+          "@type": "string",
+          "@value": "3314e8e8-37d6-4285-9ba1-c38de61ac0e4"
+        },
+        "name": {
+          "@type": "string",
+          "@value": "lookup-table-fireware-msg-id-to-description"
+        },
+        "default_multi_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "default_multi_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "data_adapter_name": {
+          "@type": "string",
+          "@value": "5c6c801a-198d-415c-b75c-1ba7a58be31f"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Lookup Table Fireware msg ID to Description"
+        },
+        "default_single_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_table",
+        "version": "1"
+      },
+      "id": "f92cb0e0-4206-41f9-8753-92fcfde7e547",
+      "data": {
+        "default_single_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "cache_name": {
+          "@type": "string",
+          "@value": "1223059a-061a-48a9-b303-e3a7baf7a10a"
+        },
+        "name": {
+          "@type": "string",
+          "@value": "Countrycode3_to_latlong"
+        },
+        "default_multi_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "default_multi_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "data_adapter_name": {
+          "@type": "string",
+          "@value": "f45ff819-6eda-4532-9530-5b095db3f0b8"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Countrycode3_to_latlong"
+        },
+        "default_single_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Use Lookuptable to convert the UN Code to latitude and longitude"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_table",
+        "version": "1"
+      },
+      "id": "e4484e92-ea8f-4b87-9724-b0992167093f",
+      "data": {
+        "default_single_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "cache_name": {
+          "@type": "string",
+          "@value": "3314e8e8-37d6-4285-9ba1-c38de61ac0e4"
+        },
+        "name": {
+          "@type": "string",
+          "@value": "lookup-table-fireware-msg-id-to-name"
+        },
+        "default_multi_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "default_multi_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "data_adapter_name": {
+          "@type": "string",
+          "@value": "fb441e3b-c339-48e4-be39-634d542b25c3"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Lookup Table Fireware msg ID to Name"
+        },
+        "default_single_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    }
+  ]
 }
