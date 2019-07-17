@@ -1,0 +1,4699 @@
+{
+  "v": "1",
+  "id": "eeb7ca6d-f27f-43cf-bb3e-511dac03afe9",
+  "rev": 2,
+  "name": "graylog-cp-watchguard",
+  "summary": "Content Pack to process and transform Watchguard logs",
+  "description": "This Content Pack enables you to parse the logs which are generated and shipped by Watchguard Fireware. The logs are parsed to enable dashboards, streams and structured search queries.",
+  "vendor": "Watchguard",
+  "url": "https://github.com/ThoZed/graylog-cp-watchguard",
+  "parameters": [
+    {
+      "name": "input_port",
+      "title": "Input port",
+      "description": "Port for syslog input",
+      "type": "integer",
+      "default_value": 55514
+    },
+    {
+      "name": "location_countrycode_lookup_table",
+      "title": "Location countrycode_lookup_table.csv",
+      "description": "Absolute path to lookup table location",
+      "type": "string",
+      "default_value": "/etc/graylog/countrycode_lookup_table.csv"
+    },
+    {
+      "name": "location_fireware_msg_id_lookup_table",
+      "title": "Location fireware_msg_id_lookup_table.csv",
+      "description": "Absolute path to lookup table location",
+      "type": "string",
+      "default_value": "/etc/graylog/fireware_msg_id_lookup_table.csv"
+    }
+  ],
+  "entities": [
+    {
+      "v": "1",
+      "type": {
+        "name": "dashboard",
+        "version": "1"
+      },
+      "id": "80d97653-e61e-4145-8453-85fede99a90f",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "Watchguard - integrator"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "show metrics , find problems while extracting"
+        },
+        "widgets": [
+          {
+            "id": {
+              "@type": "string",
+              "@value": "f60b5255-bb7f-4ca1-a228-7cf9fc64b4eb"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "missing extractor - 7d - feel free to contribute :-)"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "QUICKVALUES"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 10
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 604800
+              }
+            },
+            "configuration": {
+              "query": {
+                "@type": "string",
+                "@value": "device:watchguard NOT action:Deny NOT action:Allow NOT _exists_:dhcp_message"
+              },
+              "show_pie_chart": {
+                "@type": "boolean",
+                "@value": false
+              },
+              "sort_order": {
+                "@type": "string",
+                "@value": "desc"
+              },
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 604800
+                }
+              },
+              "stacked_fields": {
+                "@type": "string",
+                "@value": ""
+              },
+              "data_table_limit": {
+                "@type": "integer",
+                "@value": 50
+              },
+              "field": {
+                "@type": "string",
+                "@value": "msg_id"
+              },
+              "show_data_table": {
+                "@type": "boolean",
+                "@value": true
+              },
+              "limit": {
+                "@type": "integer",
+                "@value": 5
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 6
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 1
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 1
+              }
+            }
+          },
+          {
+            "id": {
+              "@type": "string",
+              "@value": "edb43469-c6ea-498c-8183-bb52073076fb"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "Overview incoming/unextracted - 1h"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "STACKED_CHART"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 10
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 3600
+              }
+            },
+            "configuration": {
+              "interval": {
+                "@type": "string",
+                "@value": "minute"
+              },
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 3600
+                }
+              },
+              "renderer": {
+                "@type": "string",
+                "@value": "line"
+              },
+              "interpolation": {
+                "@type": "string",
+                "@value": "linear"
+              },
+              "series": []
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 4
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 4
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 7
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 1
+              }
+            }
+          },
+          {
+            "id": {
+              "@type": "string",
+              "@value": "a905ec8e-d8c5-4d83-8872-5bda4d1c4ccc"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "missing extractor - 1h - feel free to contribute :-)"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "QUICKVALUES"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 10
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 3600
+              }
+            },
+            "configuration": {
+              "query": {
+                "@type": "string",
+                "@value": "device:watchguard NOT action:Deny NOT action:Allow NOT _exists_:dhcp_message"
+              },
+              "show_pie_chart": {
+                "@type": "boolean",
+                "@value": false
+              },
+              "sort_order": {
+                "@type": "string",
+                "@value": "desc"
+              },
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 3600
+                }
+              },
+              "stacked_fields": {
+                "@type": "string",
+                "@value": ""
+              },
+              "data_table_limit": {
+                "@type": "integer",
+                "@value": 50
+              },
+              "field": {
+                "@type": "string",
+                "@value": "msg_id"
+              },
+              "show_data_table": {
+                "@type": "boolean",
+                "@value": true
+              },
+              "limit": {
+                "@type": "integer",
+                "@value": 5
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 6
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 1
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 3
+              }
+            }
+          },
+          {
+            "id": {
+              "@type": "string",
+              "@value": "91a9ff33-ebe7-4f03-b582-34bf7a5adc5b"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "Overview incoming/unextracted - 7d"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "STACKED_CHART"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 10
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 604800
+              }
+            },
+            "configuration": {
+              "interval": {
+                "@type": "string",
+                "@value": "minute"
+              },
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 604800
+                }
+              },
+              "renderer": {
+                "@type": "string",
+                "@value": "line"
+              },
+              "interpolation": {
+                "@type": "string",
+                "@value": "linear"
+              },
+              "series": []
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 4
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 4
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 11
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 1
+              }
+            }
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "dashboard",
+        "version": "1"
+      },
+      "id": "640807a9-924e-4a0b-aa49-1df7f59b5bbd",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "Watchguard - incident"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Overview of metrics amout of each section and level"
+        },
+        "widgets": [
+          {
+            "id": {
+              "@type": "string",
+              "@value": "af05f020-d056-44de-a2db-047cf053bcf0"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "WARNING last 7 days"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "STREAM_SEARCH_RESULT_COUNT"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 10
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 604800
+              }
+            },
+            "configuration": {
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 604800
+                }
+              },
+              "lower_is_better": {
+                "@type": "boolean",
+                "@value": true
+              },
+              "stream_id": {
+                "@type": "string",
+                "@value": "33e44fa7-750e-46d5-99af-b9b4298244d6"
+              },
+              "trend": {
+                "@type": "boolean",
+                "@value": true
+              },
+              "query": {
+                "@type": "string",
+                "@value": ""
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 1
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 7
+              }
+            }
+          },
+          {
+            "id": {
+              "@type": "string",
+              "@value": "bb4fa050-fc5a-411f-bce4-4421d3f68c60"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "Security Services Packets 24h"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "SEARCH_RESULT_CHART"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 10
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 86400
+              }
+            },
+            "configuration": {
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 86400
+                }
+              },
+              "interval": {
+                "@type": "string",
+                "@value": "minute"
+              },
+              "stream_id": {
+                "@type": "string",
+                "@value": "f50b3b19-7650-45e7-b5c9-6226fe98c5a4"
+              },
+              "query": {
+                "@type": "string",
+                "@value": ""
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 7
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 5
+              }
+            }
+          },
+          {
+            "id": {
+              "@type": "string",
+              "@value": "6ed50d74-c99a-4c47-a65f-fe54da3f6f3f"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "VPN Packets last 24h"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "SEARCH_RESULT_CHART"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 10
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 86400
+              }
+            },
+            "configuration": {
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 86400
+                }
+              },
+              "interval": {
+                "@type": "string",
+                "@value": "minute"
+              },
+              "stream_id": {
+                "@type": "string",
+                "@value": "9d015631-e6dd-4f55-b1d9-6ea1da2d502e"
+              },
+              "query": {
+                "@type": "string",
+                "@value": ""
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 3
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 5
+              }
+            }
+          },
+          {
+            "id": {
+              "@type": "string",
+              "@value": "c675c3b5-4f60-4956-8d65-18aaa0af796e"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "INFO last 7 days"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "STREAM_SEARCH_RESULT_COUNT"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 600
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 604800
+              }
+            },
+            "configuration": {
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 604800
+                }
+              },
+              "lower_is_better": {
+                "@type": "boolean",
+                "@value": false
+              },
+              "stream_id": {
+                "@type": "string",
+                "@value": "572153e9-5561-4daf-b5de-f383e57834cb"
+              },
+              "trend": {
+                "@type": "boolean",
+                "@value": false
+              },
+              "query": {
+                "@type": "string",
+                "@value": ""
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 1
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 1
+              }
+            }
+          },
+          {
+            "id": {
+              "@type": "string",
+              "@value": "739e06ea-1dba-4284-b414-a9f49a2df8db"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "Management Packets last 24h"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "SEARCH_RESULT_CHART"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 10
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 86400
+              }
+            },
+            "configuration": {
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 86400
+                }
+              },
+              "interval": {
+                "@type": "string",
+                "@value": "minute"
+              },
+              "stream_id": {
+                "@type": "string",
+                "@value": "d85222c0-ef31-46ce-8ad4-597c3383773f"
+              },
+              "query": {
+                "@type": "string",
+                "@value": ""
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 7
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 3
+              }
+            }
+          },
+          {
+            "id": {
+              "@type": "string",
+              "@value": "7a076dee-ba18-4f61-9f2f-0293ac1f0bab"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "Networking Packets last 24h"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "SEARCH_RESULT_CHART"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 10
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 86400
+              }
+            },
+            "configuration": {
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 86400
+                }
+              },
+              "interval": {
+                "@type": "string",
+                "@value": "minute"
+              },
+              "stream_id": {
+                "@type": "string",
+                "@value": "ff5e7118-3e03-463b-abd3-4d46707447b8"
+              },
+              "query": {
+                "@type": "string",
+                "@value": ""
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 3
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 7
+              }
+            }
+          },
+          {
+            "id": {
+              "@type": "string",
+              "@value": "5fac1877-8593-4ee6-9a62-7b8c279ecfe9"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "Overall messages 14 days"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "SEARCH_RESULT_CHART"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 600
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 1209600
+              }
+            },
+            "configuration": {
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 1209600
+                }
+              },
+              "interval": {
+                "@type": "string",
+                "@value": "minute"
+              },
+              "stream_id": {
+                "@type": "string",
+                "@value": "555f3443-5b5a-40b7-b834-3083f0bf46e8"
+              },
+              "query": {
+                "@type": "string",
+                "@value": ""
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 3
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 1
+              }
+            }
+          },
+          {
+            "id": {
+              "@type": "string",
+              "@value": "459aea49-baab-4b51-b059-8f538c726562"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "Mobile Security last 24h"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "SEARCH_RESULT_CHART"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 10
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 86400
+              }
+            },
+            "configuration": {
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 86400
+                }
+              },
+              "interval": {
+                "@type": "string",
+                "@value": "minute"
+              },
+              "stream_id": {
+                "@type": "string",
+                "@value": "f3a9cb00-9471-47a0-9c87-321d95f28140"
+              },
+              "query": {
+                "@type": "string",
+                "@value": ""
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 5
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 5
+              }
+            }
+          },
+          {
+            "id": {
+              "@type": "string",
+              "@value": "77f2747b-8458-4f54-813d-5174f93800d8"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "DEBUG last 7 days"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "STREAM_SEARCH_RESULT_COUNT"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 10
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 604800
+              }
+            },
+            "configuration": {
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 604800
+                }
+              },
+              "lower_is_better": {
+                "@type": "boolean",
+                "@value": true
+              },
+              "stream_id": {
+                "@type": "string",
+                "@value": "d05d7527-42ab-4f9d-ab89-45f32536837a"
+              },
+              "trend": {
+                "@type": "boolean",
+                "@value": true
+              },
+              "query": {
+                "@type": "string",
+                "@value": ""
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 1
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 3
+              }
+            }
+          },
+          {
+            "id": {
+              "@type": "string",
+              "@value": "8e736906-425f-4316-b152-5a6f712159f4"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "ERROR last 7 days"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "STREAM_SEARCH_RESULT_COUNT"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 10
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 604800
+              }
+            },
+            "configuration": {
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 604800
+                }
+              },
+              "lower_is_better": {
+                "@type": "boolean",
+                "@value": true
+              },
+              "stream_id": {
+                "@type": "string",
+                "@value": "69105433-2605-4ce1-9715-817393195f93"
+              },
+              "trend": {
+                "@type": "boolean",
+                "@value": true
+              },
+              "query": {
+                "@type": "string",
+                "@value": ""
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 1
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 5
+              }
+            }
+          },
+          {
+            "id": {
+              "@type": "string",
+              "@value": "ce2059d8-dd32-420e-a55a-a58cdce5d9bc"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "Proxy Packets last 24h"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "SEARCH_RESULT_CHART"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 10
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 86400
+              }
+            },
+            "configuration": {
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 86400
+                }
+              },
+              "interval": {
+                "@type": "string",
+                "@value": "minute"
+              },
+              "stream_id": {
+                "@type": "string",
+                "@value": "efcc80d5-9ce9-44f3-bbc4-1cbbd4880c80"
+              },
+              "query": {
+                "@type": "string",
+                "@value": ""
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 7
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 1
+              }
+            }
+          },
+          {
+            "id": {
+              "@type": "string",
+              "@value": "28d7755b-a1ad-4472-9636-addd0a0c5b9d"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "Firewall Packets last 24h"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "SEARCH_RESULT_CHART"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 10
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 86400
+              }
+            },
+            "configuration": {
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 86400
+                }
+              },
+              "interval": {
+                "@type": "string",
+                "@value": "minute"
+              },
+              "stream_id": {
+                "@type": "string",
+                "@value": "61e8af72-5825-465b-8972-5700b8f7bea4"
+              },
+              "query": {
+                "@type": "string",
+                "@value": ""
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 3
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 3
+              }
+            }
+          },
+          {
+            "id": {
+              "@type": "string",
+              "@value": "02bd8efc-6772-46be-a016-21babcb8285f"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "Overall messages 24h"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "SEARCH_RESULT_CHART"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 10
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 86400
+              }
+            },
+            "configuration": {
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 86400
+                }
+              },
+              "interval": {
+                "@type": "string",
+                "@value": "minute"
+              },
+              "stream_id": {
+                "@type": "string",
+                "@value": "555f3443-5b5a-40b7-b834-3083f0bf46e8"
+              },
+              "query": {
+                "@type": "string",
+                "@value": ""
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 4
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 5
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 1
+              }
+            }
+          },
+          {
+            "id": {
+              "@type": "string",
+              "@value": "11105423-f9ce-4dc2-bfb2-7bb01fbbc540"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "Cluster Packets last 24h"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "SEARCH_RESULT_CHART"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 10
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 86400
+              }
+            },
+            "configuration": {
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 86400
+                }
+              },
+              "interval": {
+                "@type": "string",
+                "@value": "minute"
+              },
+              "stream_id": {
+                "@type": "string",
+                "@value": "d2bc6507-82ba-4c3c-accd-ad88bffa742f"
+              },
+              "query": {
+                "@type": "string",
+                "@value": ""
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 5
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 7
+              }
+            }
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "dashboard",
+        "version": "1"
+      },
+      "id": "aa6d2fd4-bdaf-4d7f-bb80-75b2f88d5830",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "Watchguard - presentation"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Collection of informational charts"
+        },
+        "widgets": [
+          {
+            "id": {
+              "@type": "string",
+              "@value": "eb09002c-62a9-436a-933f-7933aa7f36d4"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "Worldmap - Connections"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "org.graylog.plugins.map.widget.strategy.MapWidgetStrategy"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 10
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 300
+              }
+            },
+            "configuration": {
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 300
+                }
+              },
+              "field": {
+                "@type": "string",
+                "@value": "geo_coords"
+              },
+              "query": {
+                "@type": "string",
+                "@value": "device:watchguard"
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 4
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 4
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 4
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 1
+              }
+            }
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "50a1c8ad-107c-4ea1-a62f-32efddbd2c65",
+      "data": {
+        "name": "DHCPMESSAGE",
+        "pattern": "(DHCPDISCOVER|DHCPOFFER|DHCPREQUEST|DHCPACK|DHCPNAK|DHCPRELEASE|DHCPDECLINE)"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "4a01e372-8ffa-437d-afb1-f382370acf92",
+      "data": {
+        "name": "DHCPMESSAGE",
+        "pattern": "(DHCPDISCOVER|DHCPOFFER|DHCPREQUEST|DHCPACK|DHCPNAK|DHCPRELEASE|DHCPDECLINE)"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "fb9d67c9-6d7b-48eb-bb44-68c836896081",
+      "data": {
+        "name": "NUMBER",
+        "pattern": "(?:%{BASE10NUM})"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "3d853e0c-9f25-4f7e-aa76-a1f857f95d4c",
+      "data": {
+        "name": "NOTSPACE",
+        "pattern": "\\S+"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "f80f91ca-e773-40af-8a44-dc16c82069c6",
+      "data": {
+        "name": "IPV4",
+        "pattern": "(?<![0-9])(?:(?:[0-1]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])[.](?:[0-1]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])[.](?:[0-1]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])[.](?:[0-1]?[0-9]{1,2}|2[0-4][0-9]|25[0-5]))(?![0-9])"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "d93382b9-9e6e-4463-948b-e7aff7f52ad3",
+      "data": {
+        "name": "MAC",
+        "pattern": "(?:%{CISCOMAC}|%{WINDOWSMAC}|%{COMMONMAC})"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "758b5043-2c50-4341-9eb5-0b60ee0f2e8e",
+      "data": {
+        "name": "COMMONMAC",
+        "pattern": "(?:(?:[A-Fa-f0-9]{2}:){5}[A-Fa-f0-9]{2})"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "71c9f5d5-e37f-460c-9896-c0f4e51858b3",
+      "data": {
+        "name": "DATA",
+        "pattern": ".*?"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "503878e2-7ab1-46ab-aad4-8aab55c98ab6",
+      "data": {
+        "name": "BASE10NUM",
+        "pattern": "(?<![0-9.+-])(?>[+-]?(?:(?:[0-9]+(?:\\.[0-9]+)?)|(?:\\.[0-9]+)))"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "5c9dbfa0-120c-4106-ae31-df3b10b4c0d1",
+      "data": {
+        "name": "SECOND",
+        "pattern": "(?:(?:[0-5]?[0-9]|60)(?:[:.,][0-9]+)?)"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "d99a0e3a-7987-425d-80d5-a83d4f89598b",
+      "data": {
+        "name": "WINDOWSMAC",
+        "pattern": "(?:(?:[A-Fa-f0-9]{2}-){5}[A-Fa-f0-9]{2})"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "91e622aa-cb5f-403e-827f-b49f21117f34",
+      "data": {
+        "name": "CISCOMAC",
+        "pattern": "(?:(?:[A-Fa-f0-9]{4}\\.){2}[A-Fa-f0-9]{4})"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "input",
+        "version": "1"
+      },
+      "id": "9d6d5720-0198-46b6-9847-a690cd74f536",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "watchguard-syslog-udp"
+        },
+        "configuration": {
+          "expand_structured_data": {
+            "@type": "boolean",
+            "@value": false
+          },
+          "recv_buffer_size": {
+            "@type": "integer",
+            "@value": 262144
+          },
+          "port": {
+            "@type": "integer",
+            "@value": 55514
+          },
+          "number_worker_threads": {
+            "@type": "integer",
+            "@value": 1
+          },
+          "force_rdns": {
+            "@type": "boolean",
+            "@value": false
+          },
+          "allow_override_date": {
+            "@type": "boolean",
+            "@value": true
+          },
+          "bind_address": {
+            "@type": "string",
+            "@value": "0.0.0.0"
+          },
+          "store_full_message": {
+            "@type": "boolean",
+            "@value": true
+          }
+        },
+        "static_fields": {
+          "from_syslog": {
+            "@type": "string",
+            "@value": "true"
+          },
+          "device": {
+            "@type": "string",
+            "@value": "watchguard"
+          }
+        },
+        "type": {
+          "@type": "string",
+          "@value": "org.graylog2.inputs.syslog.udp.SyslogUDPInput"
+        },
+        "global": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "extractors": [
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "msg_desc"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": ""
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 6
+            },
+            "converters": [],
+            "configuration": {
+              "lookup_table_name": {
+                "@type": "string",
+                "@value": "lookup-table-fireware-msg-id-to-description"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "msg_id"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Fireware msg Description"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "LOOKUP_TABLE"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "NONE"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "msg_id"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*: msg_id.*"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "^.*msg_id=\\\"(\\S\\S\\S\\S-\\S\\S\\S\\S)\\\""
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Message ID"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "msg_name"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": ""
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 5
+            },
+            "converters": [],
+            "configuration": {
+              "lookup_table_name": {
+                "@type": "string",
+                "@value": "lookup-table-fireware-msg-id-to-name"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "msg_id"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Fireware msg Name"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "LOOKUP_TABLE"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "NONE"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "msg_area"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": ""
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 4
+            },
+            "converters": [],
+            "configuration": {
+              "lookup_table_name": {
+                "@type": "string",
+                "@value": "lookup-table-fireware-msg-id-to-area"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "msg_id"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Fireware msg Area"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "LOOKUP_TABLE"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "NONE"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "msg_level"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": ""
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 3
+            },
+            "converters": [],
+            "configuration": {
+              "lookup_table_name": {
+                "@type": "string",
+                "@value": "lookup-table-fireware-msg-id-to-level"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "msg_id"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Fireware msg Level"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "LOOKUP_TABLE"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "NONE"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "policy_name"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*tcp|udp|icmp.*\\((.*)-\\d\\d\\)"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 1
+            },
+            "converters": [],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "^.*\\((.*)-\\d\\d\\)"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Name of firewall policy"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "policy_name"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*tcp|udp|icmp.*\\((.*)\\)$"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 2
+            },
+            "converters": [],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "^.*\\((.*)\\)$"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Name of firewall policy - internal naming"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "geo_coords"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": ""
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 16
+            },
+            "converters": [],
+            "configuration": {
+              "lookup_table_name": {
+                "@type": "string",
+                "@value": "Countrycode3_to_latlong"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "geo_dst"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "geo_dst to coordinates"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "LOOKUP_TABLE"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "NONE"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*msg_id=\"1600-0066\".*"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 15
+            },
+            "converters": [],
+            "configuration": {
+              "grok_pattern": {
+                "@type": "string",
+                "@value": "^.*\\) %{NOTSPACE:service}\\[%{NOTSPACE:process}\\]: msg_id=\"1600-0066\" %{DHCPMESSAGE:dhcp_message} (from|(for %{IPV4:dhcp_clientip}|for %{IPV4:dhcp_clientip} \\(%{IPV4:dhcp_serverip}\\)) from) %{MAC:dhcp_clientmac} (via|\\(%{NOTSPACE:dhcp_clientname}\\) via) vlan%{NUMBER:dhcp_clientvlan}"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Networking DHCP INFO 1600-0066"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "GROK"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*msg_id=\"1600-0065\".*"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 14
+            },
+            "converters": [],
+            "configuration": {
+              "grok_pattern": {
+                "@type": "string",
+                "@value": "^.*\\) %{NOTSPACE:service}\\[%{NOTSPACE:process}\\]: msg_id=\"1600-0065\" %{DHCPMESSAGE:dhcp_message} (on|to) %{IPV4:dhcp_clientip}( to %{MAC:dhcp_clientmac} \\(%{NOTSPACE:dhcp_clientname}\\) via| \\(%{COMMONMAC:dhcp_clientmac}\\) via) vlan%{NOTSPACE:dhcp_clientvlan}"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Networking DHCP INFO 1600-0065"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "GROK"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*msg_id=\"1BFF-0001\".*"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 12
+            },
+            "converters": [],
+            "configuration": {
+              "grok_pattern": {
+                "@type": "string",
+                "@value": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{NOTSPACE:protocol} %{IPV4:srcip} %{IPV4:dstip} %{BASE10NUM:srcport} %{BASE10NUM:dstport} msg=\"%{DATA:proxy_msg}\" proxy_act=\"%{DATA:proxy_action}\" keyword=\"%{NOTSPACE:keyword} ((?:\\s+(geo_src=\"%{DATA:geo_src}\"|geo_dst=\"%{DATA:geo_dst}\")?)|\\()"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Proxy SMTP INFO 1BFF-0001"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "GROK"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*msg_id=\"3000-0148\".*"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 7
+            },
+            "converters": [],
+            "configuration": {
+              "grok_pattern": {
+                "@type": "string",
+                "@value": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{BASE10NUM:ip_pkt_len} %{NOTSPACE:protocol} %{BASE10NUM:iph_len} %{BASE10NUM:TTL} (%{IPV4:srcip}|%{DATA:srcuser}) (%{IPV4:dstip}|%{DATA:dstuser}) %{BASE10NUM:srcport} %{BASE10NUM:dstport} %{DATA:ip_pkt_info} ((?:\\s+(geo_src=\"%{DATA:geo_src}\"|geo_dst=\"%{DATA:geo_dst}\")?)|\\()"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Firewall PacketFilter INFO 3000-0148"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "GROK"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*msg_id=\"1BFF-000F\".*"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 13
+            },
+            "converters": [],
+            "configuration": {
+              "grok_pattern": {
+                "@type": "string",
+                "@value": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{NOTSPACE:protocol} %{IPV4:srcip} %{IPV4:dstip} %{BASE10NUM:srcport} %{BASE10NUM:dstport} msg=\"%{DATA:proxy_msg}\" proxy_act=\"%{DATA:proxy_action}\" rcvd_bytes=\"%{BASE10NUM:rcvd_bytes}\" sent_bytes=\"%{BASE10NUM:sent_bytes}\" sender=\"%{DATA:sender}\" recipients=\"%{DATA:recipients}\" server_ssl=\"%{DATA:server_ssl}\" client_ssl=\"%{DATA:client_ssl}\" ((?:\\s+(geo_src=\"%{DATA:geo_src}\"|geo_dst=\"%{DATA:geo_dst}\")?)|\\() "
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Proxy SMTP INFO 1BFF-000F"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "GROK"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*msg_id=\"2CFF-0000\".*"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 10
+            },
+            "converters": [],
+            "configuration": {
+              "grok_pattern": {
+                "@type": "string",
+                "@value": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{NOTSPACE:protocol} %{IPV4:srcip} %{IPV4:dstip} %{BASE10NUM:srcport} %{BASE10NUM:dstport} msg=\"%{DATA:proxy_msg}\" proxy_act=\"%{DATA:proxy_action}\" sni=\"%{DATA:sni}\" cn=\"%{DATA:cn}\" cert_issuer=\"%{DATA:cert_issuer}\" cert_subject=\"%{DATA:cert_subject}\" action=\"%{DATA:cert_action}\" app_id=\"%{DATA:app_id}\" app_cat_id=\"%{DATA:app_cat_id}\" sent_bytes=\"%{BASE10NUM:sent_bytes}\" rcvd_bytes=\"%{BASE10NUM:rcvd_bytes}\" (?:\\s+(geo_dst=\"%{DATA:geo_dst}\")?)"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Proxy HTTPS INFO 2CFF-0000"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "GROK"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*msg_id=\"1AFF-0033\".*"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 9
+            },
+            "converters": [],
+            "configuration": {
+              "grok_pattern": {
+                "@type": "string",
+                "@value": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{NOTSPACE:protocol} %{IPV4:srcip} %{IPV4:dstip} %{BASE10NUM:srcport} %{BASE10NUM:dstport} msg=\"%{DATA:proxy_msg}\" proxy_act=\"%{DATA:proxy_action}\" header=\"%{DATA:proxy_header}\" (?:\\s+(geo_dst=\"%{DATA:geo_dst}\")?)"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Proxy HTTP INFO 1AFF-0033"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "GROK"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*msg_id=\"2CFF-0008\".*"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 11
+            },
+            "converters": [],
+            "configuration": {
+              "grok_pattern": {
+                "@type": "string",
+                "@value": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{NOTSPACE:protocol} %{IPV4:srcip} %{IPV4:dstip} %{BASE10NUM:srcport} %{BASE10NUM:dstport} msg=\"%{DATA:proxy_msg}\"(?:\\s+(geo_dst=\"%{DATA:geo_dst}\")?)"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Proxy HTTPS INFO 2CFF-0008"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "GROK"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*msg_id=\"1AFF-0024\".*"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 8
+            },
+            "converters": [],
+            "configuration": {
+              "grok_pattern": {
+                "@type": "string",
+                "@value": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{NOTSPACE:protocol} %{IPV4:srcip} %{IPV4:dstip} %{BASE10NUM:srcport} %{BASE10NUM:dstport} msg=\"%{DATA:proxy_msg}\" proxy_act=\"%{DATA:proxy_action}\" op=\"%{DATA:proxy_op}\" dstname=\"%{DATA:proxy_dstname}\" arg=\"%{DATA:proxy_arg}\" sent_bytes=\"%{BASE10NUM:sent_bytes}\" rcvd_bytes=\"%{BASE10NUM:rcvd_bytes}\" elapsed_time=\"%{SECOND:elapsed_time} sec\\(s\\)\"(?:\\s+(geo_dst=\"%{DATA:geo_dst}\")?)"
+              },
+              "named_captures_only": {
+                "@type": "boolean",
+                "@value": false
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Proxy HTTP INFO 1AFF-0024"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "GROK"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_adapter",
+        "version": "1"
+      },
+      "id": "e8f607b1-2a17-45b2-8538-21e7e7fe6754",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "countrycode-3dig-to-latlong"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "countrycode 3dig to latlong"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup the countrycode table to convert 3 digit country code(UN) to 2digit country code(ISO)"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "csvfile"
+          },
+          "path": {
+            "@value": "location_countrycode_lookup_table",
+            "@type": "parameter"
+          },
+          "separator": {
+            "@type": "string",
+            "@value": ";"
+          },
+          "quotechar": {
+            "@type": "string",
+            "@value": "'"
+          },
+          "key_column": {
+            "@type": "string",
+            "@value": "ccode_un_a3"
+          },
+          "value_column": {
+            "@type": "string",
+            "@value": "ccode_latlong"
+          },
+          "check_interval": {
+            "@type": "long",
+            "@value": 600
+          },
+          "case_insensitive_lookup": {
+            "@type": "boolean",
+            "@value": false
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_adapter",
+        "version": "1"
+      },
+      "id": "7a9496c4-0a9a-4e32-9ac8-fe466417e7b0",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "fireware-msg-id-to-name-lookup"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Fireware msg ID to Name Lookup"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "csvfile"
+          },
+          "path": {
+            "@value": "location_fireware_msg_id_lookup_table",
+            "@type": "parameter"
+          },
+          "separator": {
+            "@type": "string",
+            "@value": ","
+          },
+          "quotechar": {
+            "@type": "string",
+            "@value": "\""
+          },
+          "key_column": {
+            "@type": "string",
+            "@value": "msg_id"
+          },
+          "value_column": {
+            "@type": "string",
+            "@value": "msg_name"
+          },
+          "check_interval": {
+            "@type": "long",
+            "@value": 180
+          },
+          "case_insensitive_lookup": {
+            "@type": "boolean",
+            "@value": false
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_adapter",
+        "version": "1"
+      },
+      "id": "5ce59bd0-6ece-4ecb-b6e6-469338030658",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "fireware-msg-id-to-level-lookup"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Fireware msg ID to Level Lookup"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "csvfile"
+          },
+          "path": {
+            "@value": "location_fireware_msg_id_lookup_table",
+            "@type": "parameter"
+          },
+          "separator": {
+            "@type": "string",
+            "@value": ","
+          },
+          "quotechar": {
+            "@type": "string",
+            "@value": "\""
+          },
+          "key_column": {
+            "@type": "string",
+            "@value": "msg_id"
+          },
+          "value_column": {
+            "@type": "string",
+            "@value": "msg_level"
+          },
+          "check_interval": {
+            "@type": "long",
+            "@value": 180
+          },
+          "case_insensitive_lookup": {
+            "@type": "boolean",
+            "@value": false
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_adapter",
+        "version": "1"
+      },
+      "id": "018f6f0d-289f-452f-b081-8fa139daeba5",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "fireware-msg-id-to-description-lookup"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Fireware msg ID to Description Lookup"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "csvfile"
+          },
+          "path": {
+            "@value": "location_fireware_msg_id_lookup_table",
+            "@type": "parameter"
+          },
+          "separator": {
+            "@type": "string",
+            "@value": ","
+          },
+          "quotechar": {
+            "@type": "string",
+            "@value": "\""
+          },
+          "key_column": {
+            "@type": "string",
+            "@value": "msg_id"
+          },
+          "value_column": {
+            "@type": "string",
+            "@value": "msg_desc"
+          },
+          "check_interval": {
+            "@type": "long",
+            "@value": 180
+          },
+          "case_insensitive_lookup": {
+            "@type": "boolean",
+            "@value": false
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_adapter",
+        "version": "1"
+      },
+      "id": "58a41420-d2de-4f5b-a6db-7f354c5fd62f",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "fireware-msg-id-to-area-lookup"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Fireware msg ID to Area Lookup"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "csvfile"
+          },
+          "path": {
+            "@value": "location_fireware_msg_id_lookup_table",
+            "@type": "parameter"
+          },
+          "separator": {
+            "@type": "string",
+            "@value": ","
+          },
+          "quotechar": {
+            "@type": "string",
+            "@value": "\""
+          },
+          "key_column": {
+            "@type": "string",
+            "@value": "msg_id"
+          },
+          "value_column": {
+            "@type": "string",
+            "@value": "msg_area"
+          },
+          "check_interval": {
+            "@type": "long",
+            "@value": 180
+          },
+          "case_insensitive_lookup": {
+            "@type": "boolean",
+            "@value": false
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_adapter",
+        "version": "1"
+      },
+      "id": "fb8ef88d-325c-4591-a486-1ae623820741",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "fireware-msg-id-to-description-lookup"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Fireware msg ID to Description Lookup"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "csvfile"
+          },
+          "path": {
+            "@type": "string",
+            "@value": "/etc/graylog/fireware_msg_id_lookup_table.csv"
+          },
+          "separator": {
+            "@type": "string",
+            "@value": ","
+          },
+          "quotechar": {
+            "@type": "string",
+            "@value": "\""
+          },
+          "key_column": {
+            "@type": "string",
+            "@value": "msg_id"
+          },
+          "value_column": {
+            "@type": "string",
+            "@value": "msg_desc"
+          },
+          "check_interval": {
+            "@type": "long",
+            "@value": 180
+          },
+          "case_insensitive_lookup": {
+            "@type": "boolean",
+            "@value": false
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_adapter",
+        "version": "1"
+      },
+      "id": "fd03a291-0421-4fa1-a5a6-e659a782ec1a",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "fireware-msg-id-to-name-lookup"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Fireware msg ID to Name Lookup"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "csvfile"
+          },
+          "path": {
+            "@type": "string",
+            "@value": "/etc/graylog/fireware_msg_id_lookup_table.csv"
+          },
+          "separator": {
+            "@type": "string",
+            "@value": ","
+          },
+          "quotechar": {
+            "@type": "string",
+            "@value": "\""
+          },
+          "key_column": {
+            "@type": "string",
+            "@value": "msg_id"
+          },
+          "value_column": {
+            "@type": "string",
+            "@value": "msg_name"
+          },
+          "check_interval": {
+            "@type": "long",
+            "@value": 180
+          },
+          "case_insensitive_lookup": {
+            "@type": "boolean",
+            "@value": false
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_adapter",
+        "version": "1"
+      },
+      "id": "e8c2dd4f-b9fa-4469-a96d-a4c721282ec6",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "fireware-msg-id-to-area-lookup"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Fireware msg ID to Area Lookup"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "csvfile"
+          },
+          "path": {
+            "@type": "string",
+            "@value": "/etc/graylog/fireware_msg_id_lookup_table.csv"
+          },
+          "separator": {
+            "@type": "string",
+            "@value": ","
+          },
+          "quotechar": {
+            "@type": "string",
+            "@value": "\""
+          },
+          "key_column": {
+            "@type": "string",
+            "@value": "msg_id"
+          },
+          "value_column": {
+            "@type": "string",
+            "@value": "msg_area"
+          },
+          "check_interval": {
+            "@type": "long",
+            "@value": 180
+          },
+          "case_insensitive_lookup": {
+            "@type": "boolean",
+            "@value": false
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_adapter",
+        "version": "1"
+      },
+      "id": "440f73cc-fe90-4cf8-85a6-f64a4e4fea14",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "fireware-msg-id-to-level-lookup"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Fireware msg ID to Level Lookup"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "csvfile"
+          },
+          "path": {
+            "@type": "string",
+            "@value": "/etc/graylog/fireware_msg_id_lookup_table.csv"
+          },
+          "separator": {
+            "@type": "string",
+            "@value": ","
+          },
+          "quotechar": {
+            "@type": "string",
+            "@value": "\""
+          },
+          "key_column": {
+            "@type": "string",
+            "@value": "msg_id"
+          },
+          "value_column": {
+            "@type": "string",
+            "@value": "msg_level"
+          },
+          "check_interval": {
+            "@type": "long",
+            "@value": 180
+          },
+          "case_insensitive_lookup": {
+            "@type": "boolean",
+            "@value": false
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_adapter",
+        "version": "1"
+      },
+      "id": "9c0d421c-d118-4482-bf8b-dd6bf7049011",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "countrycode-3dig-to-latlong"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "countrycode 3dig to latlong"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup the countrycode table to convert 3 digit country code(UN) to 2digit country code(ISO)"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "csvfile"
+          },
+          "path": {
+            "@type": "string",
+            "@value": "/etc/graylog/countrycode_lookup_table.csv"
+          },
+          "separator": {
+            "@type": "string",
+            "@value": ";"
+          },
+          "quotechar": {
+            "@type": "string",
+            "@value": "'"
+          },
+          "key_column": {
+            "@type": "string",
+            "@value": "ccode_un_a3"
+          },
+          "value_column": {
+            "@type": "string",
+            "@value": "ccode_latlong"
+          },
+          "check_interval": {
+            "@type": "long",
+            "@value": 600
+          },
+          "case_insensitive_lookup": {
+            "@type": "boolean",
+            "@value": false
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_cache",
+        "version": "1"
+      },
+      "id": "67886225-44f7-46cb-9e4e-35cb9df22464",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "country-code-table-cache"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Country Code Table Cache"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Cache for table of country codes"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "guava_cache"
+          },
+          "max_size": {
+            "@type": "integer",
+            "@value": 1000
+          },
+          "expire_after_access": {
+            "@type": "long",
+            "@value": 60
+          },
+          "expire_after_access_unit": {
+            "@type": "string",
+            "@value": "SECONDS"
+          },
+          "expire_after_write": {
+            "@type": "long",
+            "@value": 0
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_cache",
+        "version": "1"
+      },
+      "id": "9823a6c5-7275-4f2f-b87d-2e1c120e8e4a",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "fireware-msg_id-cache"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Fireware msg_ID Cache"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Cache for csv Lookup of Fireware msg_id's"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "guava_cache"
+          },
+          "max_size": {
+            "@type": "integer",
+            "@value": 1000
+          },
+          "expire_after_access": {
+            "@type": "long",
+            "@value": 60
+          },
+          "expire_after_access_unit": {
+            "@type": "string",
+            "@value": "SECONDS"
+          },
+          "expire_after_write": {
+            "@type": "long",
+            "@value": 0
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_cache",
+        "version": "1"
+      },
+      "id": "938ad06c-ff7b-4ad4-a189-3d852f144648",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "fireware-msg_id-cache"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Fireware msg_ID Cache"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Cache for csv Lookup of Fireware msg_id's"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "guava_cache"
+          },
+          "max_size": {
+            "@type": "integer",
+            "@value": 1000
+          },
+          "expire_after_access": {
+            "@type": "long",
+            "@value": 60
+          },
+          "expire_after_access_unit": {
+            "@type": "string",
+            "@value": "SECONDS"
+          },
+          "expire_after_write": {
+            "@type": "long",
+            "@value": 0
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_cache",
+        "version": "1"
+      },
+      "id": "c69a1c72-e9e1-431f-a4d9-4f98e17b202f",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "country-code-table-cache"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Country Code Table Cache"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Cache for table of country codes"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "guava_cache"
+          },
+          "max_size": {
+            "@type": "integer",
+            "@value": 1000
+          },
+          "expire_after_access": {
+            "@type": "long",
+            "@value": 60
+          },
+          "expire_after_access_unit": {
+            "@type": "string",
+            "@value": "SECONDS"
+          },
+          "expire_after_write": {
+            "@type": "long",
+            "@value": 0
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_table",
+        "version": "1"
+      },
+      "id": "2019c709-3b60-44aa-8cb4-92f935807843",
+      "data": {
+        "default_single_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "cache_name": {
+          "@type": "string",
+          "@value": "9823a6c5-7275-4f2f-b87d-2e1c120e8e4a"
+        },
+        "name": {
+          "@type": "string",
+          "@value": "lookup-table-fireware-msg-id-to-area"
+        },
+        "default_multi_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "default_multi_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "data_adapter_name": {
+          "@type": "string",
+          "@value": "58a41420-d2de-4f5b-a6db-7f354c5fd62f"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Lookup Table Fireware msg ID to Area"
+        },
+        "default_single_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_table",
+        "version": "1"
+      },
+      "id": "893f4d50-359b-4ebe-b840-a8b202610ba4",
+      "data": {
+        "default_single_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "cache_name": {
+          "@type": "string",
+          "@value": "9823a6c5-7275-4f2f-b87d-2e1c120e8e4a"
+        },
+        "name": {
+          "@type": "string",
+          "@value": "lookup-table-fireware-msg-id-to-description"
+        },
+        "default_multi_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "default_multi_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "data_adapter_name": {
+          "@type": "string",
+          "@value": "018f6f0d-289f-452f-b081-8fa139daeba5"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Lookup Table Fireware msg ID to Description"
+        },
+        "default_single_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_table",
+        "version": "1"
+      },
+      "id": "7c4c4f53-2f3c-4c3c-a8a6-a11b9b3c2fc7",
+      "data": {
+        "default_single_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "cache_name": {
+          "@type": "string",
+          "@value": "9823a6c5-7275-4f2f-b87d-2e1c120e8e4a"
+        },
+        "name": {
+          "@type": "string",
+          "@value": "lookup-table-fireware-msg-id-to-level"
+        },
+        "default_multi_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "default_multi_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "data_adapter_name": {
+          "@type": "string",
+          "@value": "5ce59bd0-6ece-4ecb-b6e6-469338030658"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Lookup Table Fireware msg ID to Level"
+        },
+        "default_single_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_table",
+        "version": "1"
+      },
+      "id": "16030bfa-2a8c-469b-882b-4a5c3cd62f00",
+      "data": {
+        "default_single_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "cache_name": {
+          "@type": "string",
+          "@value": "67886225-44f7-46cb-9e4e-35cb9df22464"
+        },
+        "name": {
+          "@type": "string",
+          "@value": "Countrycode3_to_latlong"
+        },
+        "default_multi_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "default_multi_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "data_adapter_name": {
+          "@type": "string",
+          "@value": "e8f607b1-2a17-45b2-8538-21e7e7fe6754"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Lookup Table Countrycode3 to latlong"
+        },
+        "default_single_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Use Lookuptable to convert the UN Code to latitude and longitude"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_table",
+        "version": "1"
+      },
+      "id": "2b441f06-2b6c-4496-a5a3-7a301ff2f8aa",
+      "data": {
+        "default_single_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "cache_name": {
+          "@type": "string",
+          "@value": "9823a6c5-7275-4f2f-b87d-2e1c120e8e4a"
+        },
+        "name": {
+          "@type": "string",
+          "@value": "lookup-table-fireware-msg-id-to-name"
+        },
+        "default_multi_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "default_multi_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "data_adapter_name": {
+          "@type": "string",
+          "@value": "7a9496c4-0a9a-4e32-9ac8-fe466417e7b0"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Lookup Table Fireware msg ID to Name"
+        },
+        "default_single_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_table",
+        "version": "1"
+      },
+      "id": "3836c574-a38c-45d0-9c86-413b1fb9963a",
+      "data": {
+        "default_single_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "cache_name": {
+          "@type": "string",
+          "@value": "938ad06c-ff7b-4ad4-a189-3d852f144648"
+        },
+        "name": {
+          "@type": "string",
+          "@value": "lookup-table-fireware-msg-id-to-description"
+        },
+        "default_multi_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "default_multi_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "data_adapter_name": {
+          "@type": "string",
+          "@value": "fb8ef88d-325c-4591-a486-1ae623820741"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Lookup Table Fireware msg ID to Description"
+        },
+        "default_single_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_table",
+        "version": "1"
+      },
+      "id": "4e8a9bac-4305-4520-8df5-2ed58a0cb460",
+      "data": {
+        "default_single_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "cache_name": {
+          "@type": "string",
+          "@value": "938ad06c-ff7b-4ad4-a189-3d852f144648"
+        },
+        "name": {
+          "@type": "string",
+          "@value": "lookup-table-fireware-msg-id-to-name"
+        },
+        "default_multi_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "default_multi_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "data_adapter_name": {
+          "@type": "string",
+          "@value": "fd03a291-0421-4fa1-a5a6-e659a782ec1a"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Lookup Table Fireware msg ID to Name"
+        },
+        "default_single_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_table",
+        "version": "1"
+      },
+      "id": "6175dd6a-9fcc-4592-ba94-a2e99f5840b3",
+      "data": {
+        "default_single_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "cache_name": {
+          "@type": "string",
+          "@value": "938ad06c-ff7b-4ad4-a189-3d852f144648"
+        },
+        "name": {
+          "@type": "string",
+          "@value": "lookup-table-fireware-msg-id-to-area"
+        },
+        "default_multi_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "default_multi_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "data_adapter_name": {
+          "@type": "string",
+          "@value": "e8c2dd4f-b9fa-4469-a96d-a4c721282ec6"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Lookup Table Fireware msg ID to Area"
+        },
+        "default_single_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_table",
+        "version": "1"
+      },
+      "id": "67e5a4a0-6d17-414d-bf80-8f6d4339619a",
+      "data": {
+        "default_single_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "cache_name": {
+          "@type": "string",
+          "@value": "938ad06c-ff7b-4ad4-a189-3d852f144648"
+        },
+        "name": {
+          "@type": "string",
+          "@value": "lookup-table-fireware-msg-id-to-level"
+        },
+        "default_multi_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "default_multi_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "data_adapter_name": {
+          "@type": "string",
+          "@value": "440f73cc-fe90-4cf8-85a6-f64a4e4fea14"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Lookup Table Fireware msg ID to Level"
+        },
+        "default_single_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "lookup_table",
+        "version": "1"
+      },
+      "id": "3761a464-fe06-460b-9eee-c7e85d9995af",
+      "data": {
+        "default_single_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "cache_name": {
+          "@type": "string",
+          "@value": "c69a1c72-e9e1-431f-a4d9-4f98e17b202f"
+        },
+        "name": {
+          "@type": "string",
+          "@value": "Countrycode3_to_latlong"
+        },
+        "default_multi_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "default_multi_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "data_adapter_name": {
+          "@type": "string",
+          "@value": "9c0d421c-d118-4482-bf8b-dd6bf7049011"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Lookup Table Countrycode3 to latlong"
+        },
+        "default_single_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Use Lookuptable to convert the UN Code to latitude and longitude"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "stream",
+        "version": "1"
+      },
+      "id": "efcc80d5-9ce9-44f3-bbc4-1cbbd4880c80",
+      "data": {
+        "alarm_callbacks": [],
+        "outputs": [],
+        "remove_matches": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Watchguard Proxy"
+        },
+        "stream_rules": [
+          {
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "field": {
+              "@type": "string",
+              "@value": "msg_area"
+            },
+            "value": {
+              "@type": "string",
+              "@value": "Proxy / .*"
+            },
+            "inverted": {
+              "@type": "boolean",
+              "@value": false
+            },
+            "description": {
+              "@type": "string",
+              "@value": ""
+            }
+          }
+        ],
+        "alert_conditions": [],
+        "matching_type": {
+          "@type": "string",
+          "@value": "AND"
+        },
+        "disabled": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Show only logs related to Proxy"
+        },
+        "default_stream": {
+          "@type": "boolean",
+          "@value": false
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "stream",
+        "version": "1"
+      },
+      "id": "d2bc6507-82ba-4c3c-accd-ad88bffa742f",
+      "data": {
+        "alarm_callbacks": [],
+        "outputs": [],
+        "remove_matches": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Watchguard Cluster"
+        },
+        "stream_rules": [
+          {
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "field": {
+              "@type": "string",
+              "@value": "msg_area"
+            },
+            "value": {
+              "@type": "string",
+              "@value": "Cluster / .*"
+            },
+            "inverted": {
+              "@type": "boolean",
+              "@value": false
+            },
+            "description": {
+              "@type": "string",
+              "@value": ""
+            }
+          }
+        ],
+        "alert_conditions": [],
+        "matching_type": {
+          "@type": "string",
+          "@value": "AND"
+        },
+        "disabled": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Show only logs related to Cluster"
+        },
+        "default_stream": {
+          "@type": "boolean",
+          "@value": false
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "stream",
+        "version": "1"
+      },
+      "id": "d85222c0-ef31-46ce-8ad4-597c3383773f",
+      "data": {
+        "alarm_callbacks": [],
+        "outputs": [],
+        "remove_matches": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Watchguard Management"
+        },
+        "stream_rules": [
+          {
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "field": {
+              "@type": "string",
+              "@value": "msg_area"
+            },
+            "value": {
+              "@type": "string",
+              "@value": "Management / .*"
+            },
+            "inverted": {
+              "@type": "boolean",
+              "@value": false
+            },
+            "description": {
+              "@type": "string",
+              "@value": ""
+            }
+          }
+        ],
+        "alert_conditions": [],
+        "matching_type": {
+          "@type": "string",
+          "@value": "AND"
+        },
+        "disabled": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Show only logs related to Management"
+        },
+        "default_stream": {
+          "@type": "boolean",
+          "@value": false
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "stream",
+        "version": "1"
+      },
+      "id": "d05d7527-42ab-4f9d-ab89-45f32536837a",
+      "data": {
+        "alarm_callbacks": [],
+        "outputs": [],
+        "remove_matches": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Watchguard DEBUG"
+        },
+        "stream_rules": [
+          {
+            "type": {
+              "@type": "string",
+              "@value": "EXACT"
+            },
+            "field": {
+              "@type": "string",
+              "@value": "msg_level"
+            },
+            "value": {
+              "@type": "string",
+              "@value": "DEBUG"
+            },
+            "inverted": {
+              "@type": "boolean",
+              "@value": false
+            },
+            "description": {
+              "@type": "string",
+              "@value": ""
+            }
+          }
+        ],
+        "alert_conditions": [],
+        "matching_type": {
+          "@type": "string",
+          "@value": "AND"
+        },
+        "disabled": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Show only logs with level DEBUG"
+        },
+        "default_stream": {
+          "@type": "boolean",
+          "@value": false
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "stream",
+        "version": "1"
+      },
+      "id": "9d015631-e6dd-4f55-b1d9-6ea1da2d502e",
+      "data": {
+        "alarm_callbacks": [],
+        "outputs": [],
+        "remove_matches": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Watchguard VPN"
+        },
+        "stream_rules": [
+          {
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "field": {
+              "@type": "string",
+              "@value": "msg_area"
+            },
+            "value": {
+              "@type": "string",
+              "@value": "VPN / .*"
+            },
+            "inverted": {
+              "@type": "boolean",
+              "@value": false
+            },
+            "description": {
+              "@type": "string",
+              "@value": ""
+            }
+          }
+        ],
+        "alert_conditions": [],
+        "matching_type": {
+          "@type": "string",
+          "@value": "AND"
+        },
+        "disabled": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Show only logs related to VPN"
+        },
+        "default_stream": {
+          "@type": "boolean",
+          "@value": false
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "stream",
+        "version": "1"
+      },
+      "id": "61e8af72-5825-465b-8972-5700b8f7bea4",
+      "data": {
+        "alarm_callbacks": [],
+        "outputs": [],
+        "remove_matches": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Watchguard Firewall"
+        },
+        "stream_rules": [
+          {
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "field": {
+              "@type": "string",
+              "@value": "msg_area"
+            },
+            "value": {
+              "@type": "string",
+              "@value": "Firewall / .*"
+            },
+            "inverted": {
+              "@type": "boolean",
+              "@value": false
+            },
+            "description": {
+              "@type": "string",
+              "@value": ""
+            }
+          }
+        ],
+        "alert_conditions": [],
+        "matching_type": {
+          "@type": "string",
+          "@value": "AND"
+        },
+        "disabled": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Show only logs related to Firewall"
+        },
+        "default_stream": {
+          "@type": "boolean",
+          "@value": false
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "stream",
+        "version": "1"
+      },
+      "id": "572153e9-5561-4daf-b5de-f383e57834cb",
+      "data": {
+        "alarm_callbacks": [],
+        "outputs": [],
+        "remove_matches": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Watchguard INFO"
+        },
+        "stream_rules": [
+          {
+            "type": {
+              "@type": "string",
+              "@value": "EXACT"
+            },
+            "field": {
+              "@type": "string",
+              "@value": "msg_level"
+            },
+            "value": {
+              "@type": "string",
+              "@value": "INFO"
+            },
+            "inverted": {
+              "@type": "boolean",
+              "@value": false
+            },
+            "description": {
+              "@type": "string",
+              "@value": ""
+            }
+          }
+        ],
+        "alert_conditions": [],
+        "matching_type": {
+          "@type": "string",
+          "@value": "AND"
+        },
+        "disabled": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Show only logs with level INFO"
+        },
+        "default_stream": {
+          "@type": "boolean",
+          "@value": false
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "stream",
+        "version": "1"
+      },
+      "id": "555f3443-5b5a-40b7-b834-3083f0bf46e8",
+      "data": {
+        "alarm_callbacks": [],
+        "outputs": [],
+        "remove_matches": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Watchguard all messages"
+        },
+        "stream_rules": [
+          {
+            "type": {
+              "@type": "string",
+              "@value": "EXACT"
+            },
+            "field": {
+              "@type": "string",
+              "@value": "watchguard log messages"
+            },
+            "value": {
+              "@type": "string",
+              "@value": "watchguard"
+            },
+            "inverted": {
+              "@type": "boolean",
+              "@value": false
+            },
+            "description": {
+              "@type": "string",
+              "@value": ""
+            }
+          }
+        ],
+        "alert_conditions": [],
+        "matching_type": {
+          "@type": "string",
+          "@value": "AND"
+        },
+        "disabled": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "description": {
+          "@type": "string",
+          "@value": "watchguard log messages"
+        },
+        "default_stream": {
+          "@type": "boolean",
+          "@value": false
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "stream",
+        "version": "1"
+      },
+      "id": "f3a9cb00-9471-47a0-9c87-321d95f28140",
+      "data": {
+        "alarm_callbacks": [],
+        "outputs": [],
+        "remove_matches": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Watchguard Mobile Security"
+        },
+        "stream_rules": [
+          {
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "field": {
+              "@type": "string",
+              "@value": "msg_area"
+            },
+            "value": {
+              "@type": "string",
+              "@value": "Mobile Security / .*"
+            },
+            "inverted": {
+              "@type": "boolean",
+              "@value": false
+            },
+            "description": {
+              "@type": "string",
+              "@value": ""
+            }
+          }
+        ],
+        "alert_conditions": [],
+        "matching_type": {
+          "@type": "string",
+          "@value": "AND"
+        },
+        "disabled": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Show only logs related to Mobile Security"
+        },
+        "default_stream": {
+          "@type": "boolean",
+          "@value": false
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "stream",
+        "version": "1"
+      },
+      "id": "ff5e7118-3e03-463b-abd3-4d46707447b8",
+      "data": {
+        "alarm_callbacks": [],
+        "outputs": [],
+        "remove_matches": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Watchguard Networking "
+        },
+        "stream_rules": [
+          {
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "field": {
+              "@type": "string",
+              "@value": "msg_area"
+            },
+            "value": {
+              "@type": "string",
+              "@value": "Networking / .*"
+            },
+            "inverted": {
+              "@type": "boolean",
+              "@value": false
+            },
+            "description": {
+              "@type": "string",
+              "@value": ""
+            }
+          }
+        ],
+        "alert_conditions": [],
+        "matching_type": {
+          "@type": "string",
+          "@value": "AND"
+        },
+        "disabled": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Show only logs related to Networking"
+        },
+        "default_stream": {
+          "@type": "boolean",
+          "@value": false
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "stream",
+        "version": "1"
+      },
+      "id": "33e44fa7-750e-46d5-99af-b9b4298244d6",
+      "data": {
+        "alarm_callbacks": [],
+        "outputs": [],
+        "remove_matches": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Watchguard WARNING"
+        },
+        "stream_rules": [
+          {
+            "type": {
+              "@type": "string",
+              "@value": "EXACT"
+            },
+            "field": {
+              "@type": "string",
+              "@value": "msg_level"
+            },
+            "value": {
+              "@type": "string",
+              "@value": "WARNING"
+            },
+            "inverted": {
+              "@type": "boolean",
+              "@value": false
+            },
+            "description": {
+              "@type": "string",
+              "@value": ""
+            }
+          }
+        ],
+        "alert_conditions": [],
+        "matching_type": {
+          "@type": "string",
+          "@value": "AND"
+        },
+        "disabled": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Show only logs with level WARNING"
+        },
+        "default_stream": {
+          "@type": "boolean",
+          "@value": false
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "stream",
+        "version": "1"
+      },
+      "id": "69105433-2605-4ce1-9715-817393195f93",
+      "data": {
+        "alarm_callbacks": [],
+        "outputs": [],
+        "remove_matches": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Watchguard ERROR"
+        },
+        "stream_rules": [
+          {
+            "type": {
+              "@type": "string",
+              "@value": "EXACT"
+            },
+            "field": {
+              "@type": "string",
+              "@value": "msg_level"
+            },
+            "value": {
+              "@type": "string",
+              "@value": "ERROR"
+            },
+            "inverted": {
+              "@type": "boolean",
+              "@value": false
+            },
+            "description": {
+              "@type": "string",
+              "@value": ""
+            }
+          }
+        ],
+        "alert_conditions": [],
+        "matching_type": {
+          "@type": "string",
+          "@value": "AND"
+        },
+        "disabled": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Show only logs with level ERROR"
+        },
+        "default_stream": {
+          "@type": "boolean",
+          "@value": false
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "stream",
+        "version": "1"
+      },
+      "id": "f50b3b19-7650-45e7-b5c9-6226fe98c5a4",
+      "data": {
+        "alarm_callbacks": [],
+        "outputs": [],
+        "remove_matches": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Watchguard Security Services"
+        },
+        "stream_rules": [
+          {
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "field": {
+              "@type": "string",
+              "@value": "msg_area"
+            },
+            "value": {
+              "@type": "string",
+              "@value": "Security Services / .*"
+            },
+            "inverted": {
+              "@type": "boolean",
+              "@value": false
+            },
+            "description": {
+              "@type": "string",
+              "@value": ""
+            }
+          }
+        ],
+        "alert_conditions": [],
+        "matching_type": {
+          "@type": "string",
+          "@value": "AND"
+        },
+        "disabled": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Show only logs related to Security Services"
+        },
+        "default_stream": {
+          "@type": "boolean",
+          "@value": false
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    }
+  ]
+}
