@@ -1,4 +1,4 @@
-![graylog-cp-watchguard_2](https://user-images.githubusercontent.com/1869080/43983109-2e9316ca-9cf9-11e8-86e8-2f7a818f03dd.png)
+![graylog-cp-watchguard_2](https://user-images.githubusercontent.com/1869080/61405975-3dd23000-a8db-11e9-9c37-a7cb27897609.png)
 
 
 # Graylog Content Pack for Watchguard
@@ -30,18 +30,13 @@ This file is a list similar to the [Fireware log catalog](https://www.watchguard
 
    -IP-Address: <graylog host>
 
-   -Port: 55514
+   -Port: 55514(content pack default port)
 
 
 ### Import Content Pack
 
-Because you have to import the content in order the content pack consists following files:
-
-1. content_pack_lookuptables.json
-2. content_pack_input.json
-3. content_pack_dashboard.json
-
-please apply the lookuptables first.
+You could import the complete content in one File. Just Upload [content-pack-graylog-cp-watchguard.json](content-pack-graylog-cp-watchguard.json) in System/Content Pack Section of Graylog and install.
+With the parameters for input port and lookup table file path you could customize the content pack to fit your needs. 
 
 *if you run into trouble while importing or updating it may be helpful to remove every component an start fresh.*
 
@@ -62,7 +57,7 @@ With the help of streams it is possible to narrow your search results to followi
 - ERROR
 - DEBUG
 
-The Streams are also setup to allow user access only for certain messages.
+The Streams are also useful to allow user access only for certain messages.
 
 ### Dashboard
 
@@ -75,4 +70,22 @@ Its also a good point to start digging the logs, in case of an incident.
 
 <img src="https://user-images.githubusercontent.com/1869080/42139130-4ab43fa4-7d88-11e8-94dd-c03955f58594.PNG" width="600">
 
-### Extractors
+### Contribute
+
+Please help adding Extractors to the input to be able to do a structured search on every kind of msg_id.
+
+How to:
+
+- find missing extractor for msg_id
+- figure out on which way values could be matched
+- build regex,grok, ...
+- test 
+- create pull request
+
+Thanks:-)
+
+
+
+
+
+
