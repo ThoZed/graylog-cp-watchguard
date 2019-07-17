@@ -1,4 +1,4 @@
-![graylog-cp-watchguard_2](https://user-images.githubusercontent.com/1869080/43983109-2e9316ca-9cf9-11e8-86e8-2f7a818f03dd.png)
+![graylog-cp-watchguard_2](https://user-images.githubusercontent.com/1869080/61405975-3dd23000-a8db-11e9-9c37-a7cb27897609.png)
 
 
 # Graylog Content Pack for Watchguard
@@ -30,19 +30,13 @@ This file is a list similar to the [Fireware log catalog](https://www.watchguard
 
    -IP-Address: <graylog host>
 
-   -Port: 55514
+   -Port: 55514(content pack default port)
 
 
 ### Import Content Pack
 
-Because you have to import the content in order the content pack consists following files:
-
-1. content_pack_1_DataAdapter.json
-2. content_pack_2_LookupTables.json
-3. content_pack_3_Input.json
-4. content_pack_4_Dashboard.json
-
-please always apply in this order.
+You could import the complete content in one File. Just Upload [content-pack-graylog-cp-watchguard.json](content-pack-graylog-cp-watchguard.json) in System/Content Pack Section of Graylog and install.
+With the parameters for input port and lookup table file path you could customize the content pack to fit your needs. 
 
 *if you run into trouble while importing or updating it may be helpful to remove every component an start fresh.*
 
@@ -89,8 +83,6 @@ How to:
 - create pull request
 
 Thanks:-)
-
-Example:
 
 
 
