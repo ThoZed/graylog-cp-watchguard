@@ -3,11 +3,11 @@
 
 # Graylog Content Pack for Watchguard
 
-This Content Pack enables you to parse the logs which are generated and shipped by Watchguard Fireware. The Logs are parsed to enable dashboards, streams and structured search queries.  
+This content pack sturcture and enriches log messages which are generated and shipped by Watchguard Fireware. The logs are parsed to enable all the wonderful features of Graylog. :-) 
 
 ###  Fireware log format
 
-The logs messages include a message ID which could be extracted by using following Expression.
+The log messages include a message ID which could be extracted by using following expression.
 
 `^.*msg_id=\"(\S\S\S\S-\S\S\S\S)\"`
 
@@ -18,6 +18,8 @@ With the help of this information it is more easy to read the incoming log messa
 The extractor calls a lookup table which uses a data adapter to read the [csv](LookupTables/fireware_msg_id_lookup_table.csv) file.
 
 This file is a list similar to the [Fireware log catalog](https://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html)
+
+The msg_id is used as a key to identify the format of the log message. Based on that the extractor rule of the graylog input is setup for each msg_id separately. 
 
 ### Prerequisites
 
@@ -35,7 +37,7 @@ This file is a list similar to the [Fireware log catalog](https://www.watchguard
 
 ### Import Content Pack
 
-You could import the complete content in one File. Just Upload [content-pack-graylog-cp-watchguard.json](content-pack-graylog-cp-watchguard.json) in System/Content Pack Section of Graylog and install.
+You could import the complete content in one File. Just upload [content-pack-graylog-cp-watchguard.json](content-pack-graylog-cp-watchguard.json) in System/Content Pack Section of Graylog and install.
 With the parameters for input port and lookup table file path you could customize the content pack to fit your needs. 
 
 *if you run into trouble while importing or updating it may be helpful to remove every component an start fresh.*
@@ -57,7 +59,7 @@ With the help of streams it is possible to narrow your search results to followi
 - ERROR
 - DEBUG
 
-The Streams are also useful to allow user access only for certain messages.
+The streams are also useful to allow user access only for certain messages.
 
 ### Dashboard
 
@@ -72,7 +74,7 @@ Its also a good point to start digging the logs, in case of an incident.
 
 ### Contribute
 
-Please help adding Extractors to the input to be able to do a structured search on every kind of msg_id.
+Please help adding extractors to the input to be able to do a structured search on every kind of msg_id.
 
 How to:
 
