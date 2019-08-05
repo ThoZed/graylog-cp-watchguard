@@ -1,7 +1,7 @@
 ---
 name: Add Extractor
 about: Issue Template to add new extractor
-title: "[Add Extractor for msg_id: ...]"
+title: 'Add Extractor for msg_id: ...'
 labels: extractor
 assignees: ''
 
