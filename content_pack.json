@@ -2512,7 +2512,7 @@
             "configuration": {
               "grok_pattern": {
                 "@type": "string",
-                "@value": "^.* %{WORD:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{WORD:protocol} %{IPV4:srcip} %{IPV4:dstip} (duration=\"%{DATA:duration}\"|(%{BASE10NUM:srcport} %{BASE10NUM:dstport})?(  geo_dst=\"%{DATA:geo_dst}\")? duration=\"%{BASE10NUM:duration}\") sent_bytes=\"%{BASE10NUM:sent_bytes}\" rcvd_bytes=\"%{BASE10NUM:rcvd_bytes}\""
+                "@value": "^.* %{WORD:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{WORD:protocol} %{IPV4:srcip} %{IPV4:dstip} (( geo_dst=\"%{DATA:geo_dst}\" duration=\"%{BASE10NUM:duration}\")|duration=\"%{DATA:duration}\"|(%{BASE10NUM:srcport} %{BASE10NUM:dstport})?(  geo_dst=\"%{DATA:geo_dst}\")? duration=\"%{BASE10NUM:duration}\") sent_bytes=\"%{BASE10NUM:sent_bytes}\" rcvd_bytes=\"%{BASE10NUM:rcvd_bytes}\""
               }
             },
             "source_field": {
