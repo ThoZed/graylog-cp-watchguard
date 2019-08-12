@@ -1,12 +1,14 @@
 {
-  "v": "1",
   "id": "eeb7ca6d-f27f-43cf-bb3e-511dac03afe9",
-  "rev": 2,
+  "rev": 5,
+  "v": "1",
   "name": "graylog-cp-watchguard",
   "summary": "Content Pack to process and transform Watchguard logs",
   "description": "This Content Pack enables you to parse the logs which are generated and shipped by Watchguard Fireware. The logs are parsed to enable dashboards, streams and structured search queries.",
   "vendor": "Watchguard",
   "url": "https://github.com/ThoZed/graylog-cp-watchguard",
+  "created_at": "2019-08-09T13:15:12.662Z",
+  "server_version": "3.0.2+1686930",
   "parameters": [
     {
       "name": "input_port",
@@ -32,12 +34,12 @@
   ],
   "entities": [
     {
-      "v": "1",
+      "id": "80d97653-e61e-4145-8453-85fede99a90f",
       "type": {
         "name": "dashboard",
         "version": "1"
       },
-      "id": "80d97653-e61e-4145-8453-85fede99a90f",
+      "v": "1",
       "data": {
         "title": {
           "@type": "string",
@@ -380,12 +382,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "640807a9-924e-4a0b-aa49-1df7f59b5bbd",
       "type": {
         "name": "dashboard",
         "version": "1"
       },
-      "id": "640807a9-924e-4a0b-aa49-1df7f59b5bbd",
+      "v": "1",
       "data": {
         "title": {
           "@type": "string",
@@ -1402,12 +1404,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "aa6d2fd4-bdaf-4d7f-bb80-75b2f88d5830",
       "type": {
         "name": "dashboard",
         "version": "1"
       },
-      "id": "aa6d2fd4-bdaf-4d7f-bb80-75b2f88d5830",
+      "v": "1",
       "data": {
         "title": {
           "@type": "string",
@@ -1494,12 +1496,12 @@
       ]
     },
     {
-      "v": "1",
-      "type": {
-        "name": "grok_pattern",
-        "version": "1"
-      },
       "id": "50a1c8ad-107c-4ea1-a62f-32efddbd2c65",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "v": "1",
       "data": {
         "name": "DHCPMESSAGE",
         "pattern": "(DHCPDISCOVER|DHCPOFFER|DHCPREQUEST|DHCPACK|DHCPNAK|DHCPRELEASE|DHCPDECLINE)"
@@ -1512,12 +1514,12 @@
       ]
     },
     {
-      "v": "1",
-      "type": {
-        "name": "grok_pattern",
-        "version": "1"
-      },
       "id": "4a01e372-8ffa-437d-afb1-f382370acf92",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "v": "1",
       "data": {
         "name": "DHCPMESSAGE",
         "pattern": "(DHCPDISCOVER|DHCPOFFER|DHCPREQUEST|DHCPACK|DHCPNAK|DHCPRELEASE|DHCPDECLINE)"
@@ -1530,12 +1532,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "fb9d67c9-6d7b-48eb-bb44-68c836896081",
       "type": {
         "name": "grok_pattern",
         "version": "1"
       },
-      "id": "fb9d67c9-6d7b-48eb-bb44-68c836896081",
+      "v": "1",
       "data": {
         "name": "NUMBER",
         "pattern": "(?:%{BASE10NUM})"
@@ -1548,12 +1550,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "3d853e0c-9f25-4f7e-aa76-a1f857f95d4c",
       "type": {
         "name": "grok_pattern",
         "version": "1"
       },
-      "id": "3d853e0c-9f25-4f7e-aa76-a1f857f95d4c",
+      "v": "1",
       "data": {
         "name": "NOTSPACE",
         "pattern": "\\S+"
@@ -1566,12 +1568,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "f80f91ca-e773-40af-8a44-dc16c82069c6",
       "type": {
         "name": "grok_pattern",
         "version": "1"
       },
-      "id": "f80f91ca-e773-40af-8a44-dc16c82069c6",
+      "v": "1",
       "data": {
         "name": "IPV4",
         "pattern": "(?<![0-9])(?:(?:[0-1]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])[.](?:[0-1]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])[.](?:[0-1]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])[.](?:[0-1]?[0-9]{1,2}|2[0-4][0-9]|25[0-5]))(?![0-9])"
@@ -1584,12 +1586,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "d93382b9-9e6e-4463-948b-e7aff7f52ad3",
       "type": {
         "name": "grok_pattern",
         "version": "1"
       },
-      "id": "d93382b9-9e6e-4463-948b-e7aff7f52ad3",
+      "v": "1",
       "data": {
         "name": "MAC",
         "pattern": "(?:%{CISCOMAC}|%{WINDOWSMAC}|%{COMMONMAC})"
@@ -1602,12 +1604,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "758b5043-2c50-4341-9eb5-0b60ee0f2e8e",
       "type": {
         "name": "grok_pattern",
         "version": "1"
       },
-      "id": "758b5043-2c50-4341-9eb5-0b60ee0f2e8e",
+      "v": "1",
       "data": {
         "name": "COMMONMAC",
         "pattern": "(?:(?:[A-Fa-f0-9]{2}:){5}[A-Fa-f0-9]{2})"
@@ -1620,12 +1622,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "71c9f5d5-e37f-460c-9896-c0f4e51858b3",
       "type": {
         "name": "grok_pattern",
         "version": "1"
       },
-      "id": "71c9f5d5-e37f-460c-9896-c0f4e51858b3",
+      "v": "1",
       "data": {
         "name": "DATA",
         "pattern": ".*?"
@@ -1638,12 +1640,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "503878e2-7ab1-46ab-aad4-8aab55c98ab6",
       "type": {
         "name": "grok_pattern",
         "version": "1"
       },
-      "id": "503878e2-7ab1-46ab-aad4-8aab55c98ab6",
+      "v": "1",
       "data": {
         "name": "BASE10NUM",
         "pattern": "(?<![0-9.+-])(?>[+-]?(?:(?:[0-9]+(?:\\.[0-9]+)?)|(?:\\.[0-9]+)))"
@@ -1656,12 +1658,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "5c9dbfa0-120c-4106-ae31-df3b10b4c0d1",
       "type": {
         "name": "grok_pattern",
         "version": "1"
       },
-      "id": "5c9dbfa0-120c-4106-ae31-df3b10b4c0d1",
+      "v": "1",
       "data": {
         "name": "SECOND",
         "pattern": "(?:(?:[0-5]?[0-9]|60)(?:[:.,][0-9]+)?)"
@@ -1674,12 +1676,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "d99a0e3a-7987-425d-80d5-a83d4f89598b",
       "type": {
         "name": "grok_pattern",
         "version": "1"
       },
-      "id": "d99a0e3a-7987-425d-80d5-a83d4f89598b",
+      "v": "1",
       "data": {
         "name": "WINDOWSMAC",
         "pattern": "(?:(?:[A-Fa-f0-9]{2}-){5}[A-Fa-f0-9]{2})"
@@ -1692,12 +1694,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "91e622aa-cb5f-403e-827f-b49f21117f34",
       "type": {
         "name": "grok_pattern",
         "version": "1"
       },
-      "id": "91e622aa-cb5f-403e-827f-b49f21117f34",
+      "v": "1",
       "data": {
         "name": "CISCOMAC",
         "pattern": "(?:(?:[A-Fa-f0-9]{4}\\.){2}[A-Fa-f0-9]{4})"
@@ -1710,12 +1712,282 @@
       ]
     },
     {
+      "id": "4d4c4b3e-e6b3-4286-8999-effb4f75827d",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
       "v": "1",
+      "data": {
+        "name": "DHCPMESSAGE",
+        "pattern": "(DHCPDISCOVER|DHCPOFFER|DHCPREQUEST|DHCPACK|DHCPNAK|DHCPRELEASE|DHCPDECLINE)"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "4417f7a4-8064-4df7-8150-b8003992d54f",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "name": "NUMBER",
+        "pattern": "(?:%{BASE10NUM})"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "38466d20-7bc8-462e-a1eb-6d1ec719facf",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "name": "NOTSPACE",
+        "pattern": "\\S+"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "d3aa56a4-0a1a-4d2c-9014-ed47c40f4a98",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "name": "IPV4",
+        "pattern": "(?<![0-9])(?:(?:[0-1]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])[.](?:[0-1]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])[.](?:[0-1]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])[.](?:[0-1]?[0-9]{1,2}|2[0-4][0-9]|25[0-5]))(?![0-9])"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "a9d1ea4e-8a22-4c13-899e-4013726be681",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "name": "MAC",
+        "pattern": "(?:%{CISCOMAC}|%{WINDOWSMAC}|%{COMMONMAC})"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "0a39f8b1-afb6-40d5-a2f7-a8767a95422d",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "name": "COMMONMAC",
+        "pattern": "(?:(?:[A-Fa-f0-9]{2}:){5}[A-Fa-f0-9]{2})"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "9509b9bc-8ac7-4cbd-a927-744413216e45",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "name": "DATA",
+        "pattern": ".*?"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "59b4f7b1-a789-41c4-bc50-2215954e8e3e",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "name": "BASE10NUM",
+        "pattern": "(?<![0-9.+-])(?>[+-]?(?:(?:[0-9]+(?:\\.[0-9]+)?)|(?:\\.[0-9]+)))"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "9f77ce31-0374-4544-9b7c-91cc1bab704c",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "name": "SECOND",
+        "pattern": "(?:(?:[0-5]?[0-9]|60)(?:[:.,][0-9]+)?)"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "4b6e7631-dda2-42fa-9738-06c66228061c",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "name": "WORD",
+        "pattern": "\\b\\w+\\b"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "cdb19608-587e-45ff-bb5e-75e7d5664954",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "name": "EMAILADDRESS",
+        "pattern": "%{EMAILLOCALPART}@%{HOSTNAME}"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "d8f2b56e-b085-458a-87ef-51076ebc07dd",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "name": "WINDOWSMAC",
+        "pattern": "(?:(?:[A-Fa-f0-9]{2}-){5}[A-Fa-f0-9]{2})"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "9ef538c7-3c0c-4987-a740-b81353d21ba9",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "name": "CISCOMAC",
+        "pattern": "(?:(?:[A-Fa-f0-9]{4}\\.){2}[A-Fa-f0-9]{4})"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "506ad5c1-60bf-448e-9eb2-dbc60595d686",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "name": "HOSTNAME",
+        "pattern": "\\b(?:[0-9A-Za-z][0-9A-Za-z-]{0,62})(?:\\.(?:[0-9A-Za-z][0-9A-Za-z-]{0,62}))*(\\.?|\\b)"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "36561180-8ed2-4cb5-a833-87176109aef7",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "name": "EMAILLOCALPART",
+        "pattern": "[a-zA-Z][a-zA-Z0-9_.+-=:]+"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "b9f3e25c-a62d-45ab-aa56-e7c81a73010b",
       "type": {
         "name": "input",
         "version": "1"
       },
-      "id": "9d6d5720-0198-46b6-9847-a690cd74f536",
+      "v": "1",
       "data": {
         "title": {
           "@type": "string",
@@ -1731,8 +2003,8 @@
             "@value": 262144
           },
           "port": {
-            "@type": "integer",
-            "@value": 55514
+            "@value": "input_port",
+            "@type": "parameter"
           },
           "number_worker_threads": {
             "@type": "integer",
@@ -1990,7 +2262,7 @@
             },
             "order": {
               "@type": "integer",
-              "@value": 1
+              "@value": 2
             },
             "converters": [],
             "configuration": {
@@ -2031,7 +2303,7 @@
             },
             "order": {
               "@type": "integer",
-              "@value": 2
+              "@value": 1
             },
             "converters": [],
             "configuration": {
@@ -2072,7 +2344,7 @@
             },
             "order": {
               "@type": "integer",
-              "@value": 16
+              "@value": 27
             },
             "converters": [],
             "configuration": {
@@ -2113,7 +2385,7 @@
             },
             "order": {
               "@type": "integer",
-              "@value": 15
+              "@value": 26
             },
             "converters": [],
             "configuration": {
@@ -2154,7 +2426,7 @@
             },
             "order": {
               "@type": "integer",
-              "@value": 14
+              "@value": 25
             },
             "converters": [],
             "configuration": {
@@ -2195,7 +2467,7 @@
             },
             "order": {
               "@type": "integer",
-              "@value": 12
+              "@value": 17
             },
             "converters": [],
             "configuration": {
@@ -2277,7 +2549,7 @@
             },
             "order": {
               "@type": "integer",
-              "@value": 13
+              "@value": 22
             },
             "converters": [],
             "configuration": {
@@ -2318,7 +2590,7 @@
             },
             "order": {
               "@type": "integer",
-              "@value": 10
+              "@value": 15
             },
             "converters": [],
             "configuration": {
@@ -2359,7 +2631,7 @@
             },
             "order": {
               "@type": "integer",
-              "@value": 9
+              "@value": 13
             },
             "converters": [],
             "configuration": {
@@ -2400,7 +2672,7 @@
             },
             "order": {
               "@type": "integer",
-              "@value": 11
+              "@value": 16
             },
             "converters": [],
             "configuration": {
@@ -2441,7 +2713,7 @@
             },
             "order": {
               "@type": "integer",
-              "@value": 8
+              "@value": 14
             },
             "converters": [],
             "configuration": {
@@ -2474,6 +2746,457 @@
               "@type": "string",
               "@value": "REGEX"
             }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "sec_service"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*msg_id=\"2E02-0065\".*"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 10
+            },
+            "converters": [],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "^.*Scheduled (.*) update started"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "SecurityServices  SignatureUpdate INFO 2E02-0065"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*msg_id=\"2E02-0069\".*"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 12
+            },
+            "converters": [],
+            "configuration": {
+              "grok_pattern": {
+                "@type": "string",
+                "@value": "^.* Device already has the latest %{WORD:sec_service} signature version \\(%{DATA:sec_service_sig}\\)"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "SecurityServices  SignatureUpdate INFO 2E02-0069"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "GROK"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*msg_id=\"2E02-0066\".*"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 11
+            },
+            "converters": [],
+            "configuration": {
+              "grok_pattern": {
+                "@type": "string",
+                "@value": "^.* Scheduled %{WORD:sec_service} update for version \\(%{DATA:sec_service_sig}\\) completed"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "SecurityServices  SignatureUpdate INFO 2E02-0066"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "GROK"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*msg_id=\"3000-0173\".*"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 9
+            },
+            "converters": [],
+            "configuration": {
+              "grok_pattern": {
+                "@type": "string",
+                "@value": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{BASE10NUM:ip_pkt_len} %{NOTSPACE:protocol} %{BASE10NUM:iph_len} %{BASE10NUM:TTL} (%{IPV4:srcip}|%{DATA:srcuser}) (%{IPV4:dstip}|%{DATA:dstuser}) %{BASE10NUM:srcport} %{BASE10NUM:dstport} %{DATA:ip_pkt_info} (?:\\s+geo_src=\"%{DATA:geo_src}\") msg=\"%{DATA:hostile_msg}\" botnet=\"%{DATA:hostile_botnet}\""
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Firewall PacketFilter INFO 3000-0173"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "GROK"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*msg_id=\"3000-0151\".*"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 8
+            },
+            "converters": [],
+            "configuration": {
+              "grok_pattern": {
+                "@type": "string",
+                "@value": "^.* %{WORD:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{WORD:protocol} %{IPV4:srcip} %{IPV4:dstip} (( geo_dst=\"%{DATA:geo_dst}\" duration=\"%{BASE10NUM:duration}\")|duration=\"%{DATA:duration}\"|(%{BASE10NUM:srcport} %{BASE10NUM:dstport})?(  geo_dst=\"%{DATA:geo_dst}\")? duration=\"%{BASE10NUM:duration}\") sent_bytes=\"%{BASE10NUM:sent_bytes}\" rcvd_bytes=\"%{BASE10NUM:rcvd_bytes}\""
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Firewall PacketFilter INFO 3000-0151"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "GROK"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*msg_id=\"1BFF-002C\".*"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 24
+            },
+            "converters": [],
+            "configuration": {
+              "grok_pattern": {
+                "@type": "string",
+                "@value": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{NOTSPACE:protocol} %{IPV4:srcip} %{IPV4:dstip} %{BASE10NUM:srcport} %{BASE10NUM:dstport} msg=\"%{DATA:proxy_msg}\" proxy_act=\"%{DATA:proxy_action}\" sender=\"%{EMAILADDRESS:proxy_sender}\" recipients=\"%{EMAILADDRESS:proxy_recipients}\" error=\"GAV Scan size limit \\(%{BASE10NUM:proxy_sizelimit}\\) exceeded\" filename=\"%{DATA:proxy_filename}\" ((?:\\s+(geo_src=\"%{DATA:geo_src}\"|geo_dst=\"%{DATA:geo_dst}\")?)|\\()"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Proxy SMTP INFO 1BFF-002C"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "GROK"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*msg_id=\"1BFF-0015\".*"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 23
+            },
+            "converters": [],
+            "configuration": {
+              "grok_pattern": {
+                "@type": "string",
+                "@value": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{NOTSPACE:protocol} %{IPV4:srcip} %{IPV4:dstip} %{BASE10NUM:srcport} %{BASE10NUM:dstport} msg=\"%{DATA:proxy_msg}\" proxy_act=\"%{DATA:proxy_action}\" line_length=\"%{NOTSPACE:proxy_linelength}\" ((?:\\s+(geo_src=\"%{DATA:geo_src}\"|geo_dst=\"%{DATA:geo_dst}\")?)|\\()"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Proxy SMTP INFO 1BFF-0015"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "GROK"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*msg_id=\"1BFF-0007\".*"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 20
+            },
+            "converters": [],
+            "configuration": {
+              "grok_pattern": {
+                "@type": "string",
+                "@value": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{NOTSPACE:protocol} %{IPV4:srcip} %{IPV4:dstip} %{BASE10NUM:srcport} %{BASE10NUM:dstport} msg=\"%{DATA:proxy_msg}\" proxy_act=\"%{DATA:proxy_action}\" rule_name=\"%{DATA:proxy_rulename}\" filename=\"%{DATA:proxy_filename}\" sender=\"%{EMAILADDRESS:proxy_sender}\" recipients=\"%{EMAILADDRESS:proxy_recipients}\"((?:\\s+(geo_src=\"%{DATA:geo_src}\"|geo_dst=\"%{DATA:geo_dst}\")?)|\\()"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Proxy SMTP INFO 1BFF-0007"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "GROK"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*msg_id=\"1BFF-000C\".*"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 21
+            },
+            "converters": [],
+            "configuration": {
+              "grok_pattern": {
+                "@type": "string",
+                "@value": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{NOTSPACE:protocol} %{IPV4:srcip} %{IPV4:dstip} %{BASE10NUM:srcport} %{BASE10NUM:dstport} msg=\"%{DATA:proxy_msg}\" proxy_act=\"%{DATA:proxy_action}\" sender=\"%{EMAILADDRESS:proxy_sender}\" recipients=\"%{EMAILADDRESS:proxy_recipients}\" virus=\"%{DATA:proxy_virus}\" filename=\"%{DATA:proxy_filename}\"((?:\\s+(geo_src=\"%{DATA:geo_src}\"|geo_dst=\"%{DATA:geo_dst}\")?)|\\()"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Proxy SMTP INFO 1BFF-000C"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "GROK"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*msg_id=\"1BFF-0006\".*"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 19
+            },
+            "converters": [],
+            "configuration": {
+              "grok_pattern": {
+                "@type": "string",
+                "@value": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{NOTSPACE:protocol} %{IPV4:srcip} %{IPV4:dstip} %{BASE10NUM:srcport} %{BASE10NUM:dstport} msg=\"%{DATA:proxy_msg}\" proxy_act=\"%{DATA:proxy_action}\" rule_name=\"%{DATA:proxy_rulename}\" (auto_detected_mime_type=\"%{DATA:proxy_autodetect_type}\"|filename=\"%{DATA:proxy_filename}\") sender=\"%{EMAILADDRESS:proxy_sender}\" recipients=\"%{EMAILADDRESS:proxy_recipients}\"((?:\\s+(geo_src=\"%{DATA:geo_src}\"|geo_dst=\"%{DATA:geo_dst}\")?)|\\()"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Proxy SMTP INFO 1BFF-0006"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "GROK"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^.*msg_id=\"1BFF-0004\".*"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 18
+            },
+            "converters": [],
+            "configuration": {
+              "grok_pattern": {
+                "@type": "string",
+                "@value": "^.* %{NOTSPACE:action} %{NOTSPACE:srcif} %{NOTSPACE:dstif} %{NOTSPACE:protocol} %{IPV4:srcip} %{IPV4:dstip} %{BASE10NUM:srcport} %{BASE10NUM:dstport} msg=\"%{DATA:proxy_msg}\" proxy_act=\"%{DATA:proxy_action}\" address=\"%{EMAILADDRESS:proxy_sender}\" keyword=\"%{DATA:proxy_keywordmsg}\" value=\"%{DATA:proxy_value}\" response=\"%{DATA:proxy_response}\"((?:\\s+(geo_src=\"%{DATA:geo_src}\"|geo_dst=\"%{DATA:geo_dst}\")?)|\\()"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Proxy SMTP INFO 1BFF-0004"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "GROK"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
           }
         ]
       },
@@ -2485,12 +3208,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "e8f607b1-2a17-45b2-8538-21e7e7fe6754",
       "type": {
         "name": "lookup_adapter",
         "version": "1"
       },
-      "id": "e8f607b1-2a17-45b2-8538-21e7e7fe6754",
+      "v": "1",
       "data": {
         "name": {
           "@type": "string",
@@ -2547,12 +3270,12 @@
       ]
     },
     {
-      "v": "1",
-      "type": {
-        "name": "lookup_adapter",
-        "version": "1"
-      },
       "id": "7a9496c4-0a9a-4e32-9ac8-fe466417e7b0",
+      "type": {
+        "name": "lookup_adapter",
+        "version": "1"
+      },
+      "v": "1",
       "data": {
         "name": {
           "@type": "string",
@@ -2609,12 +3332,12 @@
       ]
     },
     {
-      "v": "1",
-      "type": {
-        "name": "lookup_adapter",
-        "version": "1"
-      },
       "id": "5ce59bd0-6ece-4ecb-b6e6-469338030658",
+      "type": {
+        "name": "lookup_adapter",
+        "version": "1"
+      },
+      "v": "1",
       "data": {
         "name": {
           "@type": "string",
@@ -2671,12 +3394,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "018f6f0d-289f-452f-b081-8fa139daeba5",
       "type": {
         "name": "lookup_adapter",
         "version": "1"
       },
-      "id": "018f6f0d-289f-452f-b081-8fa139daeba5",
+      "v": "1",
       "data": {
         "name": {
           "@type": "string",
@@ -2733,12 +3456,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "58a41420-d2de-4f5b-a6db-7f354c5fd62f",
       "type": {
         "name": "lookup_adapter",
         "version": "1"
       },
-      "id": "58a41420-d2de-4f5b-a6db-7f354c5fd62f",
+      "v": "1",
       "data": {
         "name": {
           "@type": "string",
@@ -2795,12 +3518,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "fb8ef88d-325c-4591-a486-1ae623820741",
       "type": {
         "name": "lookup_adapter",
         "version": "1"
       },
-      "id": "fb8ef88d-325c-4591-a486-1ae623820741",
+      "v": "1",
       "data": {
         "name": {
           "@type": "string",
@@ -2857,12 +3580,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "fd03a291-0421-4fa1-a5a6-e659a782ec1a",
       "type": {
         "name": "lookup_adapter",
         "version": "1"
       },
-      "id": "fd03a291-0421-4fa1-a5a6-e659a782ec1a",
+      "v": "1",
       "data": {
         "name": {
           "@type": "string",
@@ -2919,12 +3642,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "e8c2dd4f-b9fa-4469-a96d-a4c721282ec6",
       "type": {
         "name": "lookup_adapter",
         "version": "1"
       },
-      "id": "e8c2dd4f-b9fa-4469-a96d-a4c721282ec6",
+      "v": "1",
       "data": {
         "name": {
           "@type": "string",
@@ -2981,12 +3704,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "440f73cc-fe90-4cf8-85a6-f64a4e4fea14",
       "type": {
         "name": "lookup_adapter",
         "version": "1"
       },
-      "id": "440f73cc-fe90-4cf8-85a6-f64a4e4fea14",
+      "v": "1",
       "data": {
         "name": {
           "@type": "string",
@@ -3043,12 +3766,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "9c0d421c-d118-4482-bf8b-dd6bf7049011",
       "type": {
         "name": "lookup_adapter",
         "version": "1"
       },
-      "id": "9c0d421c-d118-4482-bf8b-dd6bf7049011",
+      "v": "1",
       "data": {
         "name": {
           "@type": "string",
@@ -3105,12 +3828,322 @@
       ]
     },
     {
-      "v": "1",
+      "id": "935ab4fc-6d33-438e-aeab-abdab6149cd4",
       "type": {
-        "name": "lookup_cache",
+        "name": "lookup_adapter",
         "version": "1"
       },
+      "v": "1",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "fireware-msg-id-to-description-lookup"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Fireware msg ID to Description Lookup"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "csvfile"
+          },
+          "path": {
+            "@type": "string",
+            "@value": "/etc/graylog/fireware_msg_id_lookup_table.csv"
+          },
+          "separator": {
+            "@type": "string",
+            "@value": ","
+          },
+          "quotechar": {
+            "@type": "string",
+            "@value": "\""
+          },
+          "key_column": {
+            "@type": "string",
+            "@value": "msg_id"
+          },
+          "value_column": {
+            "@type": "string",
+            "@value": "msg_desc"
+          },
+          "check_interval": {
+            "@type": "long",
+            "@value": 180
+          },
+          "case_insensitive_lookup": {
+            "@type": "boolean",
+            "@value": false
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "d27b39ce-dcc5-4b4f-9898-4884d6b2b7d1",
+      "type": {
+        "name": "lookup_adapter",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "fireware-msg-id-to-name-lookup"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Fireware msg ID to Name Lookup"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "csvfile"
+          },
+          "path": {
+            "@type": "string",
+            "@value": "/etc/graylog/fireware_msg_id_lookup_table.csv"
+          },
+          "separator": {
+            "@type": "string",
+            "@value": ","
+          },
+          "quotechar": {
+            "@type": "string",
+            "@value": "\""
+          },
+          "key_column": {
+            "@type": "string",
+            "@value": "msg_id"
+          },
+          "value_column": {
+            "@type": "string",
+            "@value": "msg_name"
+          },
+          "check_interval": {
+            "@type": "long",
+            "@value": 180
+          },
+          "case_insensitive_lookup": {
+            "@type": "boolean",
+            "@value": false
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "22b400b7-398a-4b52-8f51-a5320e743e3f",
+      "type": {
+        "name": "lookup_adapter",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "fireware-msg-id-to-area-lookup"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Fireware msg ID to Area Lookup"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "csvfile"
+          },
+          "path": {
+            "@type": "string",
+            "@value": "/etc/graylog/fireware_msg_id_lookup_table.csv"
+          },
+          "separator": {
+            "@type": "string",
+            "@value": ","
+          },
+          "quotechar": {
+            "@type": "string",
+            "@value": "\""
+          },
+          "key_column": {
+            "@type": "string",
+            "@value": "msg_id"
+          },
+          "value_column": {
+            "@type": "string",
+            "@value": "msg_area"
+          },
+          "check_interval": {
+            "@type": "long",
+            "@value": 180
+          },
+          "case_insensitive_lookup": {
+            "@type": "boolean",
+            "@value": false
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "1533e2cf-1839-4900-a987-7a75fac7438d",
+      "type": {
+        "name": "lookup_adapter",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "fireware-msg-id-to-level-lookup"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Fireware msg ID to Level Lookup"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "csvfile"
+          },
+          "path": {
+            "@type": "string",
+            "@value": "/etc/graylog/fireware_msg_id_lookup_table.csv"
+          },
+          "separator": {
+            "@type": "string",
+            "@value": ","
+          },
+          "quotechar": {
+            "@type": "string",
+            "@value": "\""
+          },
+          "key_column": {
+            "@type": "string",
+            "@value": "msg_id"
+          },
+          "value_column": {
+            "@type": "string",
+            "@value": "msg_level"
+          },
+          "check_interval": {
+            "@type": "long",
+            "@value": 180
+          },
+          "case_insensitive_lookup": {
+            "@type": "boolean",
+            "@value": false
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "8e231609-e982-420e-ba2a-a165ab6d89c2",
+      "type": {
+        "name": "lookup_adapter",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "countrycode-3dig-to-latlong"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "countrycode 3dig to latlong"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup the countrycode table to convert 3 digit country code(UN) to 2digit country code(ISO)"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "csvfile"
+          },
+          "path": {
+            "@type": "string",
+            "@value": "/etc/graylog/countrycode_lookup_table.csv"
+          },
+          "separator": {
+            "@type": "string",
+            "@value": ";"
+          },
+          "quotechar": {
+            "@type": "string",
+            "@value": "'"
+          },
+          "key_column": {
+            "@type": "string",
+            "@value": "ccode_un_a3"
+          },
+          "value_column": {
+            "@type": "string",
+            "@value": "ccode_latlong"
+          },
+          "check_interval": {
+            "@type": "long",
+            "@value": 600
+          },
+          "case_insensitive_lookup": {
+            "@type": "boolean",
+            "@value": false
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
       "id": "67886225-44f7-46cb-9e4e-35cb9df22464",
+      "type": {
+        "name": "lookup_cache",
+        "version": "1"
+      },
+      "v": "1",
       "data": {
         "name": {
           "@type": "string",
@@ -3155,12 +4188,12 @@
       ]
     },
     {
-      "v": "1",
-      "type": {
-        "name": "lookup_cache",
-        "version": "1"
-      },
       "id": "9823a6c5-7275-4f2f-b87d-2e1c120e8e4a",
+      "type": {
+        "name": "lookup_cache",
+        "version": "1"
+      },
+      "v": "1",
       "data": {
         "name": {
           "@type": "string",
@@ -3205,12 +4238,12 @@
       ]
     },
     {
-      "v": "1",
-      "type": {
-        "name": "lookup_cache",
-        "version": "1"
-      },
       "id": "938ad06c-ff7b-4ad4-a189-3d852f144648",
+      "type": {
+        "name": "lookup_cache",
+        "version": "1"
+      },
+      "v": "1",
       "data": {
         "name": {
           "@type": "string",
@@ -3255,12 +4288,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "c69a1c72-e9e1-431f-a4d9-4f98e17b202f",
       "type": {
         "name": "lookup_cache",
         "version": "1"
       },
-      "id": "c69a1c72-e9e1-431f-a4d9-4f98e17b202f",
+      "v": "1",
       "data": {
         "name": {
           "@type": "string",
@@ -3305,12 +4338,112 @@
       ]
     },
     {
+      "id": "1d57f09f-4f24-4469-968d-23299424a9dc",
+      "type": {
+        "name": "lookup_cache",
+        "version": "1"
+      },
       "v": "1",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "fireware-msg_id-cache"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Fireware msg_ID Cache"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Cache for csv Lookup of Fireware msg_id's"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "guava_cache"
+          },
+          "max_size": {
+            "@type": "integer",
+            "@value": 1000
+          },
+          "expire_after_access": {
+            "@type": "long",
+            "@value": 60
+          },
+          "expire_after_access_unit": {
+            "@type": "string",
+            "@value": "SECONDS"
+          },
+          "expire_after_write": {
+            "@type": "long",
+            "@value": 0
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "6109e8e0-df1d-441a-8213-7acd64a06f0c",
+      "type": {
+        "name": "lookup_cache",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "country-code-table-cache"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Country Code Table Cache"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Cache for table of country codes"
+        },
+        "configuration": {
+          "type": {
+            "@type": "string",
+            "@value": "guava_cache"
+          },
+          "max_size": {
+            "@type": "integer",
+            "@value": 1000
+          },
+          "expire_after_access": {
+            "@type": "long",
+            "@value": 60
+          },
+          "expire_after_access_unit": {
+            "@type": "string",
+            "@value": "SECONDS"
+          },
+          "expire_after_write": {
+            "@type": "long",
+            "@value": 0
+          }
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "2019c709-3b60-44aa-8cb4-92f935807843",
       "type": {
         "name": "lookup_table",
         "version": "1"
       },
-      "id": "2019c709-3b60-44aa-8cb4-92f935807843",
+      "v": "1",
       "data": {
         "default_single_value_type": {
           "@type": "string",
@@ -3357,12 +4490,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "893f4d50-359b-4ebe-b840-a8b202610ba4",
       "type": {
         "name": "lookup_table",
         "version": "1"
       },
-      "id": "893f4d50-359b-4ebe-b840-a8b202610ba4",
+      "v": "1",
       "data": {
         "default_single_value_type": {
           "@type": "string",
@@ -3409,12 +4542,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "7c4c4f53-2f3c-4c3c-a8a6-a11b9b3c2fc7",
       "type": {
         "name": "lookup_table",
         "version": "1"
       },
-      "id": "7c4c4f53-2f3c-4c3c-a8a6-a11b9b3c2fc7",
+      "v": "1",
       "data": {
         "default_single_value_type": {
           "@type": "string",
@@ -3461,12 +4594,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "16030bfa-2a8c-469b-882b-4a5c3cd62f00",
       "type": {
         "name": "lookup_table",
         "version": "1"
       },
-      "id": "16030bfa-2a8c-469b-882b-4a5c3cd62f00",
+      "v": "1",
       "data": {
         "default_single_value_type": {
           "@type": "string",
@@ -3513,12 +4646,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "2b441f06-2b6c-4496-a5a3-7a301ff2f8aa",
       "type": {
         "name": "lookup_table",
         "version": "1"
       },
-      "id": "2b441f06-2b6c-4496-a5a3-7a301ff2f8aa",
+      "v": "1",
       "data": {
         "default_single_value_type": {
           "@type": "string",
@@ -3565,12 +4698,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "3836c574-a38c-45d0-9c86-413b1fb9963a",
       "type": {
         "name": "lookup_table",
         "version": "1"
       },
-      "id": "3836c574-a38c-45d0-9c86-413b1fb9963a",
+      "v": "1",
       "data": {
         "default_single_value_type": {
           "@type": "string",
@@ -3617,12 +4750,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "4e8a9bac-4305-4520-8df5-2ed58a0cb460",
       "type": {
         "name": "lookup_table",
         "version": "1"
       },
-      "id": "4e8a9bac-4305-4520-8df5-2ed58a0cb460",
+      "v": "1",
       "data": {
         "default_single_value_type": {
           "@type": "string",
@@ -3669,12 +4802,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "6175dd6a-9fcc-4592-ba94-a2e99f5840b3",
       "type": {
         "name": "lookup_table",
         "version": "1"
       },
-      "id": "6175dd6a-9fcc-4592-ba94-a2e99f5840b3",
+      "v": "1",
       "data": {
         "default_single_value_type": {
           "@type": "string",
@@ -3721,12 +4854,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "67e5a4a0-6d17-414d-bf80-8f6d4339619a",
       "type": {
         "name": "lookup_table",
         "version": "1"
       },
-      "id": "67e5a4a0-6d17-414d-bf80-8f6d4339619a",
+      "v": "1",
       "data": {
         "default_single_value_type": {
           "@type": "string",
@@ -3773,12 +4906,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "3761a464-fe06-460b-9eee-c7e85d9995af",
       "type": {
         "name": "lookup_table",
         "version": "1"
       },
-      "id": "3761a464-fe06-460b-9eee-c7e85d9995af",
+      "v": "1",
       "data": {
         "default_single_value_type": {
           "@type": "string",
@@ -3825,12 +4958,272 @@
       ]
     },
     {
+      "id": "308aac13-52b1-490e-a21c-4d728dcd7eb9",
+      "type": {
+        "name": "lookup_table",
+        "version": "1"
+      },
       "v": "1",
+      "data": {
+        "default_single_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "cache_name": {
+          "@type": "string",
+          "@value": "1d57f09f-4f24-4469-968d-23299424a9dc"
+        },
+        "name": {
+          "@type": "string",
+          "@value": "lookup-table-fireware-msg-id-to-description"
+        },
+        "default_multi_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "default_multi_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "data_adapter_name": {
+          "@type": "string",
+          "@value": "935ab4fc-6d33-438e-aeab-abdab6149cd4"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Lookup Table Fireware msg ID to Description"
+        },
+        "default_single_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "8e83eebd-e3b1-480f-a318-9f32db603671",
+      "type": {
+        "name": "lookup_table",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "default_single_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "cache_name": {
+          "@type": "string",
+          "@value": "1d57f09f-4f24-4469-968d-23299424a9dc"
+        },
+        "name": {
+          "@type": "string",
+          "@value": "lookup-table-fireware-msg-id-to-name"
+        },
+        "default_multi_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "default_multi_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "data_adapter_name": {
+          "@type": "string",
+          "@value": "d27b39ce-dcc5-4b4f-9898-4884d6b2b7d1"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Lookup Table Fireware msg ID to Name"
+        },
+        "default_single_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "6b19a746-8afd-437a-96ee-29552b2a9dfe",
+      "type": {
+        "name": "lookup_table",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "default_single_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "cache_name": {
+          "@type": "string",
+          "@value": "1d57f09f-4f24-4469-968d-23299424a9dc"
+        },
+        "name": {
+          "@type": "string",
+          "@value": "lookup-table-fireware-msg-id-to-area"
+        },
+        "default_multi_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "default_multi_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "data_adapter_name": {
+          "@type": "string",
+          "@value": "22b400b7-398a-4b52-8f51-a5320e743e3f"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Lookup Table Fireware msg ID to Area"
+        },
+        "default_single_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "4b8b5224-9b5d-412b-9b0d-b1306251078b",
+      "type": {
+        "name": "lookup_table",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "default_single_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "cache_name": {
+          "@type": "string",
+          "@value": "1d57f09f-4f24-4469-968d-23299424a9dc"
+        },
+        "name": {
+          "@type": "string",
+          "@value": "lookup-table-fireware-msg-id-to-level"
+        },
+        "default_multi_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "default_multi_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "data_adapter_name": {
+          "@type": "string",
+          "@value": "1533e2cf-1839-4900-a987-7a75fac7438d"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Lookup Table Fireware msg ID to Level"
+        },
+        "default_single_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Lookup Table for Watchguard msg ID's - http://www.watchguard.com/help/docs/fireware/11/en-US/log_catalog/index.html"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "f8c185af-e29f-4c5e-be50-005e3dc8b5a0",
+      "type": {
+        "name": "lookup_table",
+        "version": "1"
+      },
+      "v": "1",
+      "data": {
+        "default_single_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "cache_name": {
+          "@type": "string",
+          "@value": "6109e8e0-df1d-441a-8213-7acd64a06f0c"
+        },
+        "name": {
+          "@type": "string",
+          "@value": "Countrycode3_to_latlong"
+        },
+        "default_multi_value_type": {
+          "@type": "string",
+          "@value": "NULL"
+        },
+        "default_multi_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "data_adapter_name": {
+          "@type": "string",
+          "@value": "8e231609-e982-420e-ba2a-a165ab6d89c2"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Lookup Table Countrycode3 to latlong"
+        },
+        "default_single_value": {
+          "@type": "string",
+          "@value": ""
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Use Lookuptable to convert the UN Code to latitude and longitude"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "id": "efcc80d5-9ce9-44f3-bbc4-1cbbd4880c80",
       "type": {
         "name": "stream",
         "version": "1"
       },
-      "id": "efcc80d5-9ce9-44f3-bbc4-1cbbd4880c80",
+      "v": "1",
       "data": {
         "alarm_callbacks": [],
         "outputs": [],
@@ -3892,12 +5285,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "d2bc6507-82ba-4c3c-accd-ad88bffa742f",
       "type": {
         "name": "stream",
         "version": "1"
       },
-      "id": "d2bc6507-82ba-4c3c-accd-ad88bffa742f",
+      "v": "1",
       "data": {
         "alarm_callbacks": [],
         "outputs": [],
@@ -3959,12 +5352,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "d85222c0-ef31-46ce-8ad4-597c3383773f",
       "type": {
         "name": "stream",
         "version": "1"
       },
-      "id": "d85222c0-ef31-46ce-8ad4-597c3383773f",
+      "v": "1",
       "data": {
         "alarm_callbacks": [],
         "outputs": [],
@@ -4026,12 +5419,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "d05d7527-42ab-4f9d-ab89-45f32536837a",
       "type": {
         "name": "stream",
         "version": "1"
       },
-      "id": "d05d7527-42ab-4f9d-ab89-45f32536837a",
+      "v": "1",
       "data": {
         "alarm_callbacks": [],
         "outputs": [],
@@ -4093,12 +5486,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "9d015631-e6dd-4f55-b1d9-6ea1da2d502e",
       "type": {
         "name": "stream",
         "version": "1"
       },
-      "id": "9d015631-e6dd-4f55-b1d9-6ea1da2d502e",
+      "v": "1",
       "data": {
         "alarm_callbacks": [],
         "outputs": [],
@@ -4160,12 +5553,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "61e8af72-5825-465b-8972-5700b8f7bea4",
       "type": {
         "name": "stream",
         "version": "1"
       },
-      "id": "61e8af72-5825-465b-8972-5700b8f7bea4",
+      "v": "1",
       "data": {
         "alarm_callbacks": [],
         "outputs": [],
@@ -4227,12 +5620,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "572153e9-5561-4daf-b5de-f383e57834cb",
       "type": {
         "name": "stream",
         "version": "1"
       },
-      "id": "572153e9-5561-4daf-b5de-f383e57834cb",
+      "v": "1",
       "data": {
         "alarm_callbacks": [],
         "outputs": [],
@@ -4294,12 +5687,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "555f3443-5b5a-40b7-b834-3083f0bf46e8",
       "type": {
         "name": "stream",
         "version": "1"
       },
-      "id": "555f3443-5b5a-40b7-b834-3083f0bf46e8",
+      "v": "1",
       "data": {
         "alarm_callbacks": [],
         "outputs": [],
@@ -4361,12 +5754,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "f3a9cb00-9471-47a0-9c87-321d95f28140",
       "type": {
         "name": "stream",
         "version": "1"
       },
-      "id": "f3a9cb00-9471-47a0-9c87-321d95f28140",
+      "v": "1",
       "data": {
         "alarm_callbacks": [],
         "outputs": [],
@@ -4428,12 +5821,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "ff5e7118-3e03-463b-abd3-4d46707447b8",
       "type": {
         "name": "stream",
         "version": "1"
       },
-      "id": "ff5e7118-3e03-463b-abd3-4d46707447b8",
+      "v": "1",
       "data": {
         "alarm_callbacks": [],
         "outputs": [],
@@ -4495,12 +5888,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "33e44fa7-750e-46d5-99af-b9b4298244d6",
       "type": {
         "name": "stream",
         "version": "1"
       },
-      "id": "33e44fa7-750e-46d5-99af-b9b4298244d6",
+      "v": "1",
       "data": {
         "alarm_callbacks": [],
         "outputs": [],
@@ -4562,12 +5955,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "69105433-2605-4ce1-9715-817393195f93",
       "type": {
         "name": "stream",
         "version": "1"
       },
-      "id": "69105433-2605-4ce1-9715-817393195f93",
+      "v": "1",
       "data": {
         "alarm_callbacks": [],
         "outputs": [],
@@ -4629,12 +6022,12 @@
       ]
     },
     {
-      "v": "1",
+      "id": "f50b3b19-7650-45e7-b5c9-6226fe98c5a4",
       "type": {
         "name": "stream",
         "version": "1"
       },
-      "id": "f50b3b19-7650-45e7-b5c9-6226fe98c5a4",
+      "v": "1",
       "data": {
         "alarm_callbacks": [],
         "outputs": [],
